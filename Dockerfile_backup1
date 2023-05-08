@@ -1,0 +1,23 @@
+# Set the base image
+FROM openjdk:11-jdk-slim-buster
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the Mendix application source code to the container
+COPY . /app
+
+# Install Mendix Model SDK
+RUN apt-get update && apt-get install -y wget   &&\
+    wget https://cdn.mendix.com/modeler/mendix-8.18.0.26384-linux.tar.gz && \
+    tar -xzf mendix-8.18.0.26384-linux.tar.gz && \
+    rm mendix-8.18.0.26384-linux.tar.gz && \
+    mv mendix-8.18.0.26384-linux /usr/local/mendix && \
+    ln -s /usr/local/mendix/modeler/mxbuild /usr/local/bin/mxbuild && \
+    ln -s /usr/local/mendix/modeler/m2ee /usr/local/bin/m2ee
+
+# Set environment variables
+ENV PATH="/usr/local/mendix/modeler:${PATH}"
+
+# Build the Mendix application
+RUN mxbuild --output-dir /app/data/ --java-home /usr/lib/jvm/java-11-openjdk-amd64/

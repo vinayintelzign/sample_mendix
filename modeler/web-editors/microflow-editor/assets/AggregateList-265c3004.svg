@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="24px" height="22px" viewBox="0 0 24 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 40.2 (33826) - http://www.bohemiancoding.com/sketch -->
+    <title>8FB9317E-48BB-4A24-9E8F-362EA0780AF8</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M10,0 C4.47654802,0 0,4.47654802 0,10 C0,15.523452 4.47654802,20 10,20 C15.5229009,20 20,15.5231698 20,10 C20,4.47683022 15.5229009,0 10,0 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="20" height="20" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Microflow-Rendering-Copy" transform="translate(-765.000000, -374.000000)">
+            <g id="Activities" transform="translate(440.000000, 50.000000)">
+                <g id="List-activities" transform="translate(1.000000, 233.000000)">
+                    <g id="Create-Object-Activity" transform="translate(304.000000, 71.000000)">
+                        <g id="icon" transform="translate(20.000000, 20.000000)">
+                            <g id="Entity-icons">
+                                <use id="Stroke-2175" stroke="#0595DB" mask="url(#mask-2)" stroke-width="2" fill="#FFFFFF" xlink:href="#path-1"></use>
+                                <g id="List-icon" transform="translate(5.000000, 5.000000)" fill="#0595DB">
+                                    <polygon id="Fill-6077" points="0.416666667 1.5 9.58333333 1.5 9.58333333 0.5 0.416666667 0.5"></polygon>
+                                    <polygon id="Fill-6078" points="0.416666667 5.5 9.58333333 5.5 9.58333333 4.5 0.416666667 4.5"></polygon>
+                                    <polygon id="Fill-6079" points="0.416666667 9.5 9.58333333 9.5 9.58333333 8.5 0.416666667 8.5"></polygon>
+                                </g>
+                            </g>
+                            <g id="Summation-icon" transform="translate(11.000000, 9.000000)">
+                                <path d="M6.5,0 C2.916,0 0,2.916 0,6.5 C0,10.084 2.916,13 6.5,13 C10.084,13 13,10.084 13,6.5 C13,2.916 10.084,0 6.5,0" id="Fill-4834" fill="#888888"></path>
+                                <text font-family="Courier-Bold, Courier" font-size="9" font-weight="bold" fill="#FFFFFF">
+                                    <tspan x="3.29199219" y="9">&#x2211;</tspan>
+                                </text>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

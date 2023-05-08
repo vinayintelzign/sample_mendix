@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Fill 4044 + Stroke 4045 + Stroke 4046</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard">
+            <g id="Fill-4044-+-Stroke-4045-+-Stroke-4046" transform="translate(1.000000, 1.000000)">
+                <g id="Group">
+                    <g id="Group-2">
+                        <path d="M24,12 C24,18.6272727 18.6272727,24 12,24 C5.37272727,24 0,18.6272727 0,12 C0,5.37272727 5.37272727,0 12,0 C18.6272727,0 24,5.37272727 24,12 L24,12 Z" id="Stroke-4045" stroke="#0595DB" stroke-linecap="round" stroke-linejoin="round" fill="#FFFFFF"></path>
+                        <path d="M12,16.4237278 C11.4229565,16.4237278 10.9565217,16.9115312 10.9565217,17.5125747 C10.9565217,18.114707 11.4229565,18.6014216 12,18.6014216 C12.576,18.6014216 13.0434783,18.114707 13.0434783,17.5125747 C13.0434783,16.9115312 12.576,16.4237278 12,16.4237278" id="Fill-4044" fill="#0595DB"></path>
+                    </g>
+                    <path d="M8.86956522,8.2572673 C8.86956522,6.45413686 10.2709565,4.99072665 12,4.99072665 C13.728,4.99072665 15.1304348,6.45413686 15.1304348,8.2572673 C15.1304348,10.0614866 13.728,11.5238079 12,11.5238079 L12,14.7903486" id="Stroke-4046" stroke="#0595DB" stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

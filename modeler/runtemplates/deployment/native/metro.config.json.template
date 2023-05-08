@@ -1,0 +1,59 @@
+\{
+  "watchFolders": [
+    "{ProjectDir:HtmlAttributeEncode}/theme",
+    "{ProjectDir:HtmlAttributeEncode}/javascriptsource",
+    "{ProjectDir:HtmlAttributeEncode}/themesource",
+    "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules"
+  ],
+  "resolver": \{
+    "useWatchman": {EnableWatchman:true|false},
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "sourceExts": [
+      "js",
+      "jsx",
+      "ts",
+      "tsx",
+      "cjs",
+      "mjs",
+      "json",
+      "js_commonjs-exports",
+      "js_commonjs-module"
+    ],
+    "extraNodeModules": \{
+      "externalWidgets": "{DeploymentDir:HtmlAttributeEncode}/native/externalWidgets",
+      "@babel/runtime": "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/@babel/runtime",
+      "big.js": "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/big.js",
+      "react": "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/react",
+      "react-dom": "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/react-dom",
+      "react-native-gesture-handler": "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/react-native-gesture-handler",
+      "react-native": "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/react-native",
+      "react-native-code-push": "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/react-native-code-push",
+      "react-native-device-info": "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/react-native-device-info",
+      "react-native-material-menu": "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/react-native-material-menu",
+      "react-navigation": "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/react-navigation",
+      "react-navigation-drawer": "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/react-navigation-drawer",
+      "react-navigation-stack": "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/react-navigation-stack",
+      "react-navigation-tabs": "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/react-navigation-tabs",
+      "react-native-svg": "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/react-native-svg",
+      "react-native-tab-view": "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/react-native-tab-view",
+      "react-native-vector-icons": "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/react-native-vector-icons",
+      "react-native-fast-image": "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/react-native-fast-image",
+      "react-native-screens": "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/react-native-screens",
+      "react-native-localize": "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/react-native-localize",
+      "react-native-reanimated": "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/react-native-reanimated",
+      "react-native-safe-area-context": "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/react-native-safe-area-context",
+      "@react-native-community/async-storage": "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/@react-native-community/async-storage",
+      "@react-native-community/datetimepicker": "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/@react-native-community/datetimepicker",
+      "@react-native-community/masked-view": "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/@react-native-community/masked-view",
+      "eventemitter3": "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/eventemitter3",
+      "@react-native-picker/picker": "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/@react-native-picker/picker",
+      "deprecated-react-native-prop-types": "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/deprecated-react-native-prop-types",
+      "mendix": "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/mendix",
+      "mx-global": "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/mx-global"
+    \}
+  \},
+  "cacheVersion": "{MxBuildNumber}"
+\}

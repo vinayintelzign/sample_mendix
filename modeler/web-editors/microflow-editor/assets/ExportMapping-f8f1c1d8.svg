@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="22px" viewBox="0 0 24 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>999A1D84-776B-4E5A-B72F-B99DD795F677</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M10,0 C4.47654802,0 0,4.47654802 0,10 C0,15.523452 4.47654802,20 10,20 C15.5229009,20 20,15.5231698 20,10 C20,4.47683022 15.5229009,0 10,0 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="20" height="20" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Microflow-Rendering-Copy" transform="translate(-467.000000, -871.000000)">
+            <g id="Activities" transform="translate(446.000000, 50.000000)">
+                <g id="Variable-activities" transform="translate(1.000000, 598.000000)">
+                    <g id="Export-service-mapping" transform="translate(0.000000, 203.000000)">
+                        <g id="icon-copy-11" transform="translate(20.000000, 20.000000)">
+                            <g id="Entity-icons" stroke="#0595DB">
+                                <use id="Stroke-2175" mask="url(#mask-2)" stroke-width="2" fill="#FFFFFF" xlink:href="#path-1"></use>
+                                <g id="Group-881" transform="translate(4.000000, 4.000000)" stroke-width="0.599999964" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline id="Stroke-3432" points="9.5952381 2.1 9.5952381 4.9704 6.5 6.9 3.4047619 4.9704 3.4047619 2.1"></polyline>
+                                    <polygon id="Stroke-3433" points="9.5952381 2.1 6.5 3.9 3.4047619 2.1 6.5 0.3"></polygon>
+                                    <path d="M6.5,3.9 L6.5,6.9" id="Stroke-3434"></path>
+                                    <polyline id="Stroke-3435" points="12.6904762 6.9 12.6904762 9.7704 9.5952381 11.7 6.5 9.7704 6.5 6.9"></polyline>
+                                    <polygon id="Stroke-3436" points="12.6904762 6.9 9.5952381 8.7 6.5 6.9 9.5952381 4.9704"></polygon>
+                                    <path d="M9.5952381,8.7 L9.5952381,11.7" id="Stroke-3437"></path>
+                                    <polyline id="Stroke-3438" points="6.5 6.9 6.5 9.7704 3.4047619 11.7 0.30952381 9.7704 0.30952381 6.9"></polyline>
+                                    <polygon id="Stroke-3439" points="6.5 6.9 3.4047619 8.7 0.30952381 6.9 3.4047619 4.9704"></polygon>
+                                    <path d="M3.4047619,8.7 L3.4047619,11.7" id="Stroke-3440"></path>
+                                </g>
+                            </g>
+                            <g id="plus" transform="translate(11.000000, 9.000000)">
+                                <path d="M6.5,0 C2.91554545,0 0,2.91554545 0,6.5 C0,10.0844545 2.91554545,13 6.5,13 C10.0844545,13 13,10.0844545 13,6.5 C13,2.91554545 10.0844545,0 6.5,0" id="Fill-4864" fill="#888888"></path>
+                                <path d="M8.86365543,7.4457554 L6.5003496,10 L4.13704377,7.4457554 C3.95431874,7.24935252 3.95431874,6.93007194 4.13704377,6.73366906 C4.31883653,6.53726619 4.61343402,6.53726619 4.79615905,6.73366906 L6.04819839,8.08733813 L6.04819839,3.50359712 C6.04819839,3.22561151 6.25702699,3 6.51433366,3 C6.77164033,3 6.98046893,3.22561151 6.98046893,3.50359712 L6.98046893,8.05611511 L8.20454016,6.73366906 C8.38633291,6.53726619 8.68186268,6.53726619 8.86365543,6.73366906 C9.04544819,6.93007194 9.04544819,7.24935252 8.86365543,7.4457554" id="Path" fill="#FFFFFF" transform="translate(6.500000, 6.500000) rotate(-90.000000) translate(-6.500000, -6.500000) "></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

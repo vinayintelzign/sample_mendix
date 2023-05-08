@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="22px" viewBox="0 0 24 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>9159ACDA-5B51-4EEB-BBD4-A674C24D9E70</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <ellipse id="path-1" cx="9.6" cy="9.56521739" rx="9.6" ry="9.56521739"></ellipse>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="19.2" height="19.1304348" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Microflow-Rendering-Copy" transform="translate(-467.000000, -1235.000000)">
+            <g id="Activities" transform="translate(447.000000, 50.000000)">
+                <g id="Message-Activities" transform="translate(0.000000, 1084.000000)">
+                    <g id="Show-validation-message" transform="translate(0.000000, 81.000000)">
+                        <g id="Group-4" transform="translate(20.000000, 20.000000)">
+                            <g id="Pages-icon" stroke="#0595DB">
+                                <use id="Oval" mask="url(#mask-2)" stroke-width="2" fill="#FFFFFF" xlink:href="#path-1"></use>
+                                <g id="Stroke-342" transform="translate(5.000000, 6.000000)" stroke-width="0.5" stroke-linejoin="round">
+                                    <path d="M9.79166667,3.5744 C9.79166667,5.54849524 7.64666667,7.14849524 5,7.14849524 C4.40958333,7.14849524 3.84375,7.06887619 3.32125,6.92335238 L0.5675,8.09478095 L1.64583333,6.12678095 C0.75875,5.47801905 0.208333333,4.5744 0.208333333,3.5744 C0.208333333,1.60030476 2.35333333,-7.61904764e-05 5,-7.61904764e-05 C7.64666667,-7.61904764e-05 9.79166667,1.60030476 9.79166667,3.5744 L9.79166667,3.5744 Z"></path>
+                                </g>
+                            </g>
+                            <g id="Arrow" transform="translate(10.000000, 8.000000)">
+                                <ellipse id="Oval-2" fill="#76CA02" cx="6.72" cy="6.69565217" rx="6.72" ry="6.69565217"></ellipse>
+                                <polyline id="Stroke-1051" stroke="#FFFFFF" stroke-linecap="round" points="9.986 4.39130435 6.168 8.57630435 3.44 5.84930435"></polyline>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

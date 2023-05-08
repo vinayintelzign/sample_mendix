@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="24px" height="22px" viewBox="0 0 24 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 40.2 (33826) - http://www.bohemiancoding.com/sketch -->
+    <title>6EA6FB17-006D-43CC-BE2C-019CA2C62F1A</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M10,0 C4.47654802,0 0,4.47654802 0,10 C0,15.523452 4.47654802,20 10,20 C15.5229009,20 20,15.5231698 20,10 C20,4.47683022 15.5229009,0 10,0 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="20" height="20" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Microflow-Rendering-Copy" transform="translate(-610.000000, -374.000000)">
+            <g id="Activities" transform="translate(440.000000, 50.000000)">
+                <g id="List-activities" transform="translate(1.000000, 233.000000)">
+                    <g id="Create-Object-Activity" transform="translate(149.000000, 71.000000)">
+                        <g id="icon" transform="translate(20.000000, 20.000000)">
+                            <g id="Entity-icons">
+                                <use id="Stroke-2175" stroke="#0595DB" mask="url(#mask-2)" stroke-width="2" fill="#FFFFFF" xlink:href="#path-1"></use>
+                                <g id="Fill-6077-+-Fill-6078-+-Fill-6079" transform="translate(5.000000, 5.000000)" fill="#0595DB">
+                                    <polygon id="Fill-6077" points="0.416666667 1.5 9.58333333 1.5 9.58333333 0.5 0.416666667 0.5"></polygon>
+                                    <polygon id="Fill-6078" points="0.416666667 5.5 9.58333333 5.5 9.58333333 4.5 0.416666667 4.5"></polygon>
+                                    <polygon id="Fill-6079" points="0.416666667 9.5 9.58333333 9.5 9.58333333 8.5 0.416666667 8.5"></polygon>
+                                </g>
+                            </g>
+                            <path d="M17.5,9 C13.916,9 11,11.916 11,15.5 C11,19.084 13.916,22 17.5,22 C21.084,22 24,19.084 24,15.5 C24,11.916 21.084,9 17.5,9" id="Fill-4834" fill="#888888"></path>
+                            <g id="Edit-icon" transform="translate(14.000000, 11.000000)" fill="#FFFFFF">
+                                <path d="M0.590791667,7.802975 L1.66816667,5.28801667 L3.46108333,7.08093333 L0.946125,8.15885 C0.912,8.173475 0.875708333,8.18105833 0.839416667,8.18105833 C0.769,8.18105833 0.699666667,8.15343333 0.648208333,8.10143333 C0.569666667,8.02343333 0.546916667,7.90480833 0.590791667,7.802975 L0.590791667,7.802975 Z" id="Path"></path>
+                                <path d="M3.8955,6.74943333 L1.99045833,4.84385 L5.40079167,1.43351667 C5.40404167,1.43676667 5.405125,1.44164167 5.408375,1.44489167 L7.31395833,3.350475 L3.90308333,6.76080833 C3.900375,6.75755833 3.89929167,6.75268333 3.8955,6.74943333 L3.8955,6.74943333 Z" id="Path"></path>
+                                <path d="M5.79133333,1.06193333 C5.78808333,1.05868333 5.78320833,1.0576 5.77995833,1.05435 L6.584875,0.249433333 C6.63579167,0.198516667 6.70458333,0.17035 6.77608333,0.17035 C6.848125,0.17035 6.91691667,0.198516667 6.96783333,0.249433333 L8.49966667,1.78180833 C8.60583333,1.88743333 8.60583333,2.0586 8.49966667,2.16476667 L7.69691667,2.96751667 L5.79133333,1.06193333 Z" id="Path"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

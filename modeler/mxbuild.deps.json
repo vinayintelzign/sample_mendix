@@ -1,0 +1,3989 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0/win10-x64",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {},
+    ".NETCoreApp,Version=v6.0/win10-x64": {
+      "mxbuild/9.24.0\n": {
+        "dependencies": {
+          "Mendix.BusinessEvents.MendixBuildExtension": "9.24.0",
+          "Mendix.CommandLine.Shared": "9.24.0",
+          "Mendix.Common": "9.24.0",
+          "Mendix.ModelSDK": "9.24.0",
+          "Mendix.Modeler.Analytics": "9.24.0",
+          "Mendix.Modeler.BusinessEvents": "9.24.0",
+          "Mendix.Modeler.CodeActions": "9.24.0",
+          "Mendix.Modeler.Core": "9.24.0",
+          "Mendix.Modeler.DataBroker": "9.24.0",
+          "Mendix.Modeler.DataHubConnector": "9.24.0",
+          "Mendix.Modeler.DataStorage": "9.24.0",
+          "Mendix.Modeler.DatabaseConnector": "9.24.0",
+          "Mendix.Modeler.Deployment": "9.24.0",
+          "Mendix.Modeler.DocumentTemplates": "9.24.0",
+          "Mendix.Modeler.ExcelDataImporter": "9.24.0",
+          "Mendix.Modeler.ExtensionLoader": "9.24.0",
+          "Mendix.Modeler.Integration": "9.24.0",
+          "Mendix.Modeler.JavaActions": "9.24.0",
+          "Mendix.Modeler.JavaScriptActions": "9.24.0",
+          "Mendix.Modeler.Microflows": "9.24.0",
+          "Mendix.Modeler.MxAssist.MLKit": "9.24.0",
+          "Mendix.Modeler.MxAssist.PerformanceBot": "9.24.0",
+          "Mendix.Modeler.MxAssist.PerformanceBot.Interfaces": "9.24.0",
+          "Mendix.Modeler.MxAssist.PerformanceBot.Serialization": "9.24.0",
+          "Mendix.Modeler.Packages": "9.24.0",
+          "Mendix.Modeler.ProjectHandling": "9.24.0",
+          "Mendix.Modeler.ProtectedModules": "9.24.0",
+          "Mendix.Modeler.SprintrConnector": "9.24.0",
+          "Mendix.Modeler.Storage": "9.24.0",
+          "Mendix.Modeler.Texts": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0",
+          "Mendix.Modeler.WebUI": "9.24.0",
+          "Mendix.Modeler.WebUI.Atlas": "9.24.0",
+          "Mendix.Modeler.WebUI.Export": "9.24.0",
+          "Mendix.Modeler.WebUI.JSEngine": "9.24.0",
+          "Mendix.Modeler.WebUI.MicroflowAnalyzer": "9.24.0",
+          "Mendix.Modeler.Workflows": "9.24.0",
+          "NDesk.Options": "0.2.1",
+          "NLog": "4.6.3",
+          "Newtonsoft.Json": "13.0.3",
+          "mx": "9.24.0",
+          "mxutil": "9.24.0",
+          "runtimepack.Microsoft.NETCore.App.Runtime.win-x64": "6.0.11"
+        },
+        "runtime": {
+          "mxbuild.dll": {}
+        }
+      },
+      "runtimepack.Microsoft.NETCore.App.Runtime.win-x64/6.0.11": {
+        "runtime": {
+          "Microsoft.CSharp.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "Microsoft.VisualBasic.Core.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.100.1122.52304"
+          },
+          "Microsoft.VisualBasic.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "Microsoft.Win32.Primitives.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "Microsoft.Win32.Registry.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.AppContext.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Buffers.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Collections.Concurrent.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Collections.NonGeneric.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Collections.Specialized.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Collections.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.ComponentModel.Annotations.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.ComponentModel.DataAnnotations.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.ComponentModel.EventBasedAsync.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.ComponentModel.Primitives.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.ComponentModel.TypeConverter.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.ComponentModel.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Configuration.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Console.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Core.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Data.Common.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Data.DataSetExtensions.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Data.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Diagnostics.Contracts.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Diagnostics.Debug.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Diagnostics.DiagnosticSource.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Diagnostics.FileVersionInfo.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Diagnostics.Process.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Diagnostics.StackTrace.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Diagnostics.TextWriterTraceListener.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Diagnostics.Tools.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Diagnostics.TraceSource.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Diagnostics.Tracing.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Drawing.Primitives.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Drawing.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Dynamic.Runtime.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Formats.Asn1.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Globalization.Calendars.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Globalization.Extensions.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Globalization.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.IO.Compression.Brotli.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.IO.Compression.FileSystem.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.IO.Compression.ZipFile.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.IO.Compression.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.IO.FileSystem.AccessControl.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.IO.FileSystem.DriveInfo.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.IO.FileSystem.Primitives.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.IO.FileSystem.Watcher.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.IO.FileSystem.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.IO.IsolatedStorage.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.IO.MemoryMappedFiles.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.IO.Pipes.AccessControl.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.IO.Pipes.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.IO.UnmanagedMemoryStream.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.IO.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Linq.Expressions.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Linq.Parallel.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Linq.Queryable.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Linq.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Memory.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Net.Http.Json.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Net.Http.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Net.HttpListener.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Net.Mail.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Net.NameResolution.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Net.NetworkInformation.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Net.Ping.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Net.Primitives.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Net.Quic.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Net.Requests.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Net.Security.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Net.ServicePoint.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Net.Sockets.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Net.WebClient.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Net.WebHeaderCollection.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Net.WebProxy.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Net.WebSockets.Client.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Net.WebSockets.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Net.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Numerics.Vectors.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Numerics.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.ObjectModel.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Private.CoreLib.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Private.DataContractSerialization.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Private.Uri.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Private.Xml.Linq.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Private.Xml.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Reflection.DispatchProxy.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Reflection.Emit.ILGeneration.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Reflection.Emit.Lightweight.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Reflection.Emit.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Reflection.Extensions.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Reflection.Metadata.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Reflection.Primitives.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Reflection.TypeExtensions.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Reflection.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Resources.Reader.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Resources.ResourceManager.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Resources.Writer.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Runtime.CompilerServices.Unsafe.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Runtime.CompilerServices.VisualC.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Runtime.Extensions.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Runtime.Handles.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Runtime.InteropServices.RuntimeInformation.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Runtime.InteropServices.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Runtime.Intrinsics.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Runtime.Loader.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Runtime.Numerics.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Runtime.Serialization.Formatters.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Runtime.Serialization.Json.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Runtime.Serialization.Primitives.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Runtime.Serialization.Xml.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Runtime.Serialization.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Runtime.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Security.AccessControl.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Security.Claims.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Security.Cryptography.Algorithms.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Security.Cryptography.Cng.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Security.Cryptography.Csp.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Security.Cryptography.Encoding.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Security.Cryptography.OpenSsl.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Security.Cryptography.Primitives.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Security.Cryptography.X509Certificates.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Security.Principal.Windows.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Security.Principal.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Security.SecureString.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Security.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.ServiceModel.Web.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.ServiceProcess.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Text.Encoding.CodePages.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Text.Encoding.Extensions.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Text.Encoding.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Text.Encodings.Web.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Text.Json.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Text.RegularExpressions.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Threading.Channels.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Threading.Overlapped.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Threading.Tasks.Dataflow.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Threading.Tasks.Extensions.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Threading.Tasks.Parallel.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Threading.Tasks.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Threading.Thread.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Threading.ThreadPool.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Threading.Timer.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Threading.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Transactions.Local.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Transactions.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.ValueTuple.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Web.HttpUtility.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Web.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Windows.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Xml.Linq.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Xml.ReaderWriter.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Xml.Serialization.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Xml.XDocument.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Xml.XPath.XDocument.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Xml.XPath.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Xml.XmlDocument.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Xml.XmlSerializer.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.Xml.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "System.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "WindowsBase.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "mscorlib.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "6.0.1122.52304"
+          },
+          "netstandard.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "6.0.1122.52304"
+          }
+        },
+        "native": {
+          "Microsoft.DiaSymReader.Native.amd64.dll": {
+            "fileVersion": "14.28.29715.1"
+          },
+          "System.IO.Compression.Native.dll": {
+            "fileVersion": "42.42.42.42424"
+          },
+          "api-ms-win-core-console-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-core-console-l1-2-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-core-datetime-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-core-debug-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-core-errorhandling-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-core-fibers-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-core-file-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-core-file-l1-2-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-core-file-l2-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-core-handle-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-core-heap-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-core-interlocked-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-core-libraryloader-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-core-localization-l1-2-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-core-memory-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-core-namedpipe-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-core-processenvironment-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-core-processthreads-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-core-processthreads-l1-1-1.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-core-profile-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-core-rtlsupport-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-core-string-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-core-synch-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-core-synch-l1-2-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-core-sysinfo-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-core-timezone-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-core-util-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-crt-conio-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-crt-convert-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-crt-environment-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-crt-filesystem-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-crt-heap-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-crt-locale-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-crt-math-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-crt-multibyte-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-crt-private-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-crt-process-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-crt-runtime-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-crt-stdio-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-crt-string-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-crt-time-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "api-ms-win-crt-utility-l1-1-0.dll": {
+            "fileVersion": "10.0.22000.194"
+          },
+          "clretwrc.dll": {
+            "fileVersion": "6.0.1122.52304"
+          },
+          "clrjit.dll": {
+            "fileVersion": "6.0.1122.52304"
+          },
+          "coreclr.dll": {
+            "fileVersion": "6.0.1122.52304"
+          },
+          "createdump.exe": {
+            "fileVersion": "6.0.1122.52304"
+          },
+          "dbgshim.dll": {
+            "fileVersion": "6.0.1122.52304"
+          },
+          "hostfxr.dll": {
+            "fileVersion": "6.0.1122.52304"
+          },
+          "hostpolicy.dll": {
+            "fileVersion": "6.0.1122.52304"
+          },
+          "mscordaccore.dll": {
+            "fileVersion": "6.0.1122.52304"
+          },
+          "mscordaccore_amd64_amd64_6.0.1122.52304.dll": {
+            "fileVersion": "6.0.1122.52304"
+          },
+          "mscordbi.dll": {
+            "fileVersion": "6.0.1122.52304"
+          },
+          "mscorrc.dll": {
+            "fileVersion": "6.0.1122.52304"
+          },
+          "msquic.dll": {
+            "fileVersion": "1.7.0.0"
+          },
+          "ucrtbase.dll": {
+            "fileVersion": "10.0.22000.194"
+          }
+        }
+      },
+      "Antlr/3.1.3.42154": {
+        "runtime": {
+          "lib/Antlr3.Runtime.dll": {
+            "assemblyVersion": "3.1.3.42154",
+            "fileVersion": "3.1.3.42154"
+          }
+        }
+      },
+      "Antlr4.Runtime.Standard/4.11.1": {
+        "runtime": {
+          "lib/netstandard2.0/Antlr4.Runtime.Standard.dll": {
+            "assemblyVersion": "4.11.1.0",
+            "fileVersion": "4.11.1.0"
+          }
+        }
+      },
+      "AvsAn/3.2.0": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.0"
+        },
+        "runtime": {
+          "lib/netstandard1.1/AvsAn.dll": {
+            "assemblyVersion": "3.2.0.0",
+            "fileVersion": "3.2.0.0"
+          }
+        }
+      },
+      "CodePort.Wintellect.PowerCollections/1.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/PowerCollections.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "CommandLineParser/2.5.0": {
+        "runtime": {
+          "lib/netstandard2.0/CommandLine.dll": {
+            "assemblyVersion": "2.5.0.0",
+            "fileVersion": "2.5.0.0"
+          }
+        }
+      },
+      "CsvHelper/27.2.1": {
+        "runtime": {
+          "lib/net6.0/CsvHelper.dll": {
+            "assemblyVersion": "27.0.0.0",
+            "fileVersion": "27.2.1.0"
+          }
+        }
+      },
+      "DotNetZip/1.16.0": {
+        "dependencies": {
+          "System.Security.Permissions": "6.0.0",
+          "System.Text.Encoding.CodePages": "6.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/DotNetZip.dll": {
+            "assemblyVersion": "1.16.0.0",
+            "fileVersion": "1.16.0.0"
+          }
+        }
+      },
+      "Esprima/2.1.2": {
+        "runtime": {
+          "lib/netstandard2.1/Esprima.dll": {
+            "assemblyVersion": "2.1.2.0",
+            "fileVersion": "2.1.2.0"
+          }
+        }
+      },
+      "Eto.Forms/2.7.0": {
+        "dependencies": {
+          "System.ComponentModel.Annotations": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Eto.dll": {
+            "assemblyVersion": "2.6.0.0",
+            "fileVersion": "2.6.8162.8450"
+          }
+        }
+      },
+      "Fizzler/1.2.1": {
+        "runtime": {
+          "lib/netstandard2.0/Fizzler.dll": {
+            "assemblyVersion": "1.2.1.0",
+            "fileVersion": "1.2.1.0"
+          }
+        }
+      },
+      "Google.Protobuf/3.14.0": {
+        "dependencies": {
+          "System.Memory": "4.5.4",
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Protobuf.dll": {
+            "assemblyVersion": "3.14.0.0",
+            "fileVersion": "3.14.0.0"
+          }
+        }
+      },
+      "Humanizer.Core/2.8.26": {
+        "runtime": {
+          "lib/netstandard2.0/Humanizer.dll": {
+            "assemblyVersion": "2.8.0.0",
+            "fileVersion": "2.8.26.1919"
+          }
+        }
+      },
+      "Jint/3.0.0-beta-2037": {
+        "dependencies": {
+          "Esprima": "2.1.2"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Jint.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          }
+        }
+      },
+      "MediaTypeMap/2.1.0": {
+        "runtime": {
+          "lib/net40/MimeTypeMap.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.0"
+          }
+        }
+      },
+      "Mendix.LibGit2Sharp/1.142.0": {
+        "dependencies": {
+          "Mendix.LibGit2Sharp.NativeBinaries": "1.142.1"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/LibGit2Sharp.dll": {
+            "assemblyVersion": "1.142.0.0",
+            "fileVersion": "1.142.0.1"
+          }
+        }
+      },
+      "Mendix.LibGit2Sharp.NativeBinaries/1.142.1": {
+        "native": {
+          "runtimes/win-x64/native/git2-182d0d1.dll": {
+            "fileVersion": "1.4.2.0"
+          }
+        }
+      },
+      "Mendix.Web.Services.Discovery/1.1.0": {
+        "dependencies": {
+          "System.Security.Permissions": "6.0.0",
+          "System.Web.Services.Description": "4.9.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Mendix.Web.Services.Discovery.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
+          }
+        }
+      },
+      "Microsoft.Bcl.AsyncInterfaces/5.0.0": {
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "Microsoft.Data.Edm/5.8.5": {
+        "runtime": {
+          "lib/netstandard1.1/Microsoft.Data.Edm.dll": {
+            "assemblyVersion": "5.8.5.0",
+            "fileVersion": "5.8.5.64339"
+          }
+        },
+        "resources": {
+          "lib/netstandard1.1/de/Microsoft.Data.Edm.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netstandard1.1/es/Microsoft.Data.Edm.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netstandard1.1/fr/Microsoft.Data.Edm.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netstandard1.1/it/Microsoft.Data.Edm.resources.dll": {
+            "locale": "it"
+          },
+          "lib/netstandard1.1/ja/Microsoft.Data.Edm.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netstandard1.1/ko/Microsoft.Data.Edm.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netstandard1.1/ru/Microsoft.Data.Edm.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netstandard1.1/zh-Hans/Microsoft.Data.Edm.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/netstandard1.1/zh-Hant/Microsoft.Data.Edm.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
+      "Microsoft.Data.OData/5.8.5": {
+        "dependencies": {
+          "Microsoft.Data.Edm": "5.8.5",
+          "System.Spatial": "5.8.5"
+        },
+        "runtime": {
+          "lib/netstandard1.1/Microsoft.Data.OData.dll": {
+            "assemblyVersion": "5.8.5.0",
+            "fileVersion": "5.8.5.64339"
+          }
+        },
+        "resources": {
+          "lib/netstandard1.1/de/Microsoft.Data.OData.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netstandard1.1/es/Microsoft.Data.OData.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netstandard1.1/fr/Microsoft.Data.OData.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netstandard1.1/it/Microsoft.Data.OData.resources.dll": {
+            "locale": "it"
+          },
+          "lib/netstandard1.1/ja/Microsoft.Data.OData.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netstandard1.1/ko/Microsoft.Data.OData.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netstandard1.1/ru/Microsoft.Data.OData.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netstandard1.1/zh-Hans/Microsoft.Data.OData.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/netstandard1.1/zh-Hant/Microsoft.Data.OData.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
+      "Microsoft.Data.Sqlite/6.0.5": {
+        "dependencies": {
+          "Microsoft.Data.Sqlite.Core": "6.0.5",
+          "SQLitePCLRaw.bundle_e_sqlite3": "2.0.6"
+        }
+      },
+      "Microsoft.Data.Sqlite.Core/6.0.5": {
+        "dependencies": {
+          "SQLitePCLRaw.core": "2.0.6"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.Data.Sqlite.dll": {
+            "assemblyVersion": "6.0.5.0",
+            "fileVersion": "6.0.522.21804"
+          }
+        }
+      },
+      "Microsoft.Experimental.Collections/1.0.6-e190117-3": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Experimental.Collections.dll": {
+            "assemblyVersion": "1.0.6.0",
+            "fileVersion": "1.0.6.0"
+          }
+        }
+      },
+      "Microsoft.Extensions.ObjectPool/5.0.10": {
+        "runtime": {
+          "lib/net5.0/Microsoft.Extensions.ObjectPool.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.1021.41022"
+          }
+        }
+      },
+      "Microsoft.ML.OnnxRuntime/1.14.0": {
+        "dependencies": {
+          "Microsoft.ML.OnnxRuntime.Managed": "1.14.0"
+        },
+        "native": {
+          "runtimes/win-x64/native/onnxruntime.dll": {
+            "fileVersion": "1.14.23.209"
+          },
+          "runtimes/win-x64/native/onnxruntime.lib": {
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/onnxruntime_providers_shared.dll": {
+            "fileVersion": "1.14.23.209"
+          },
+          "runtimes/win-x64/native/onnxruntime_providers_shared.lib": {
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Microsoft.ML.OnnxRuntime.Managed/1.14.0": {
+        "dependencies": {
+          "System.Memory": "4.5.4"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.ML.OnnxRuntime.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Microsoft.NETCore.Platforms/1.1.0": {},
+      "Microsoft.NETCore.Targets/1.1.0": {},
+      "Microsoft.OData.Edm/7.15.0": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0",
+          "System.Text.Encodings.Web": "5.0.1",
+          "System.Text.Json": "4.6.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.OData.Edm.dll": {
+            "assemblyVersion": "7.15.0.0",
+            "fileVersion": "7.15.0.40301"
+          }
+        }
+      },
+      "Microsoft.OpenApi/1.6.3": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.OpenApi.dll": {
+            "assemblyVersion": "1.6.3.0",
+            "fileVersion": "1.6.3.0"
+          }
+        }
+      },
+      "Microsoft.Win32.SystemEvents/6.0.0": {
+        "runtime": {
+          "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        }
+      },
+      "morelinq/3.3.2": {
+        "runtime": {
+          "lib/netstandard2.0/MoreLinq.dll": {
+            "assemblyVersion": "3.3.2.0",
+            "fileVersion": "3.3.2.0"
+          }
+        }
+      },
+      "NDesk.Options/0.2.1": {
+        "runtime": {
+          "lib/NDesk.Options.dll": {
+            "assemblyVersion": "0.2.1.0",
+            "fileVersion": "0.2.1.0"
+          }
+        }
+      },
+      "NETStandard.Library/2.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0"
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.3.27908"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.2.22727"
+          }
+        }
+      },
+      "Newtonsoft.Json.Schema/3.0.14": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Schema.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.14.25421"
+          }
+        }
+      },
+      "NLog/4.6.3": {
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.6.3.9764"
+          }
+        }
+      },
+      "Nustache/1.16.0.10": {
+        "runtime": {
+          "lib/net20/Nustache.Core.dll": {
+            "assemblyVersion": "1.16.0.10",
+            "fileVersion": "1.16.0.10"
+          }
+        }
+      },
+      "OnnxSharp/0.2.0": {
+        "dependencies": {
+          "Google.Protobuf": "3.14.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/OnnxSharp.dll": {
+            "assemblyVersion": "0.2.0.0",
+            "fileVersion": "0.2.0.0"
+          }
+        }
+      },
+      "Polly/7.1.0": {
+        "runtime": {
+          "lib/netstandard2.0/Polly.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.1.0.0"
+          }
+        }
+      },
+      "RestSharp/108.0.1": {
+        "runtime": {
+          "lib/net6.0/RestSharp.dll": {
+            "assemblyVersion": "108.0.1.0",
+            "fileVersion": "108.0.1.0"
+          }
+        }
+      },
+      "runtime.any.System.Collections/4.3.0": {
+        "dependencies": {
+          "System.Runtime": "4.3.0"
+        }
+      },
+      "runtime.any.System.Globalization/4.3.0": {},
+      "runtime.any.System.IO/4.3.0": {},
+      "runtime.any.System.Reflection/4.3.0": {},
+      "runtime.any.System.Reflection.Primitives/4.3.0": {},
+      "runtime.any.System.Resources.ResourceManager/4.3.0": {},
+      "runtime.any.System.Runtime/4.3.0": {
+        "dependencies": {
+          "System.Private.Uri": "4.3.0"
+        }
+      },
+      "runtime.any.System.Text.Encoding/4.3.0": {},
+      "runtime.any.System.Threading.Tasks/4.3.0": {},
+      "runtime.osx.10.10-x64.CoreCompat.System.Drawing/5.8.64": {
+        "runtime": {
+          "lib/netstandard2.0/runtime.osx.10.10-x64.CoreCompat.System.Drawing.dll": {
+            "assemblyVersion": "5.8.64.0",
+            "fileVersion": "5.8.64.0"
+          }
+        }
+      },
+      "runtime.win.System.Diagnostics.Debug/4.3.0": {},
+      "runtime.win7.System.Private.Uri/4.3.0": {},
+      "SharpSvn/1.14001.156": {
+        "runtime": {
+          "runtimes/win-x64/lib/netcoreapp/Ijwhost.dll": {
+            "fileVersion": "3.100.2322.12204"
+          },
+          "runtimes/win-x64/lib/netcoreapp/SharpSvn.dll": {
+            "assemblyVersion": "1.14001.156.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "SimpleInjector/4.5.1": {
+        "dependencies": {
+          "System.ComponentModel": "4.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/SimpleInjector.dll": {
+            "assemblyVersion": "4.5.1.0",
+            "fileVersion": "4.5.1.0"
+          }
+        }
+      },
+      "SmartFormat.NET/2.4.2": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/SmartFormat.dll": {
+            "assemblyVersion": "2.4.2.0",
+            "fileVersion": "2.4.2.0"
+          }
+        }
+      },
+      "SQLitePCLRaw.bundle_e_sqlite3/2.0.6": {
+        "dependencies": {
+          "SQLitePCLRaw.core": "2.0.6",
+          "SQLitePCLRaw.lib.e_sqlite3": "2.0.6",
+          "SQLitePCLRaw.provider.e_sqlite3": "2.0.6"
+        },
+        "runtime": {
+          "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {
+            "assemblyVersion": "2.0.6.1341",
+            "fileVersion": "2.0.6.1341"
+          }
+        }
+      },
+      "SQLitePCLRaw.core/2.0.6": {
+        "dependencies": {
+          "System.Memory": "4.5.4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/SQLitePCLRaw.core.dll": {
+            "assemblyVersion": "2.0.6.1341",
+            "fileVersion": "2.0.6.1341"
+          }
+        }
+      },
+      "SQLitePCLRaw.lib.e_sqlite3/2.0.6": {
+        "native": {
+          "runtimes/win-x64/native/e_sqlite3.dll": {
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "SQLitePCLRaw.provider.e_sqlite3/2.0.6": {
+        "dependencies": {
+          "SQLitePCLRaw.core": "2.0.6"
+        },
+        "runtime": {
+          "lib/net5.0/SQLitePCLRaw.provider.e_sqlite3.dll": {
+            "assemblyVersion": "2.0.6.1341",
+            "fileVersion": "2.0.6.1341"
+          }
+        }
+      },
+      "Svg/3.4.2": {
+        "dependencies": {
+          "Fizzler": "1.2.1",
+          "System.Drawing.Common": "6.0.0",
+          "System.Memory": "4.5.4",
+          "System.ObjectModel": "4.3.0",
+          "runtime.osx.10.10-x64.CoreCompat.System.Drawing": "5.8.64"
+        },
+        "runtime": {
+          "lib/net5.0/Svg.dll": {
+            "assemblyVersion": "3.4.0.0",
+            "fileVersion": "3.4.2.1"
+          }
+        }
+      },
+      "System.Collections/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.Runtime": "4.3.0",
+          "runtime.any.System.Collections": "4.3.0"
+        }
+      },
+      "System.Collections.Immutable/7.0.0": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/System.Collections.Immutable.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        }
+      },
+      "System.ComponentModel/4.0.1": {
+        "dependencies": {
+          "System.Runtime": "4.3.0"
+        }
+      },
+      "System.ComponentModel.Annotations/5.0.0": {},
+      "System.ComponentModel.Composition/6.0.0": {
+        "runtime": {
+          "lib/net6.0/System.ComponentModel.Composition.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        }
+      },
+      "System.Configuration.ConfigurationManager/6.0.0": {
+        "dependencies": {
+          "System.Security.Cryptography.ProtectedData": "6.0.0",
+          "System.Security.Permissions": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/System.Configuration.ConfigurationManager.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        }
+      },
+      "System.Diagnostics.Debug/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.Runtime": "4.3.0",
+          "runtime.win.System.Diagnostics.Debug": "4.3.0"
+        }
+      },
+      "System.Drawing.Common/6.0.0": {
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "6.0.0"
+        },
+        "runtime": {
+          "runtimes/win/lib/net6.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        }
+      },
+      "System.Formats.Asn1/5.0.0": {},
+      "System.Globalization/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.Runtime": "4.3.0",
+          "runtime.any.System.Globalization": "4.3.0"
+        }
+      },
+      "System.IO/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.Runtime": "4.3.0",
+          "System.Text.Encoding": "4.3.0",
+          "System.Threading.Tasks": "4.3.0",
+          "runtime.any.System.IO": "4.3.0"
+        }
+      },
+      "System.Memory/4.5.4": {},
+      "System.Net.Http.WinHttpHandler/6.0.1": {
+        "runtime": {
+          "runtimes/win/lib/net6.0/System.Net.Http.WinHttpHandler.dll": {
+            "assemblyVersion": "6.0.0.1",
+            "fileVersion": "6.0.422.16404"
+          }
+        }
+      },
+      "System.Numerics.Vectors/4.5.0": {},
+      "System.ObjectModel/4.3.0": {
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Threading": "4.3.0"
+        }
+      },
+      "System.Private.ServiceModel/4.9.0": {
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "5.0.0",
+          "Microsoft.Extensions.ObjectPool": "5.0.10",
+          "System.Numerics.Vectors": "4.5.0",
+          "System.Reflection.DispatchProxy": "4.7.1",
+          "System.Security.Cryptography.Xml": "5.0.0",
+          "System.Security.Principal.Windows": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Private.ServiceModel.dll": {
+            "assemblyVersion": "4.9.0.0",
+            "fileVersion": "4.900.21.52002"
+          }
+        },
+        "resources": {
+          "lib/netstandard2.0/cs/System.Private.ServiceModel.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/netstandard2.0/de/System.Private.ServiceModel.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netstandard2.0/es/System.Private.ServiceModel.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netstandard2.0/fr/System.Private.ServiceModel.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netstandard2.0/it/System.Private.ServiceModel.resources.dll": {
+            "locale": "it"
+          },
+          "lib/netstandard2.0/ja/System.Private.ServiceModel.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netstandard2.0/ko/System.Private.ServiceModel.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netstandard2.0/pl/System.Private.ServiceModel.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/netstandard2.0/pt-BR/System.Private.ServiceModel.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/netstandard2.0/ru/System.Private.ServiceModel.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netstandard2.0/tr/System.Private.ServiceModel.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/netstandard2.0/zh-Hans/System.Private.ServiceModel.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/netstandard2.0/zh-Hant/System.Private.ServiceModel.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
+      "System.Private.Uri/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "runtime.win7.System.Private.Uri": "4.3.0"
+        }
+      },
+      "System.Reactive/4.1.6": {
+        "dependencies": {
+          "System.Runtime.InteropServices.WindowsRuntime": "4.3.0",
+          "System.Threading.Tasks.Extensions": "4.5.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Reactive.dll": {
+            "assemblyVersion": "4.1.0.0",
+            "fileVersion": "4.1.6.362"
+          }
+        }
+      },
+      "System.Reflection/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.IO": "4.3.0",
+          "System.Reflection.Primitives": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "runtime.any.System.Reflection": "4.3.0"
+        }
+      },
+      "System.Reflection.DispatchProxy/4.7.1": {},
+      "System.Reflection.Primitives/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.Runtime": "4.3.0",
+          "runtime.any.System.Reflection.Primitives": "4.3.0"
+        }
+      },
+      "System.Resources.Extensions/6.0.0": {
+        "runtime": {
+          "lib/net6.0/System.Resources.Extensions.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        }
+      },
+      "System.Resources.ResourceManager/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.Globalization": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "runtime.any.System.Resources.ResourceManager": "4.3.0"
+        }
+      },
+      "System.Runtime/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "runtime.any.System.Runtime": "4.3.0"
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
+      "System.Runtime.InteropServices.WindowsRuntime/4.3.0": {
+        "dependencies": {
+          "System.Runtime": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Runtime.InteropServices.WindowsRuntime.dll": {
+            "assemblyVersion": "4.0.2.0",
+            "fileVersion": "4.6.24705.1"
+          }
+        }
+      },
+      "System.Security.AccessControl/6.0.0": {},
+      "System.Security.Cryptography.Cng/5.0.0": {
+        "dependencies": {
+          "System.Formats.Asn1": "5.0.0"
+        }
+      },
+      "System.Security.Cryptography.Pkcs/5.0.0": {
+        "dependencies": {
+          "System.Formats.Asn1": "5.0.0",
+          "System.Security.Cryptography.Cng": "5.0.0"
+        },
+        "runtime": {
+          "runtimes/win/lib/netcoreapp3.0/System.Security.Cryptography.Pkcs.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "System.Security.Cryptography.ProtectedData/6.0.0": {
+        "runtime": {
+          "runtimes/win/lib/net6.0/System.Security.Cryptography.ProtectedData.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        }
+      },
+      "System.Security.Cryptography.Xml/5.0.0": {
+        "dependencies": {
+          "System.Security.Cryptography.Pkcs": "5.0.0",
+          "System.Security.Permissions": "6.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Security.Cryptography.Xml.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "System.Security.Permissions/6.0.0": {
+        "dependencies": {
+          "System.Security.AccessControl": "6.0.0",
+          "System.Windows.Extensions": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/System.Security.Permissions.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        }
+      },
+      "System.Security.Principal.Windows/5.0.0": {},
+      "System.ServiceModel.Duplex/4.9.0": {
+        "dependencies": {
+          "System.Private.ServiceModel": "4.9.0",
+          "System.ServiceModel.Primitives": "4.9.0"
+        },
+        "runtime": {
+          "lib/net6.0/System.ServiceModel.Duplex.dll": {
+            "assemblyVersion": "4.9.0.0",
+            "fileVersion": "4.900.21.52002"
+          }
+        }
+      },
+      "System.ServiceModel.Http/4.9.0": {
+        "dependencies": {
+          "System.Private.ServiceModel": "4.9.0",
+          "System.ServiceModel.Primitives": "4.9.0"
+        },
+        "runtime": {
+          "lib/net6.0/System.ServiceModel.Http.dll": {
+            "assemblyVersion": "4.9.0.0",
+            "fileVersion": "4.900.21.52002"
+          }
+        }
+      },
+      "System.ServiceModel.NetTcp/4.9.0": {
+        "dependencies": {
+          "System.Private.ServiceModel": "4.9.0",
+          "System.ServiceModel.Primitives": "4.9.0"
+        },
+        "runtime": {
+          "lib/net6.0/System.ServiceModel.NetTcp.dll": {
+            "assemblyVersion": "4.9.0.0",
+            "fileVersion": "4.900.21.52002"
+          }
+        }
+      },
+      "System.ServiceModel.Primitives/4.9.0": {
+        "dependencies": {
+          "System.Private.ServiceModel": "4.9.0"
+        },
+        "runtime": {
+          "lib/net6.0/System.ServiceModel.Primitives.dll": {
+            "assemblyVersion": "4.9.0.0",
+            "fileVersion": "4.900.21.52002"
+          },
+          "lib/net6.0/System.ServiceModel.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.900.21.52002"
+          }
+        }
+      },
+      "System.ServiceModel.Security/4.9.0": {
+        "dependencies": {
+          "System.Private.ServiceModel": "4.9.0",
+          "System.ServiceModel.Primitives": "4.9.0"
+        },
+        "runtime": {
+          "lib/net6.0/System.ServiceModel.Security.dll": {
+            "assemblyVersion": "4.9.0.0",
+            "fileVersion": "4.900.21.52002"
+          }
+        }
+      },
+      "System.Spatial/5.8.5": {
+        "runtime": {
+          "lib/netstandard1.1/System.Spatial.dll": {
+            "assemblyVersion": "5.8.5.0",
+            "fileVersion": "5.8.5.64339"
+          }
+        },
+        "resources": {
+          "lib/netstandard1.1/de/System.Spatial.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netstandard1.1/es/System.Spatial.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netstandard1.1/fr/System.Spatial.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netstandard1.1/it/System.Spatial.resources.dll": {
+            "locale": "it"
+          },
+          "lib/netstandard1.1/ja/System.Spatial.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netstandard1.1/ko/System.Spatial.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netstandard1.1/ru/System.Spatial.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netstandard1.1/zh-Hans/System.Spatial.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/netstandard1.1/zh-Hant/System.Spatial.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
+      "System.Text.Encoding/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.Runtime": "4.3.0",
+          "runtime.any.System.Text.Encoding": "4.3.0"
+        }
+      },
+      "System.Text.Encoding.CodePages/6.0.0": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        }
+      },
+      "System.Text.Encodings.Web/5.0.1": {},
+      "System.Text.Json/4.6.0": {},
+      "System.Threading/4.3.0": {
+        "dependencies": {
+          "System.Runtime": "4.3.0",
+          "System.Threading.Tasks": "4.3.0"
+        }
+      },
+      "System.Threading.Tasks/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.Runtime": "4.3.0",
+          "runtime.any.System.Threading.Tasks": "4.3.0"
+        }
+      },
+      "System.Threading.Tasks.Extensions/4.5.2": {},
+      "System.Web.Services.Description/4.9.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Web.Services.Description.dll": {
+            "assemblyVersion": "4.9.0.0",
+            "fileVersion": "4.900.21.52002"
+          }
+        },
+        "resources": {
+          "lib/netstandard2.0/cs/System.Web.Services.Description.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/netstandard2.0/de/System.Web.Services.Description.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netstandard2.0/es/System.Web.Services.Description.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netstandard2.0/fr/System.Web.Services.Description.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netstandard2.0/it/System.Web.Services.Description.resources.dll": {
+            "locale": "it"
+          },
+          "lib/netstandard2.0/ja/System.Web.Services.Description.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netstandard2.0/ko/System.Web.Services.Description.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netstandard2.0/pl/System.Web.Services.Description.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/netstandard2.0/pt-BR/System.Web.Services.Description.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/netstandard2.0/ru/System.Web.Services.Description.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netstandard2.0/tr/System.Web.Services.Description.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/netstandard2.0/zh-Hans/System.Web.Services.Description.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/netstandard2.0/zh-Hant/System.Web.Services.Description.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
+      "System.Windows.Extensions/6.0.0": {
+        "dependencies": {
+          "System.Drawing.Common": "6.0.0"
+        },
+        "runtime": {
+          "runtimes/win/lib/net6.0/System.Windows.Extensions.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        }
+      },
+      "YamlDotNet/11.2.1": {
+        "runtime": {
+          "lib/netstandard2.1/YamlDotNet.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.2.1.0"
+          }
+        }
+      },
+      "ZXing.Net/0.16.7": {
+        "runtime": {
+          "lib/net6.0/zxing.dll": {
+            "assemblyVersion": "0.16.7.0",
+            "fileVersion": "0.16.7.0"
+          }
+        }
+      },
+      "ZXing.Net.Bindings.Eto.Forms/0.16.3": {
+        "dependencies": {
+          "Eto.Forms": "2.7.0",
+          "NETStandard.Library": "2.0.0",
+          "ZXing.Net": "0.16.7"
+        },
+        "runtime": {
+          "lib/netstandard2.0/ZXing.Eto.Forms.dll": {
+            "assemblyVersion": "0.16.3.0",
+            "fileVersion": "0.16.3.0"
+          }
+        }
+      },
+      "Mendix.BusinessEvents.MendixBuildExtension/9.24.0": {
+        "dependencies": {
+          "Eto.Forms": "2.7.0",
+          "Mendix.StudioPro.ExtensionsAPI": "0.0.1",
+          "Newtonsoft.Json": "13.0.3",
+          "YamlDotNet": "11.2.1"
+        },
+        "runtime": {
+          "Mendix.BusinessEvents.MendixBuildExtension.dll": {}
+        }
+      },
+      "Mendix.CommandLine.Shared/9.24.0": {
+        "dependencies": {
+          "Mendix.Common": "9.24.0",
+          "Mendix.Modeler.Analytics": "9.24.0",
+          "Mendix.Modeler.Controls": "9.24.0",
+          "Mendix.Modeler.Core": "9.24.0",
+          "Mendix.Modeler.ExtensionLoader": "9.24.0",
+          "Mendix.Modeler.Microflows": "9.24.0",
+          "Mendix.Modeler.Storage": "9.24.0",
+          "Mendix.Modeler.Theming": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0",
+          "Mendix.Modeler.Utility.Network": "9.24.0",
+          "NDesk.Options": "0.2.1",
+          "System.ComponentModel.Composition": "6.0.0"
+        },
+        "runtime": {
+          "Mendix.CommandLine.Shared.dll": {}
+        }
+      },
+      "Mendix.Common/9.24.0": {
+        "dependencies": {
+          "AvsAn": "3.2.0",
+          "Humanizer.Core": "2.8.26"
+        },
+        "runtime": {
+          "Mendix.Common.dll": {}
+        }
+      },
+      "Mendix.Modeler.Analytics/9.24.0": {
+        "dependencies": {
+          "Mendix.Common": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "Mendix.Modeler.Analytics.dll": {}
+        }
+      },
+      "Mendix.Modeler.BusinessEvents/9.24.0": {
+        "dependencies": {
+          "Mendix.Common": "9.24.0",
+          "Mendix.ModelSDK": "9.24.0",
+          "Mendix.Modeler.Core": "9.24.0",
+          "Mendix.Modeler.Storage": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0"
+        },
+        "runtime": {
+          "Mendix.Modeler.BusinessEvents.dll": {}
+        }
+      },
+      "Mendix.Modeler.CodeActions/9.24.0": {
+        "dependencies": {
+          "DotNetZip": "1.16.0",
+          "Mendix.Common": "9.24.0",
+          "Mendix.ModelSDK": "9.24.0",
+          "Mendix.Modeler.CodeGeneration": "9.24.0",
+          "Mendix.Modeler.Core": "9.24.0",
+          "Mendix.Modeler.Microflows": "9.24.0",
+          "Mendix.Modeler.Packages": "9.24.0",
+          "Mendix.Modeler.Storage": "9.24.0",
+          "Mendix.Modeler.Texts": "9.24.0",
+          "Mendix.Modeler.Theming": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0"
+        },
+        "runtime": {
+          "Mendix.Modeler.CodeActions.dll": {}
+        }
+      },
+      "Mendix.Modeler.Core/9.24.0": {
+        "dependencies": {
+          "Antlr": "3.1.3.42154",
+          "Antlr4.Runtime.Standard": "4.11.1",
+          "CodePort.Wintellect.PowerCollections": "1.0.1",
+          "DotNetZip": "1.16.0",
+          "Eto.Forms": "2.7.0",
+          "MediaTypeMap": "2.1.0",
+          "Mendix.Common": "9.24.0",
+          "Mendix.ModelSDK": "9.24.0",
+          "Mendix.Modeler.Analytics": "9.24.0",
+          "Mendix.Modeler.AppStoreConnector": "9.24.0",
+          "Mendix.Modeler.Controls": "9.24.0",
+          "Mendix.Modeler.Core.VersionControl": "9.24.0",
+          "Mendix.Modeler.Integration.DataContract": "9.24.0",
+          "Mendix.Modeler.M2EEConnector": "9.24.0",
+          "Mendix.Modeler.MergeLib": "9.24.0",
+          "Mendix.Modeler.SprintrConnector": "9.24.0",
+          "Mendix.Modeler.Storage": "9.24.0",
+          "Mendix.Modeler.Texts": "9.24.0",
+          "Mendix.Modeler.Theming": "9.24.0",
+          "Mendix.Modeler.Theming.Legacy": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0",
+          "Mendix.Modeler.Utility.Network": "9.24.0",
+          "NDesk.Options": "0.2.1",
+          "Newtonsoft.Json": "13.0.3",
+          "Newtonsoft.Json.Bson": "1.0.2",
+          "Nustache": "1.16.0.10",
+          "RestSharp": "108.0.1",
+          "SmartFormat.NET": "2.4.2",
+          "Svg": "3.4.2",
+          "System.Drawing.Common": "6.0.0",
+          "System.Resources.Extensions": "6.0.0",
+          "System.Security.Cryptography.ProtectedData": "6.0.0",
+          "System.Text.Encodings.Web": "5.0.1",
+          "morelinq": "3.3.2"
+        },
+        "runtime": {
+          "Mendix.Modeler.Core.dll": {}
+        }
+      },
+      "Mendix.Modeler.DatabaseConnector/9.24.0": {
+        "dependencies": {
+          "Mendix.Common": "9.24.0",
+          "Mendix.ModelSDK": "9.24.0",
+          "Mendix.Modeler.Core": "9.24.0",
+          "Mendix.Modeler.Microflows": "9.24.0",
+          "Mendix.Modeler.Storage": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0"
+        },
+        "runtime": {
+          "Mendix.Modeler.DatabaseConnector.dll": {}
+        }
+      },
+      "Mendix.Modeler.DataBroker/9.24.0": {
+        "dependencies": {
+          "Mendix.Common": "9.24.0",
+          "Mendix.ModelSDK": "9.24.0",
+          "Mendix.Modeler.Analytics": "9.24.0",
+          "Mendix.Modeler.Core": "9.24.0",
+          "Mendix.Modeler.DataHub": "9.24.0",
+          "Mendix.Modeler.Deployment": "9.24.0",
+          "Mendix.Modeler.Integration": "9.24.0",
+          "Mendix.Modeler.Integration.DataContract": "9.24.0",
+          "Mendix.Modeler.Storage": "9.24.0",
+          "Mendix.Modeler.Texts": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0",
+          "Microsoft.OData.Edm": "7.15.0",
+          "Newtonsoft.Json": "13.0.3",
+          "System.Text.Encodings.Web": "5.0.1"
+        },
+        "runtime": {
+          "Mendix.Modeler.DataBroker.dll": {}
+        }
+      },
+      "Mendix.Modeler.DataHubConnector/9.24.0": {
+        "dependencies": {
+          "Mendix.Common": "9.24.0",
+          "Mendix.Modeler.Texts": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0",
+          "Mendix.Modeler.Utility.Network": "9.24.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "Mendix.Modeler.DataHubConnector.dll": {}
+        }
+      },
+      "Mendix.Modeler.DataStorage/9.24.0": {
+        "dependencies": {
+          "Antlr": "3.1.3.42154",
+          "Mendix.Common": "9.24.0",
+          "Mendix.ModelSDK": "9.24.0",
+          "Mendix.Modeler.CodeActions": "9.24.0",
+          "Mendix.Modeler.CodeGeneration": "9.24.0",
+          "Mendix.Modeler.Controls": "9.24.0",
+          "Mendix.Modeler.Core": "9.24.0",
+          "Mendix.Modeler.JavaActions": "9.24.0",
+          "Mendix.Modeler.Storage": "9.24.0",
+          "Mendix.Modeler.Texts": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0"
+        },
+        "runtime": {
+          "Mendix.Modeler.DataStorage.dll": {}
+        }
+      },
+      "Mendix.Modeler.Deployment/9.24.0": {
+        "dependencies": {
+          "CodePort.Wintellect.PowerCollections": "1.0.1",
+          "DotNetZip": "1.16.0",
+          "Mendix.Common": "9.24.0",
+          "Mendix.ModelSDK": "9.24.0",
+          "Mendix.Modeler.Analytics": "9.24.0",
+          "Mendix.Modeler.CloudConnector": "9.24.0",
+          "Mendix.Modeler.Controls": "9.24.0",
+          "Mendix.Modeler.Core": "9.24.0",
+          "Mendix.Modeler.Core.VersionControl": "9.24.0",
+          "Mendix.Modeler.M2EEConnector": "9.24.0",
+          "Mendix.Modeler.SprintrConnector": "9.24.0",
+          "Mendix.Modeler.Storage": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0",
+          "Mendix.Modeler.VersionControl": "9.24.0",
+          "Newtonsoft.Json": "13.0.3",
+          "System.Reactive": "4.1.6"
+        },
+        "runtime": {
+          "Mendix.Modeler.Deployment.dll": {}
+        }
+      },
+      "Mendix.Modeler.DocumentTemplates/9.24.0": {
+        "dependencies": {
+          "Antlr": "3.1.3.42154",
+          "CodePort.Wintellect.PowerCollections": "1.0.1",
+          "Eto.Forms": "2.7.0",
+          "Mendix.Common": "9.24.0",
+          "Mendix.ModelSDK": "9.24.0",
+          "Mendix.Modeler.Controls": "9.24.0",
+          "Mendix.Modeler.Core": "9.24.0",
+          "Mendix.Modeler.Microflows": "9.24.0",
+          "Mendix.Modeler.Storage": "9.24.0",
+          "Mendix.Modeler.Texts": "9.24.0",
+          "Mendix.Modeler.Theming": "9.24.0",
+          "Mendix.Modeler.Theming.Legacy": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0",
+          "Mendix.Modeler.WebUI": "9.24.0",
+          "NDesk.Options": "0.2.1",
+          "RestSharp": "108.0.1",
+          "SimpleInjector": "4.5.1",
+          "System.Text.Encodings.Web": "5.0.1"
+        },
+        "runtime": {
+          "Mendix.Modeler.DocumentTemplates.dll": {}
+        }
+      },
+      "Mendix.Modeler.ExcelDataImporter/9.24.0": {
+        "dependencies": {
+          "Mendix.Common": "9.24.0",
+          "Mendix.ModelSDK": "9.24.0",
+          "Mendix.Modeler.Core": "9.24.0",
+          "Mendix.Modeler.Microflows": "9.24.0",
+          "Mendix.Modeler.Storage": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0"
+        },
+        "runtime": {
+          "Mendix.Modeler.ExcelDataImporter.dll": {}
+        }
+      },
+      "Mendix.Modeler.ExtensionLoader/9.24.0": {
+        "dependencies": {
+          "Mendix.Common": "9.24.0",
+          "Mendix.ModelSDK": "9.24.0",
+          "Mendix.Modeler.Analytics": "9.24.0",
+          "Mendix.Modeler.AppStoreConnector": "9.24.0",
+          "Mendix.Modeler.BusinessEvents": "9.24.0",
+          "Mendix.Modeler.CodeActions": "9.24.0",
+          "Mendix.Modeler.Core": "9.24.0",
+          "Mendix.Modeler.DatabaseConnector": "9.24.0",
+          "Mendix.Modeler.Deployment": "9.24.0",
+          "Mendix.Modeler.ExcelDataImporter": "9.24.0",
+          "Mendix.Modeler.JavaActions": "9.24.0",
+          "Mendix.Modeler.Microflows": "9.24.0",
+          "Mendix.Modeler.Packages": "9.24.0",
+          "Mendix.Modeler.ProjectHandling": "9.24.0",
+          "Mendix.Modeler.Storage": "9.24.0",
+          "Mendix.Modeler.Texts": "9.24.0",
+          "Mendix.Modeler.Theming": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0",
+          "Mendix.Modeler.Utility.Network": "9.24.0",
+          "Mendix.StudioPro.ExtensionsAPI": "0.0.1",
+          "NLog": "4.6.3",
+          "System.ComponentModel.Composition": "6.0.0"
+        },
+        "runtime": {
+          "Mendix.Modeler.ExtensionLoader.dll": {}
+        }
+      },
+      "Mendix.Modeler.Integration/9.24.0": {
+        "dependencies": {
+          "CodePort.Wintellect.PowerCollections": "1.0.1",
+          "DotNetZip": "1.16.0",
+          "Eto.Forms": "2.7.0",
+          "Mendix.Common": "9.24.0",
+          "Mendix.ModelSDK": "9.24.0",
+          "Mendix.Modeler.Analytics": "9.24.0",
+          "Mendix.Modeler.CodeActions": "9.24.0",
+          "Mendix.Modeler.CodeGeneration": "9.24.0",
+          "Mendix.Modeler.Controls": "9.24.0",
+          "Mendix.Modeler.Core": "9.24.0",
+          "Mendix.Modeler.DataHub": "9.24.0",
+          "Mendix.Modeler.Deployment": "9.24.0",
+          "Mendix.Modeler.Integration.DataContract": "9.24.0",
+          "Mendix.Modeler.JavaActions": "9.24.0",
+          "Mendix.Modeler.Microflows": "9.24.0",
+          "Mendix.Modeler.Storage": "9.24.0",
+          "Mendix.Modeler.Texts": "9.24.0",
+          "Mendix.Modeler.Theming": "9.24.0",
+          "Mendix.Modeler.Theming.Legacy": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0",
+          "Mendix.Modeler.Utility.Network": "9.24.0",
+          "Mendix.Web.Services.Discovery": "1.1.0",
+          "Microsoft.OData.Edm": "7.15.0",
+          "Microsoft.OpenApi": "1.6.3",
+          "NDesk.Options": "0.2.1",
+          "Newtonsoft.Json": "13.0.3",
+          "Newtonsoft.Json.Schema": "3.0.14",
+          "RestSharp": "108.0.1",
+          "SimpleInjector": "4.5.1",
+          "System.Text.Encoding.CodePages": "6.0.0",
+          "System.Text.Encodings.Web": "5.0.1",
+          "morelinq": "3.3.2"
+        },
+        "runtime": {
+          "Mendix.Modeler.Integration.dll": {}
+        }
+      },
+      "Mendix.Modeler.JavaActions/9.24.0": {
+        "dependencies": {
+          "Mendix.Common": "9.24.0",
+          "Mendix.ModelSDK": "9.24.0",
+          "Mendix.Modeler.CodeActions": "9.24.0",
+          "Mendix.Modeler.CodeGeneration": "9.24.0",
+          "Mendix.Modeler.Core": "9.24.0",
+          "Mendix.Modeler.Microflows": "9.24.0",
+          "Mendix.Modeler.Packages": "9.24.0",
+          "Mendix.Modeler.Storage": "9.24.0",
+          "Mendix.Modeler.Texts": "9.24.0",
+          "Mendix.Modeler.Theming": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0"
+        },
+        "runtime": {
+          "Mendix.Modeler.JavaActions.dll": {}
+        }
+      },
+      "Mendix.Modeler.JavaScriptActions/9.24.0": {
+        "dependencies": {
+          "Mendix.Common": "9.24.0",
+          "Mendix.ModelSDK": "9.24.0",
+          "Mendix.Modeler.CodeActions": "9.24.0",
+          "Mendix.Modeler.CodeGeneration": "9.24.0",
+          "Mendix.Modeler.Core": "9.24.0",
+          "Mendix.Modeler.Microflows": "9.24.0",
+          "Mendix.Modeler.Packages": "9.24.0",
+          "Mendix.Modeler.Storage": "9.24.0",
+          "Mendix.Modeler.Texts": "9.24.0",
+          "Mendix.Modeler.Theming": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0"
+        },
+        "runtime": {
+          "Mendix.Modeler.JavaScriptActions.dll": {}
+        }
+      },
+      "Mendix.Modeler.Microflows/9.24.0": {
+        "dependencies": {
+          "Mendix.Common": "9.24.0",
+          "Mendix.ModelSDK": "9.24.0",
+          "Mendix.Modeler.Analytics": "9.24.0",
+          "Mendix.Modeler.Core": "9.24.0",
+          "Mendix.Modeler.Storage": "9.24.0",
+          "Mendix.Modeler.Texts": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0"
+        },
+        "runtime": {
+          "Mendix.Modeler.Microflows.dll": {}
+        }
+      },
+      "Mendix.Modeler.MxAssist.MLKit/9.24.0": {
+        "dependencies": {
+          "Mendix.Common": "9.24.0",
+          "Mendix.ModelSDK": "9.24.0",
+          "Mendix.Modeler.Analytics": "9.24.0",
+          "Mendix.Modeler.CodeActions": "9.24.0",
+          "Mendix.Modeler.Controls": "9.24.0",
+          "Mendix.Modeler.Core": "9.24.0",
+          "Mendix.Modeler.Deployment": "9.24.0",
+          "Mendix.Modeler.Microflows": "9.24.0",
+          "Mendix.Modeler.Packages": "9.24.0",
+          "Mendix.Modeler.Storage": "9.24.0",
+          "Mendix.Modeler.Texts": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0",
+          "Microsoft.ML.OnnxRuntime": "1.14.0",
+          "OnnxSharp": "0.2.0",
+          "morelinq": "3.3.2"
+        },
+        "runtime": {
+          "Mendix.Modeler.MxAssist.MLKit.dll": {}
+        }
+      },
+      "Mendix.Modeler.MxAssist.PerformanceBot/9.24.0": {
+        "dependencies": {
+          "Mendix.Common": "9.24.0",
+          "Mendix.ModelSDK": "9.24.0",
+          "Mendix.Modeler.Analytics": "9.24.0",
+          "Mendix.Modeler.Analytics.DPA": "9.24.0",
+          "Mendix.Modeler.CodeActions": "9.24.0",
+          "Mendix.Modeler.Core": "9.24.0",
+          "Mendix.Modeler.JavaActions": "9.24.0",
+          "Mendix.Modeler.Microflows": "9.24.0",
+          "Mendix.Modeler.MxAssist.PerformanceBot.Interfaces": "9.24.0",
+          "Mendix.Modeler.MxAssist.PerformanceBot.Serialization": "9.24.0",
+          "Mendix.Modeler.SprintrConnector": "9.24.0",
+          "Mendix.Modeler.Storage": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0",
+          "Mendix.Modeler.WebUI": "9.24.0",
+          "morelinq": "3.3.2"
+        },
+        "runtime": {
+          "Mendix.Modeler.MxAssist.PerformanceBot.dll": {}
+        }
+      },
+      "Mendix.Modeler.MxAssist.PerformanceBot.Interfaces/9.24.0": {
+        "dependencies": {
+          "Mendix.Common": "9.24.0",
+          "Mendix.ModelSDK": "9.24.0",
+          "Mendix.Modeler.Analytics": "9.24.0",
+          "Mendix.Modeler.Core": "9.24.0",
+          "Mendix.Modeler.Microflows": "9.24.0",
+          "Mendix.Modeler.Storage": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "Mendix.Modeler.MxAssist.PerformanceBot.Interfaces.dll": {}
+        }
+      },
+      "Mendix.Modeler.MxAssist.PerformanceBot.Serialization/9.24.0": {
+        "dependencies": {
+          "Mendix.Common": "9.24.0",
+          "Mendix.Modeler.Core": "9.24.0",
+          "Mendix.Modeler.MxAssist.PerformanceBot.Interfaces": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "Mendix.Modeler.MxAssist.PerformanceBot.Serialization.dll": {}
+        }
+      },
+      "Mendix.Modeler.Packages/9.24.0": {
+        "dependencies": {
+          "DotNetZip": "1.16.0",
+          "Mendix.Common": "9.24.0",
+          "Mendix.ModelSDK": "9.24.0",
+          "Mendix.Modeler.Analytics": "9.24.0",
+          "Mendix.Modeler.Core": "9.24.0",
+          "Mendix.Modeler.Packages.Metadata": "9.24.0",
+          "Mendix.Modeler.SprintrConnector": "9.24.0",
+          "Mendix.Modeler.Storage": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0"
+        },
+        "runtime": {
+          "Mendix.Modeler.Packages.dll": {}
+        }
+      },
+      "Mendix.Modeler.ProjectHandling/9.24.0": {
+        "dependencies": {
+          "DotNetZip": "1.16.0",
+          "Eto.Forms": "2.7.0",
+          "Mendix.Common": "9.24.0",
+          "Mendix.ModelSDK": "9.24.0",
+          "Mendix.Modeler.Analytics": "9.24.0",
+          "Mendix.Modeler.AppStoreConnector": "9.24.0",
+          "Mendix.Modeler.Controls": "9.24.0",
+          "Mendix.Modeler.Core": "9.24.0",
+          "Mendix.Modeler.Core.VersionControl": "9.24.0",
+          "Mendix.Modeler.Packages": "9.24.0",
+          "Mendix.Modeler.SprintrConnector": "9.24.0",
+          "Mendix.Modeler.Storage": "9.24.0",
+          "Mendix.Modeler.Theming": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0",
+          "Mendix.Modeler.VersionControl": "9.24.0"
+        },
+        "runtime": {
+          "Mendix.Modeler.ProjectHandling.dll": {}
+        }
+      },
+      "Mendix.Modeler.ProtectedModules/9.24.0": {
+        "dependencies": {
+          "DotNetZip": "1.16.0",
+          "Mendix.Common": "9.24.0",
+          "Mendix.ModelSDK": "9.24.0",
+          "Mendix.Modeler.Analytics": "9.24.0",
+          "Mendix.Modeler.CodeActions": "9.24.0",
+          "Mendix.Modeler.Controls": "9.24.0",
+          "Mendix.Modeler.Core": "9.24.0",
+          "Mendix.Modeler.Core.VersionControl": "9.24.0",
+          "Mendix.Modeler.Deployment": "9.24.0",
+          "Mendix.Modeler.JavaActions": "9.24.0",
+          "Mendix.Modeler.Microflows": "9.24.0",
+          "Mendix.Modeler.Packages": "9.24.0",
+          "Mendix.Modeler.Packages.Metadata": "9.24.0",
+          "Mendix.Modeler.Storage": "9.24.0",
+          "Mendix.Modeler.Texts": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0",
+          "Mendix.Modeler.VersionControl": "9.24.0",
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
+        "runtime": {
+          "Mendix.Modeler.ProtectedModules.dll": {}
+        }
+      },
+      "Mendix.Modeler.SprintrConnector/9.24.0": {
+        "dependencies": {
+          "Mendix.Common": "9.24.0",
+          "Mendix.Modeler.Core.VersionControl": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0",
+          "System.ServiceModel.Duplex": "4.9.0",
+          "System.ServiceModel.Http": "4.9.0",
+          "System.ServiceModel.NetTcp": "4.9.0",
+          "System.ServiceModel.Security": "4.9.0"
+        },
+        "runtime": {
+          "Mendix.Modeler.SprintrConnector.dll": {}
+        }
+      },
+      "Mendix.Modeler.Storage/9.24.0": {
+        "dependencies": {
+          "CodePort.Wintellect.PowerCollections": "1.0.1",
+          "Mendix.Common": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0",
+          "Microsoft.Data.Sqlite": "6.0.5",
+          "Newtonsoft.Json": "13.0.3",
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
+        "runtime": {
+          "Mendix.Modeler.Storage.dll": {}
+        }
+      },
+      "Mendix.Modeler.Texts/9.24.0": {
+        "runtime": {
+          "Mendix.Modeler.Texts.dll": {}
+        }
+      },
+      "Mendix.Modeler.Utility/9.24.0": {
+        "dependencies": {
+          "CsvHelper": "27.2.1",
+          "DotNetZip": "1.16.0",
+          "Mendix.Common": "9.24.0",
+          "Mendix.Modeler.Texts": "9.24.0",
+          "NLog": "4.6.3",
+          "Newtonsoft.Json": "13.0.3",
+          "Newtonsoft.Json.Schema": "3.0.14",
+          "SimpleInjector": "4.5.1",
+          "System.Configuration.ConfigurationManager": "6.0.0"
+        },
+        "runtime": {
+          "Mendix.Modeler.Utility.dll": {}
+        }
+      },
+      "Mendix.Modeler.WebUI/9.24.0": {
+        "dependencies": {
+          "Antlr": "3.1.3.42154",
+          "CodePort.Wintellect.PowerCollections": "1.0.1",
+          "DotNetZip": "1.16.0",
+          "Eto.Forms": "2.7.0",
+          "MediaTypeMap": "2.1.0",
+          "Mendix.Common": "9.24.0",
+          "Mendix.ModelSDK": "9.24.0",
+          "Mendix.Modeler.Analytics": "9.24.0",
+          "Mendix.Modeler.CodeActions": "9.24.0",
+          "Mendix.Modeler.Controls": "9.24.0",
+          "Mendix.Modeler.Core": "9.24.0",
+          "Mendix.Modeler.Core.VersionControl": "9.24.0",
+          "Mendix.Modeler.DataStorage": "9.24.0",
+          "Mendix.Modeler.Deployment": "9.24.0",
+          "Mendix.Modeler.JavaScriptActions": "9.24.0",
+          "Mendix.Modeler.Microflows": "9.24.0",
+          "Mendix.Modeler.MxAssist.PerformanceBot.Interfaces": "9.24.0",
+          "Mendix.Modeler.Packages": "9.24.0",
+          "Mendix.Modeler.Packages.Metadata": "9.24.0",
+          "Mendix.Modeler.SprintrConnector": "9.24.0",
+          "Mendix.Modeler.Storage": "9.24.0",
+          "Mendix.Modeler.Texts": "9.24.0",
+          "Mendix.Modeler.Theming": "9.24.0",
+          "Mendix.Modeler.Theming.Legacy": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0",
+          "Mendix.Shared.CustomWidgets": "9.24.0",
+          "NDesk.Options": "0.2.1",
+          "Newtonsoft.Json": "13.0.3",
+          "RestSharp": "108.0.1",
+          "SimpleInjector": "4.5.1",
+          "Svg": "3.4.2",
+          "System.Reactive": "4.1.6",
+          "System.Text.Encodings.Web": "5.0.1",
+          "ZXing.Net": "0.16.7",
+          "ZXing.Net.Bindings.Eto.Forms": "0.16.3",
+          "morelinq": "3.3.2"
+        },
+        "runtime": {
+          "Mendix.Modeler.WebUI.dll": {}
+        }
+      },
+      "Mendix.Modeler.WebUI.Atlas/9.24.0": {
+        "dependencies": {
+          "CodePort.Wintellect.PowerCollections": "1.0.1",
+          "DotNetZip": "1.16.0",
+          "Mendix.Common": "9.24.0",
+          "Mendix.ModelSDK": "9.24.0",
+          "Mendix.Modeler.Core": "9.24.0",
+          "Mendix.Modeler.Deployment": "9.24.0",
+          "Mendix.Modeler.M2EEConnector": "9.24.0",
+          "Mendix.Modeler.Packages": "9.24.0",
+          "Mendix.Modeler.Packages.Metadata": "9.24.0",
+          "Mendix.Modeler.Storage": "9.24.0",
+          "Mendix.Modeler.Texts": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0",
+          "Mendix.Modeler.WebUI": "9.24.0",
+          "Newtonsoft.Json": "13.0.3",
+          "System.Reactive": "4.1.6"
+        },
+        "runtime": {
+          "Mendix.Modeler.WebUI.Atlas.dll": {}
+        }
+      },
+      "Mendix.Modeler.WebUI.Export/9.24.0": {
+        "dependencies": {
+          "Antlr": "3.1.3.42154",
+          "CodePort.Wintellect.PowerCollections": "1.0.1",
+          "Mendix.Common": "9.24.0",
+          "Mendix.ModelSDK": "9.24.0",
+          "Mendix.Modeler.Analytics": "9.24.0",
+          "Mendix.Modeler.CodeActions": "9.24.0",
+          "Mendix.Modeler.Core": "9.24.0",
+          "Mendix.Modeler.Deployment": "9.24.0",
+          "Mendix.Modeler.JavaActions": "9.24.0",
+          "Mendix.Modeler.JavaScriptActions": "9.24.0",
+          "Mendix.Modeler.Microflows": "9.24.0",
+          "Mendix.Modeler.Packages": "9.24.0",
+          "Mendix.Modeler.Storage": "9.24.0",
+          "Mendix.Modeler.Texts": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0",
+          "Mendix.Modeler.WebUI": "9.24.0",
+          "NDesk.Options": "0.2.1",
+          "Newtonsoft.Json": "13.0.3",
+          "RestSharp": "108.0.1",
+          "SimpleInjector": "4.5.1",
+          "System.Text.Encodings.Web": "5.0.1",
+          "morelinq": "3.3.2"
+        },
+        "runtime": {
+          "Mendix.Modeler.WebUI.Export.dll": {}
+        }
+      },
+      "Mendix.Modeler.WebUI.JSEngine/9.24.0": {
+        "dependencies": {
+          "Esprima": "2.1.2",
+          "Jint": "3.0.0-beta-2037",
+          "Mendix.Common": "9.24.0",
+          "Mendix.ModelSDK": "9.24.0",
+          "Mendix.Modeler.Core": "9.24.0",
+          "Mendix.Modeler.Microflows": "9.24.0",
+          "Mendix.Modeler.Storage": "9.24.0",
+          "Mendix.Modeler.Texts": "9.24.0",
+          "Mendix.Modeler.Theming": "9.24.0",
+          "Mendix.Modeler.Theming.Legacy": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0",
+          "Mendix.Modeler.WebUI": "9.24.0",
+          "Newtonsoft.Json": "13.0.3",
+          "Svg": "3.4.2"
+        },
+        "runtime": {
+          "Mendix.Modeler.WebUI.JSEngine.dll": {}
+        }
+      },
+      "Mendix.Modeler.WebUI.MicroflowAnalyzer/9.24.0": {
+        "dependencies": {
+          "Mendix.Common": "9.24.0",
+          "Mendix.ModelSDK": "9.24.0",
+          "Mendix.Modeler.CodeActions": "9.24.0",
+          "Mendix.Modeler.Core": "9.24.0",
+          "Mendix.Modeler.Integration": "9.24.0",
+          "Mendix.Modeler.JavaActions": "9.24.0",
+          "Mendix.Modeler.Microflows": "9.24.0",
+          "Mendix.Modeler.Storage": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0",
+          "Mendix.Modeler.WebUI": "9.24.0"
+        },
+        "runtime": {
+          "Mendix.Modeler.WebUI.MicroflowAnalyzer.dll": {}
+        }
+      },
+      "Mendix.Modeler.Workflows/9.24.0": {
+        "dependencies": {
+          "Mendix.Common": "9.24.0",
+          "Mendix.ModelSDK": "9.24.0",
+          "Mendix.Modeler.Core": "9.24.0",
+          "Mendix.Modeler.Microflows": "9.24.0",
+          "Mendix.Modeler.Storage": "9.24.0",
+          "Mendix.Modeler.Texts": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0",
+          "Mendix.Modeler.WebUI": "9.24.0",
+          "Mendix.Modeler.WebUI.Export": "9.24.0",
+          "Mendix.Modeler.WebUI.MicroflowAnalyzer": "9.24.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "Mendix.Modeler.Workflows.dll": {}
+        }
+      },
+      "Mendix.ModelSDK/9.24.0": {
+        "runtime": {
+          "Mendix.ModelSDK.dll": {}
+        }
+      },
+      "mx/9.24.0": {
+        "dependencies": {
+          "CommandLineParser": "2.5.0",
+          "DotNetZip": "1.16.0",
+          "Mendix.CommandLine.Shared": "9.24.0",
+          "Mendix.Common": "9.24.0",
+          "Mendix.ModelSDK": "9.24.0",
+          "Mendix.Modeler.Analytics": "9.24.0",
+          "Mendix.Modeler.Core": "9.24.0",
+          "Mendix.Modeler.Core.VersionControl": "9.24.0",
+          "Mendix.Modeler.Deployment": "9.24.0",
+          "Mendix.Modeler.DiffLib": "9.24.0",
+          "Mendix.Modeler.DocumentTemplates": "9.24.0",
+          "Mendix.Modeler.Integration": "9.24.0",
+          "Mendix.Modeler.JavaActions": "9.24.0",
+          "Mendix.Modeler.JavaScriptActions": "9.24.0",
+          "Mendix.Modeler.MergeLib": "9.24.0",
+          "Mendix.Modeler.Microflows": "9.24.0",
+          "Mendix.Modeler.MxAssist.MLKit": "9.24.0",
+          "Mendix.Modeler.MxAssist.PerformanceBot": "9.24.0",
+          "Mendix.Modeler.MxAssist.PerformanceBot.Interfaces": "9.24.0",
+          "Mendix.Modeler.MxAssist.PerformanceBot.Serialization": "9.24.0",
+          "Mendix.Modeler.Packages": "9.24.0",
+          "Mendix.Modeler.Packages.Metadata": "9.24.0",
+          "Mendix.Modeler.ProjectHandling": "9.24.0",
+          "Mendix.Modeler.ProtectedModules": "9.24.0",
+          "Mendix.Modeler.Storage": "9.24.0",
+          "Mendix.Modeler.Texts": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0",
+          "Mendix.Modeler.VersionControl": "9.24.0",
+          "Mendix.Modeler.WebUI": "9.24.0",
+          "Mendix.Modeler.WebUI.Atlas": "9.24.0",
+          "Mendix.Modeler.WebUI.Export": "9.24.0",
+          "Mendix.Modeler.WebUI.JSEngine": "9.24.0",
+          "Mendix.Modeler.Workflows": "9.24.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "mx.dll": {}
+        }
+      },
+      "mxutil/9.24.0": {
+        "dependencies": {
+          "DotNetZip": "1.16.0",
+          "Mendix.CommandLine.Shared": "9.24.0",
+          "Mendix.Common": "9.24.0",
+          "Mendix.ModelSDK": "9.24.0",
+          "Mendix.Modeler.Core": "9.24.0",
+          "Mendix.Modeler.DataStorage": "9.24.0",
+          "Mendix.Modeler.DocumentTemplates": "9.24.0",
+          "Mendix.Modeler.Integration": "9.24.0",
+          "Mendix.Modeler.JavaActions": "9.24.0",
+          "Mendix.Modeler.JavaScriptActions": "9.24.0",
+          "Mendix.Modeler.Packages": "9.24.0",
+          "Mendix.Modeler.ProjectHandling": "9.24.0",
+          "Mendix.Modeler.ProtectedModules": "9.24.0",
+          "Mendix.Modeler.Storage": "9.24.0",
+          "Mendix.Modeler.Utility": "9.24.0",
+          "Mendix.Modeler.WebUI": "9.24.0",
+          "Mendix.Modeler.WebUI.Atlas": "9.24.0",
+          "Mendix.Modeler.WebUI.Export": "9.24.0",
+          "Mendix.Modeler.WebUI.JSEngine": "9.24.0",
+          "Mendix.Modeler.Workflows": "9.24.0",
+          "NDesk.Options": "0.2.1"
+        },
+        "runtime": {
+          "mxutil.dll": {}
+        }
+      },
+      "Mendix.StudioPro.ExtensionsAPI.Reference/9.24.0.0": {
+        "runtime": {
+          "Mendix.StudioPro.ExtensionsAPI.dll": {
+            "assemblyVersion": "9.24.0.0",
+            "fileVersion": "9.24.0.0"
+          }
+        }
+      },
+      "Mendix.Modeler.Utility.Network.Reference/9.24.0.0": {
+        "runtime": {
+          "Mendix.Modeler.Utility.Network.dll": {
+            "assemblyVersion": "9.24.0.0",
+            "fileVersion": "9.24.0.0"
+          }
+        }
+      },
+      "Mendix.Modeler.Theming.Reference/9.24.0.0": {
+        "runtime": {
+          "Mendix.Modeler.Theming.dll": {
+            "assemblyVersion": "9.24.0.0",
+            "fileVersion": "9.24.0.0"
+          }
+        }
+      },
+      "Mendix.Modeler.Integration.DataContract.Reference/9.24.0.0": {
+        "runtime": {
+          "Mendix.Modeler.Integration.DataContract.dll": {
+            "assemblyVersion": "9.24.0.0",
+            "fileVersion": "9.24.0.0"
+          }
+        }
+      },
+      "Mendix.Modeler.DataHub.Reference/9.24.0.0": {
+        "runtime": {
+          "Mendix.Modeler.DataHub.dll": {
+            "assemblyVersion": "9.24.0.0",
+            "fileVersion": "9.24.0.0"
+          }
+        }
+      },
+      "Mendix.Modeler.CodeGeneration.Reference/9.24.0.0": {
+        "runtime": {
+          "Mendix.Modeler.CodeGeneration.dll": {
+            "assemblyVersion": "9.24.0.0",
+            "fileVersion": "9.24.0.0"
+          }
+        }
+      },
+      "Mendix.Modeler.Analytics.DPA.Reference/9.24.0.0": {
+        "runtime": {
+          "Mendix.Modeler.Analytics.DPA.dll": {
+            "assemblyVersion": "9.24.0.0",
+            "fileVersion": "9.24.0.0"
+          }
+        }
+      },
+      "Mendix.Modeler.Core.VersionControl.Reference/9.24.0.0": {
+        "runtime": {
+          "Mendix.Modeler.Core.VersionControl.dll": {
+            "assemblyVersion": "9.24.0.0",
+            "fileVersion": "9.24.0.0"
+          }
+        }
+      },
+      "Mendix.Modeler.MergeLib.Reference/9.24.0.0": {
+        "runtime": {
+          "Mendix.Modeler.MergeLib.dll": {
+            "assemblyVersion": "9.24.0.0",
+            "fileVersion": "9.24.0.0"
+          }
+        }
+      },
+      "Mendix.Modeler.Controls.Reference/9.24.0.0": {
+        "runtime": {
+          "Mendix.Modeler.Controls.dll": {
+            "assemblyVersion": "9.24.0.0",
+            "fileVersion": "9.24.0.0"
+          }
+        }
+      },
+      "Mendix.Modeler.M2EEConnector.Reference/9.24.0.0": {
+        "runtime": {
+          "Mendix.Modeler.M2EEConnector.dll": {
+            "assemblyVersion": "9.24.0.0",
+            "fileVersion": "9.24.0.0"
+          }
+        }
+      },
+      "Mendix.Modeler.AppStoreConnector.Reference/9.24.0.0": {
+        "runtime": {
+          "Mendix.Modeler.AppStoreConnector.dll": {
+            "assemblyVersion": "9.24.0.0",
+            "fileVersion": "9.24.0.0"
+          }
+        }
+      },
+      "Mendix.Modeler.Theming.Legacy.Reference/9.24.0.0": {
+        "runtime": {
+          "Mendix.Modeler.Theming.Legacy.dll": {
+            "assemblyVersion": "9.24.0.0",
+            "fileVersion": "9.24.0.0"
+          }
+        }
+      },
+      "Mendix.Modeler.CloudConnector.Reference/9.24.0.0": {
+        "runtime": {
+          "Mendix.Modeler.CloudConnector.dll": {
+            "assemblyVersion": "9.24.0.0",
+            "fileVersion": "9.24.0.0"
+          }
+        }
+      },
+      "Mendix.Modeler.VersionControl.Reference/9.24.0.0": {
+        "runtime": {
+          "Mendix.Modeler.VersionControl.dll": {
+            "assemblyVersion": "9.24.0.0",
+            "fileVersion": "9.24.0.0"
+          }
+        }
+      },
+      "Mendix.Modeler.Packages.Metadata.Reference/9.24.0.0": {
+        "runtime": {
+          "Mendix.Modeler.Packages.Metadata.dll": {
+            "assemblyVersion": "9.24.0.0",
+            "fileVersion": "9.24.0.0"
+          }
+        }
+      },
+      "Mendix.Shared.CustomWidgets.Reference/9.24.0.0": {
+        "runtime": {
+          "Mendix.Shared.CustomWidgets.dll": {
+            "assemblyVersion": "9.24.0.0",
+            "fileVersion": "9.24.0.0"
+          }
+        }
+      },
+      "Mendix.Modeler.DiffLib.Reference/9.24.0.0": {
+        "runtime": {
+          "Mendix.Modeler.DiffLib.dll": {
+            "assemblyVersion": "9.24.0.0",
+            "fileVersion": "9.24.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "mxbuild/9.24.0\n": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "runtimepack.Microsoft.NETCore.App.Runtime.win-x64/6.0.11": {
+      "type": "runtimepack",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Antlr/3.1.3.42154": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7LMudXJuw2TnIw/Gog2ERv5oZvku2yUnSaUpbA1Znqv2RGR5Z739vK4o8yIM7ofjU2y91GS2hZO1L+il9+cmdQ==",
+      "path": "antlr/3.1.3.42154",
+      "hashPath": "antlr.3.1.3.42154.nupkg.sha512"
+    },
+    "Antlr4.Runtime.Standard/4.11.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-d/zCFRgSpumVrmF11Z6gIRLfgVioTxWjE4BxLwxISPhGfjhNbNn7inIwjWJvNlk2BXhyFBu/sk7oWeANk2Rc7Q==",
+      "path": "antlr4.runtime.standard/4.11.1",
+      "hashPath": "antlr4.runtime.standard.4.11.1.nupkg.sha512"
+    },
+    "AvsAn/3.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KntHAEjoSHYko7xuJgUuobeCtGLAhkHYmXolsHPGjzYj6KVoMBOOu57NNOY5pZX9JwbhcxpqLX5sdE/9sQSqyw==",
+      "path": "avsan/3.2.0",
+      "hashPath": "avsan.3.2.0.nupkg.sha512"
+    },
+    "CodePort.Wintellect.PowerCollections/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nQaySMW5JluwM5/MFss7dDSQZanomKKJK2/GjfmmZD4b3+MF2debmQ/APi7M8H/+g2dv640NrUJPfQkbTQ/ZCg==",
+      "path": "codeport.wintellect.powercollections/1.0.1",
+      "hashPath": "codeport.wintellect.powercollections.1.0.1.nupkg.sha512"
+    },
+    "CommandLineParser/2.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ukoCfILrFB5+Trg0a8LHpNMyNyLicXG08SvWAl0BAwDATS7bzNbdSxemHM8waj7ZMOfXJ5s4exHW6Jp1XEC5DA==",
+      "path": "commandlineparser/2.5.0",
+      "hashPath": "commandlineparser.2.5.0.nupkg.sha512"
+    },
+    "CsvHelper/27.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uS5ix5hL9gL5taiAG//CScyJa8Fn1ZOh3FDhDvf4laboESFs84mCNropfp7PIt8xCkyQofljFpqu1B5UnSXjyA==",
+      "path": "csvhelper/27.2.1",
+      "hashPath": "csvhelper.27.2.1.nupkg.sha512"
+    },
+    "DotNetZip/1.16.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CS9sjjXF23FLIbwlLT5k/jXBYxVnLMn01lyAvN/hxFM+UDvSicjTPB9ZMA+Wp/QlvBPbD2pzkAXUp1O50gP/Lw==",
+      "path": "dotnetzip/1.16.0",
+      "hashPath": "dotnetzip.1.16.0.nupkg.sha512"
+    },
+    "Esprima/2.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JAiCTRsb90Rt7Yhk39mfS9KF7Eb7CxMMJ6/n9H4LRBfYlAmq9FI3oxmb0iNxtME4EhV6oQx1F/IsvDtGYwOHqg==",
+      "path": "esprima/2.1.2",
+      "hashPath": "esprima.2.1.2.nupkg.sha512"
+    },
+    "Eto.Forms/2.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+cVoTdyb0lx2owvEdgLkHYd2wD4tkr9fIg6+hW0V54zq42NuddWYfoKAukLwwJb/wGoPihbYk8d7yxLPdGbmqQ==",
+      "path": "eto.forms/2.7.0",
+      "hashPath": "eto.forms.2.7.0.nupkg.sha512"
+    },
+    "Fizzler/1.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nSudK8LeKSu7T/N/6NVZNjUniMYagfzVo8yT2XwZ9BOVbWYQH3EQ8oviuztJ7AfO8PlRDsYIWboZuzIg94hhzQ==",
+      "path": "fizzler/1.2.1",
+      "hashPath": "fizzler.1.2.1.nupkg.sha512"
+    },
+    "Google.Protobuf/3.14.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9AkodyGNmLI+wJJPbwpWLmh4BMHoXDQ9+8qvDPhQQi/BNsleqKMBn3OlyLwC6CALwan2kc5+Cenb8fJSITX3nQ==",
+      "path": "google.protobuf/3.14.0",
+      "hashPath": "google.protobuf.3.14.0.nupkg.sha512"
+    },
+    "Humanizer.Core/2.8.26": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
+      "path": "humanizer.core/2.8.26",
+      "hashPath": "humanizer.core.2.8.26.nupkg.sha512"
+    },
+    "Jint/3.0.0-beta-2037": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RZASEl/9QUZjFRI76OmxPxShyByYaj6l8v9lUEWEKgrp24/lqHfmi3Deg7TCXQy4h13NJsnPZbXRN6cCJdV+dA==",
+      "path": "jint/3.0.0-beta-2037",
+      "hashPath": "jint.3.0.0-beta-2037.nupkg.sha512"
+    },
+    "MediaTypeMap/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-o0Q01zOu4AkaDDbOQdwCsWuOoXlPGzqyl1j8ABeZJy/xsMm1U96qv/qx2X8sfyZNBY+94OaAPYCHn/1D78/cGg==",
+      "path": "mediatypemap/2.1.0",
+      "hashPath": "mediatypemap.2.1.0.nupkg.sha512"
+    },
+    "Mendix.LibGit2Sharp/1.142.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VxoK7WNK/1/NyPTMsGxFmqVv1Zw0moJIaiWIbGBh8TFVAC7VjmhkobY5HivfIhDhWuQh4mLF0pnyyGByP9wO4Q==",
+      "path": "mendix.libgit2sharp/1.142.0",
+      "hashPath": "mendix.libgit2sharp.1.142.0.nupkg.sha512"
+    },
+    "Mendix.LibGit2Sharp.NativeBinaries/1.142.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+jX/wdi/uN4TBuun7Ru5CGF4WaWX/gPq0dIZW0+OZwz9YxTFaVnuwusDnYpUmlQOT/u4gNL2/eU+IxBUAypugQ==",
+      "path": "mendix.libgit2sharp.nativebinaries/1.142.1",
+      "hashPath": "mendix.libgit2sharp.nativebinaries.1.142.1.nupkg.sha512"
+    },
+    "Mendix.Web.Services.Discovery/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ek59Cws7ZCNyBgw2grFTfckKmhgL5eODWvN6cvxJy/kYlT+aMrNNM2SjR2dcUP17nKZ0Dk3NR/odvKG2pzCFCw==",
+      "path": "mendix.web.services.discovery/1.1.0",
+      "hashPath": "mendix.web.services.discovery.1.1.0.nupkg.sha512"
+    },
+    "Microsoft.Bcl.AsyncInterfaces/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-W8DPQjkMScOMTtJbPwmPyj9c3zYSFGawDW3jwlBOOsnY+EzZFLgNQ/UMkK35JmkNOVPdCyPr2Tw7Vv9N+KA3ZQ==",
+      "path": "microsoft.bcl.asyncinterfaces/5.0.0",
+      "hashPath": "microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512"
+    },
+    "Microsoft.Data.Edm/5.8.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1wETMHqyPqxM3VLFtg9iA5iHCaBjPxgyO+Ff+z9T0tfw5TybXR28uiOLZES/OSJVmBcbqSy669ttvsCOZPTp9Q==",
+      "path": "microsoft.data.edm/5.8.5",
+      "hashPath": "microsoft.data.edm.5.8.5.nupkg.sha512"
+    },
+    "Microsoft.Data.OData/5.8.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3ZnYNqHJ9uEYVhfjO+xeGR/yV0rG8H+uw7SWmfSCEw9ZVyAOUnFvwA265UWrcDoMUGF5mX4y2JAMafnFrxW4oA==",
+      "path": "microsoft.data.odata/5.8.5",
+      "hashPath": "microsoft.data.odata.5.8.5.nupkg.sha512"
+    },
+    "Microsoft.Data.Sqlite/6.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1N2RKxj6ABpdluueSzv29oTFaEqoft6cotl4OoYo2LR8MN3puORCnBhMvHmiBgL5hDF7nLS/+goeLg9KmiLVlw==",
+      "path": "microsoft.data.sqlite/6.0.5",
+      "hashPath": "microsoft.data.sqlite.6.0.5.nupkg.sha512"
+    },
+    "Microsoft.Data.Sqlite.Core/6.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NDvPAsJZSptFxB5B5t3a/7UUihO2nPm8nsEG3s2EtnccIotMsQqSkDdak/T/tWQUivzdiy1Q/0jXk97zQgD75Q==",
+      "path": "microsoft.data.sqlite.core/6.0.5",
+      "hashPath": "microsoft.data.sqlite.core.6.0.5.nupkg.sha512"
+    },
+    "Microsoft.Experimental.Collections/1.0.6-e190117-3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-S2IfWAo5bnXSgpr8o0LR3aMqo7QD83VQUPbgta6aOYIBq8M85Hpk8hVUco22GFhSRuf4ZhP8jUs2wPlO0Dbdow==",
+      "path": "microsoft.experimental.collections/1.0.6-e190117-3",
+      "hashPath": "microsoft.experimental.collections.1.0.6-e190117-3.nupkg.sha512"
+    },
+    "Microsoft.Extensions.ObjectPool/5.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pp9tbGqIhdEXL6Q1yJl+zevAJSq4BsxqhS1GXzBvEsEz9DDNu9GLNzgUy2xyFc4YjB4m4Ff2YEWTnvQvVYdkvQ==",
+      "path": "microsoft.extensions.objectpool/5.0.10",
+      "hashPath": "microsoft.extensions.objectpool.5.0.10.nupkg.sha512"
+    },
+    "Microsoft.ML.OnnxRuntime/1.14.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lFu4/LKGctUfO/3U0BOTFRWfgJ1L/I5R4RH9l1nBAlWoeHa7O5FosKO5jspfnegXlBvjBKXaZvxA+EHT3Q9Q8w==",
+      "path": "microsoft.ml.onnxruntime/1.14.0",
+      "hashPath": "microsoft.ml.onnxruntime.1.14.0.nupkg.sha512"
+    },
+    "Microsoft.ML.OnnxRuntime.Managed/1.14.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-c6qvGpgbsvi3heFPP+9wUscmSwfDNDfhUjyviNLH/8nsaULj/Ex8AC1mmHCxaUrHBgBIn6daRcMAlzsOGQxjTQ==",
+      "path": "microsoft.ml.onnxruntime.managed/1.14.0",
+      "hashPath": "microsoft.ml.onnxruntime.managed.1.14.0.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Platforms/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "path": "microsoft.netcore.platforms/1.1.0",
+      "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Targets/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==",
+      "path": "microsoft.netcore.targets/1.1.0",
+      "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
+    },
+    "Microsoft.OData.Edm/7.15.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-86eVGNE3TrA+589cl93Jt6z+MiE5qa/tJLlxeFVhDdNi1q9oMn26nzLh5QUuokQktgwbb+Vt3Red8U3tLk5RYA==",
+      "path": "microsoft.odata.edm/7.15.0",
+      "hashPath": "microsoft.odata.edm.7.15.0.nupkg.sha512"
+    },
+    "Microsoft.OpenApi/1.6.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HQLJnNMXbt7D+VuJFBFaHMlkxKH1z3vLRrR3wiVrSOnwAXRQxHBLzgH5FjNSMKMWeyj3nY0AnM3OSACyGZUMZw==",
+      "path": "microsoft.openapi/1.6.3",
+      "hashPath": "microsoft.openapi.1.6.3.nupkg.sha512"
+    },
+    "Microsoft.Win32.SystemEvents/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hqTM5628jSsQiv+HGpiq3WKBl2c8v1KZfby2J6Pr7pEPlK9waPdgEO6b8A/+/xn/yZ9ulv8HuqK71ONy2tg67A==",
+      "path": "microsoft.win32.systemevents/6.0.0",
+      "hashPath": "microsoft.win32.systemevents.6.0.0.nupkg.sha512"
+    },
+    "morelinq/3.3.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MQc8GppZJLmjvcpEdf3EkC6ovsp7gRWt2e5mC7dcIOrgwSc+yjFd3JQ0iRqr3XrUT6rb/phv0IkEmBtbfVA7AQ==",
+      "path": "morelinq/3.3.2",
+      "hashPath": "morelinq.3.3.2.nupkg.sha512"
+    },
+    "NDesk.Options/0.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1bkSjNET5wxY+kZfTVdstkcDYF98mEbxWrG5FxJG5MTjQ0d9E2ezNfK/InvsVB50P0TiXO2ovD/SB/57EH6Zmw==",
+      "path": "ndesk.options/0.2.1",
+      "hashPath": "ndesk.options.0.2.1.nupkg.sha512"
+    },
+    "NETStandard.Library/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7jnbRU+L08FXKMxqUflxEXtVymWvNOrS8yHgu9s6EM8Anr6T/wIX4nZ08j/u3Asz+tCufp3YVwFSEvFTPYmBPA==",
+      "path": "netstandard.library/2.0.0",
+      "hashPath": "netstandard.library.2.0.0.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "path": "newtonsoft.json/13.0.3",
+      "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
+    },
+    "Newtonsoft.Json.Bson/1.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QYFyxhaABwmq3p/21VrZNYvCg3DaEoN/wUuw5nmfAf0X3HLjgupwhkEWdgfb9nvGAUIv3osmZoD3kKl4jxEmYQ==",
+      "path": "newtonsoft.json.bson/1.0.2",
+      "hashPath": "newtonsoft.json.bson.1.0.2.nupkg.sha512"
+    },
+    "Newtonsoft.Json.Schema/3.0.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Qnu41yEFuMEJMuD1kJgslc4cF981K+hA7SmgXQ/N6pk6Zknvxt4g5Hx7KRykycP3oKyoz3aTFRV/TX+Vp6v7uQ==",
+      "path": "newtonsoft.json.schema/3.0.14",
+      "hashPath": "newtonsoft.json.schema.3.0.14.nupkg.sha512"
+    },
+    "NLog/4.6.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DYbJKfpjciXc/y177fou0XsSB+ZsPFW63c3ZtrYNScU2Sw3j4o12zVpm7p30PCaaSUMLdn1iYF1KbdPcdR0Ofg==",
+      "path": "nlog/4.6.3",
+      "hashPath": "nlog.4.6.3.nupkg.sha512"
+    },
+    "Nustache/1.16.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7qN3TUzdacbhNAYvZV4fnUMBbRDa7y21d0ggN9hRohVCgXQprA5HuCPGz8F+NO+GRTTRXwhvlRVRPqQrhsyTOw==",
+      "path": "nustache/1.16.0.10",
+      "hashPath": "nustache.1.16.0.10.nupkg.sha512"
+    },
+    "OnnxSharp/0.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZyDPi5+jc4g1BNUlgXBpPrpm4y5HXYbxdjQt/gG0Xn79HYnEIq6n+r/aocTDImmO9ZwkpeySf2tmVREf7n0hbg==",
+      "path": "onnxsharp/0.2.0",
+      "hashPath": "onnxsharp.0.2.0.nupkg.sha512"
+    },
+    "Polly/7.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mpQsvlEn4ipgICh5CGyVLPV93RFVzOrBG7wPZfzY8gExh7XgWQn0GCDY9nudbUEJ12UiGPP9i4+CohghBvzhmg==",
+      "path": "polly/7.1.0",
+      "hashPath": "polly.7.1.0.nupkg.sha512"
+    },
+    "RestSharp/108.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XKwuwWq7A4dxZ8l9QkS2+ePLJ9ImmLaJSeFO6H2kpII4Us4n1NRs4w3c//8H2BYpL1XqBE8nmsd9aNCVBwXmOA==",
+      "path": "restsharp/108.0.1",
+      "hashPath": "restsharp.108.0.1.nupkg.sha512"
+    },
+    "runtime.any.System.Collections/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-23g6rqftKmovn2cLeGsuHUYm0FD7pdutb0uQMJpZ3qTvq+zHkgmt6J65VtRry4WDGYlmkMa4xDACtaQ94alNag==",
+      "path": "runtime.any.system.collections/4.3.0",
+      "hashPath": "runtime.any.system.collections.4.3.0.nupkg.sha512"
+    },
+    "runtime.any.System.Globalization/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sMDBnad4rp4t7GY442Jux0MCUuKL4otn5BK6Ni0ARTXTSpRNBzZ7hpMfKSvnVSED5kYJm96YOWsqV0JH0d2uuw==",
+      "path": "runtime.any.system.globalization/4.3.0",
+      "hashPath": "runtime.any.system.globalization.4.3.0.nupkg.sha512"
+    },
+    "runtime.any.System.IO/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SDZ5AD1DtyRoxYtEcqQ3HDlcrorMYXZeCt7ZhG9US9I5Vva+gpIWDGMkcwa5XiKL0ceQKRZIX2x0XEjLX7PDzQ==",
+      "path": "runtime.any.system.io/4.3.0",
+      "hashPath": "runtime.any.system.io.4.3.0.nupkg.sha512"
+    },
+    "runtime.any.System.Reflection/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hLC3A3rI8jipR5d9k7+f0MgRCW6texsAp0MWkN/ci18FMtQ9KH7E2vDn/DH2LkxsszlpJpOn9qy6Z6/69rH6eQ==",
+      "path": "runtime.any.system.reflection/4.3.0",
+      "hashPath": "runtime.any.system.reflection.4.3.0.nupkg.sha512"
+    },
+    "runtime.any.System.Reflection.Primitives/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Nrm1p3armp6TTf2xuvaa+jGTTmncALWFq22CpmwRvhDf6dE9ZmH40EbOswD4GnFLrMRS0Ki6Kx5aUPmKK/hZBg==",
+      "path": "runtime.any.system.reflection.primitives/4.3.0",
+      "hashPath": "runtime.any.system.reflection.primitives.4.3.0.nupkg.sha512"
+    },
+    "runtime.any.System.Resources.ResourceManager/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Lxb89SMvf8w9p9+keBLyL6H6x/TEmc6QVsIIA0T36IuyOY3kNvIdyGddA2qt35cRamzxF8K5p0Opq4G4HjNbhQ==",
+      "path": "runtime.any.system.resources.resourcemanager/4.3.0",
+      "hashPath": "runtime.any.system.resources.resourcemanager.4.3.0.nupkg.sha512"
+    },
+    "runtime.any.System.Runtime/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fRS7zJgaG9NkifaAxGGclDDoRn9HC7hXACl52Or06a/fxdzDajWb5wov3c6a+gVSlekRoexfjwQSK9sh5um5LQ==",
+      "path": "runtime.any.system.runtime/4.3.0",
+      "hashPath": "runtime.any.system.runtime.4.3.0.nupkg.sha512"
+    },
+    "runtime.any.System.Text.Encoding/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+ihI5VaXFCMVPJNstG4O4eo1CfbrByLxRrQQTqOTp1ttK0kUKDqOdBSTaCB2IBk/QtjDrs6+x4xuezyMXdm0HQ==",
+      "path": "runtime.any.system.text.encoding/4.3.0",
+      "hashPath": "runtime.any.system.text.encoding.4.3.0.nupkg.sha512"
+    },
+    "runtime.any.System.Threading.Tasks/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OhBAVBQG5kFj1S+hCEQ3TUHBAEtZ3fbEMgZMRNdN8A0Pj4x+5nTELEqL59DU0TjKVE6II3dqKw4Dklb3szT65w==",
+      "path": "runtime.any.system.threading.tasks/4.3.0",
+      "hashPath": "runtime.any.system.threading.tasks.4.3.0.nupkg.sha512"
+    },
+    "runtime.osx.10.10-x64.CoreCompat.System.Drawing/5.8.64": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ey7xQgWwixxdrmhzEUvaR4kxZDSQMWQScp8ViLvmL5xCBKG6U3TaMv/jzHilpfQXpHmJ4IylKGzzMvnYX2FwHQ==",
+      "path": "runtime.osx.10.10-x64.corecompat.system.drawing/5.8.64",
+      "hashPath": "runtime.osx.10.10-x64.corecompat.system.drawing.5.8.64.nupkg.sha512"
+    },
+    "runtime.win.System.Diagnostics.Debug/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hHHP0WCStene2jjeYcuDkETozUYF/3sHVRHAEOgS3L15hlip24ssqCTnJC28Z03Wpo078oMcJd0H4egD2aJI8g==",
+      "path": "runtime.win.system.diagnostics.debug/4.3.0",
+      "hashPath": "runtime.win.system.diagnostics.debug.4.3.0.nupkg.sha512"
+    },
+    "runtime.win7.System.Private.Uri/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Q+IBgaPYicSQs2tBlmXqbS25c/JLIthWrgrpMwxKSOobW/OqIMVFruUGfuaz4QABVzV8iKdCAbN7APY7Tclbnw==",
+      "path": "runtime.win7.system.private.uri/4.3.0",
+      "hashPath": "runtime.win7.system.private.uri.4.3.0.nupkg.sha512"
+    },
+    "SharpSvn/1.14001.156": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cmCiOhppX1xYoeayTb7znCSvtfgfPCTrP35AaZHhgPqkgn1dmfz+3ae23kxNcCUw6KMj70uGYpiwW3U1VPNhOQ==",
+      "path": "sharpsvn/1.14001.156",
+      "hashPath": "sharpsvn.1.14001.156.nupkg.sha512"
+    },
+    "SimpleInjector/4.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-F7VZl+7wbnZ1JVyytgXSnjpN9Bac0i6d62MVwcr/IZx5FRMhs3iEp+rXlLuvTqGEu7E8d9js+oJdAOTW32JNAQ==",
+      "path": "simpleinjector/4.5.1",
+      "hashPath": "simpleinjector.4.5.1.nupkg.sha512"
+    },
+    "SmartFormat.NET/2.4.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5G4Y7v0Nq+jQe7I4i1DOPlG4DeiFz6chU+0p5NH7Gh6SFNbDxCQxoLCPNg5JtB9jXpv9pSocYCdmfumHnABvSg==",
+      "path": "smartformat.net/2.4.2",
+      "hashPath": "smartformat.net.2.4.2.nupkg.sha512"
+    },
+    "SQLitePCLRaw.bundle_e_sqlite3/2.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zssYqiaucyGArZfg74rJuzK0ewgZiidsRVrZTmP7JLNvK806gXg6PGA46XzoJGpNPPA5uRcumwvVp6YTYxtQ5w==",
+      "path": "sqlitepclraw.bundle_e_sqlite3/2.0.6",
+      "hashPath": "sqlitepclraw.bundle_e_sqlite3.2.0.6.nupkg.sha512"
+    },
+    "SQLitePCLRaw.core/2.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Vh8n0dTvwXkCGur2WqQTITvk4BUO8i8h9ucSx3wwuaej3s2S6ZC0R7vqCTf9TfS/I4QkXO6g3W2YQIRFkOcijA==",
+      "path": "sqlitepclraw.core/2.0.6",
+      "hashPath": "sqlitepclraw.core.2.0.6.nupkg.sha512"
+    },
+    "SQLitePCLRaw.lib.e_sqlite3/2.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xlstskMKalKQl0H2uLNe0viBM6fvAGLWqKZUQ3twX5y1tSOZKe0+EbXopQKYdbjJytNGI6y5WSKjpI+kVr2Ckg==",
+      "path": "sqlitepclraw.lib.e_sqlite3/2.0.6",
+      "hashPath": "sqlitepclraw.lib.e_sqlite3.2.0.6.nupkg.sha512"
+    },
+    "SQLitePCLRaw.provider.e_sqlite3/2.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-peXLJbhU+0clVBIPirihM1NoTBqw8ouBpcUsVMlcZ4k6fcL2hwgkctVB2Nt5VsbnOJcPspQL5xQK7QvLpxkMgg==",
+      "path": "sqlitepclraw.provider.e_sqlite3/2.0.6",
+      "hashPath": "sqlitepclraw.provider.e_sqlite3.2.0.6.nupkg.sha512"
+    },
+    "Svg/3.4.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nSl8zFwdK8RufQlh1BUnv3Ynsi7cxTyqu77T6v13A9Em7Q6e/g7rQQ+9In2txpQiPw/MhrkypxeaOe7tUY860A==",
+      "path": "svg/3.4.2",
+      "hashPath": "svg.3.4.2.nupkg.sha512"
+    },
+    "System.Collections/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3Dcj85/TBdVpL5Zr+gEEBUuFe2icOnLalmEh9hfck1PTYbbyWuZgh4fmm2ysCLTrqLQw6t3TgTyJ+VLp+Qb+Lw==",
+      "path": "system.collections/4.3.0",
+      "hashPath": "system.collections.4.3.0.nupkg.sha512"
+    },
+    "System.Collections.Immutable/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dQPcs0U1IKnBdRDBkrCTi1FoajSTBzLcVTpjO4MBCMC7f4pDOIPzgBoX8JjG7X6uZRJ8EBxsi8+DR1JuwjnzOQ==",
+      "path": "system.collections.immutable/7.0.0",
+      "hashPath": "system.collections.immutable.7.0.0.nupkg.sha512"
+    },
+    "System.ComponentModel/4.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oBZFnm7seFiVfugsIyOvQCWobNZs7FzqDV/B7tx20Ep/l3UUFCPDkdTnCNaJZTU27zjeODmy2C/cP60u3D4c9w==",
+      "path": "system.componentmodel/4.0.1",
+      "hashPath": "system.componentmodel.4.0.1.nupkg.sha512"
+    },
+    "System.ComponentModel.Annotations/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dMkqfy2el8A8/I76n2Hi1oBFEbG1SfxD2l5nhwXV3XjlnOmwxJlQbYpJH4W51odnU9sARCSAgv7S3CyAFMkpYg==",
+      "path": "system.componentmodel.annotations/5.0.0",
+      "hashPath": "system.componentmodel.annotations.5.0.0.nupkg.sha512"
+    },
+    "System.ComponentModel.Composition/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-60Qv+F7oxomOjJeTDA5Z4iCyFbQ0B/2Mi5HT+13pxxq0lVnu2ipbWMzFB+RWKr3wWKA8BSncXr9PH/fECwMX5Q==",
+      "path": "system.componentmodel.composition/6.0.0",
+      "hashPath": "system.componentmodel.composition.6.0.0.nupkg.sha512"
+    },
+    "System.Configuration.ConfigurationManager/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7T+m0kDSlIPTHIkPMIu6m6tV6qsMqJpvQWW2jIc2qi7sn40qxFo0q+7mEQAhMPXZHMKnWrnv47ntGlM/ejvw3g==",
+      "path": "system.configuration.configurationmanager/6.0.0",
+      "hashPath": "system.configuration.configurationmanager.6.0.0.nupkg.sha512"
+    },
+    "System.Diagnostics.Debug/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZUhUOdqmaG5Jk3Xdb8xi5kIyQYAA4PnTNlHx1mu9ZY3qv4ELIdKbnL/akbGaKi2RnNUWaZsAs31rvzFdewTj2g==",
+      "path": "system.diagnostics.debug/4.3.0",
+      "hashPath": "system.diagnostics.debug.4.3.0.nupkg.sha512"
+    },
+    "System.Drawing.Common/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NfuoKUiP2nUWwKZN6twGqXioIe1zVD0RIj2t976A+czLHr2nY454RwwXs6JU9Htc6mwqL6Dn/nEL3dpVf2jOhg==",
+      "path": "system.drawing.common/6.0.0",
+      "hashPath": "system.drawing.common.6.0.0.nupkg.sha512"
+    },
+    "System.Formats.Asn1/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MTvUIktmemNB+El0Fgw9egyqT9AYSIk6DTJeoDSpc3GIHxHCMo8COqkWT1mptX5tZ1SlQ6HJZ0OsSvMth1c12w==",
+      "path": "system.formats.asn1/5.0.0",
+      "hashPath": "system.formats.asn1.5.0.0.nupkg.sha512"
+    },
+    "System.Globalization/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kYdVd2f2PAdFGblzFswE4hkNANJBKRmsfa2X5LG2AcWE1c7/4t0pYae1L8vfZ5xvE2nK/R9JprtToA61OSHWIg==",
+      "path": "system.globalization/4.3.0",
+      "hashPath": "system.globalization.4.3.0.nupkg.sha512"
+    },
+    "System.IO/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3qjaHvxQPDpSOYICjUoTsmoq5u6QJAFRUITgeT/4gqkF1bajbSmb1kwSxEA8AHlofqgcKJcM8udgieRNhaJ5Cg==",
+      "path": "system.io/4.3.0",
+      "hashPath": "system.io.4.3.0.nupkg.sha512"
+    },
+    "System.Memory/4.5.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
+      "path": "system.memory/4.5.4",
+      "hashPath": "system.memory.4.5.4.nupkg.sha512"
+    },
+    "System.Net.Http.WinHttpHandler/6.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zdSpn2+EPBEXmsopvUjkpvbXNN53dqL7BifCKBJ5M+A/P3JEiCL/guuPwuiazu+RzCuEX/NJLnoXhllaf3vBxg==",
+      "path": "system.net.http.winhttphandler/6.0.1",
+      "hashPath": "system.net.http.winhttphandler.6.0.1.nupkg.sha512"
+    },
+    "System.Numerics.Vectors/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
+      "path": "system.numerics.vectors/4.5.0",
+      "hashPath": "system.numerics.vectors.4.5.0.nupkg.sha512"
+    },
+    "System.ObjectModel/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bdX+80eKv9bN6K4N+d77OankKHGn6CH711a6fcOpMQu2Fckp/Ft4L/kW9WznHpyR0NRAvJutzOMHNNlBGvxQzQ==",
+      "path": "system.objectmodel/4.3.0",
+      "hashPath": "system.objectmodel.4.3.0.nupkg.sha512"
+    },
+    "System.Private.ServiceModel/4.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-d3RjkrtpjUQ63PzFmm/SZ4aOXeJNP+8YW5QeP0lCJy8iX4xlHdlNLWTF9sRn9SmrFTK757kQXT9Op/R4l858uw==",
+      "path": "system.private.servicemodel/4.9.0",
+      "hashPath": "system.private.servicemodel.4.9.0.nupkg.sha512"
+    },
+    "System.Private.Uri/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-I4SwANiUGho1esj4V4oSlPllXjzCZDE+5XXso2P03LW2vOda2Enzh8DWOxwN6hnrJyp314c7KuVu31QYhRzOGg==",
+      "path": "system.private.uri/4.3.0",
+      "hashPath": "system.private.uri.4.3.0.nupkg.sha512"
+    },
+    "System.Reactive/4.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mPLRPf2tql0Af4RcJRVPWiGxhJCbPQFNr74Qq0rDf+QXt8KV/SzYl9/NK604zf0s8Yu3hwelmCsDCjqp5SJoJA==",
+      "path": "system.reactive/4.1.6",
+      "hashPath": "system.reactive.4.1.6.nupkg.sha512"
+    },
+    "System.Reflection/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KMiAFoW7MfJGa9nDFNcfu+FpEdiHpWgTcS2HdMpDvt9saK3y/G4GwprPyzqjFH9NTaGPQeWNHU+iDlDILj96aQ==",
+      "path": "system.reflection/4.3.0",
+      "hashPath": "system.reflection.4.3.0.nupkg.sha512"
+    },
+    "System.Reflection.DispatchProxy/4.7.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-C1sMLwIG6ILQ2bmOT4gh62V6oJlyF4BlHcVMrOoor49p0Ji2tA8QAoqyMcIhAdH6OHKJ8m7BU+r4LK2CUEOKqw==",
+      "path": "system.reflection.dispatchproxy/4.7.1",
+      "hashPath": "system.reflection.dispatchproxy.4.7.1.nupkg.sha512"
+    },
+    "System.Reflection.Primitives/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5RXItQz5As4xN2/YUDxdpsEkMhvw3e6aNveFXUn4Hl/udNTCNhnKp8lT9fnc3MhvGKh1baak5CovpuQUXHAlIA==",
+      "path": "system.reflection.primitives/4.3.0",
+      "hashPath": "system.reflection.primitives.4.3.0.nupkg.sha512"
+    },
+    "System.Resources.Extensions/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pBnVzNQYd0OHqh0VLu/hi0zFOTtyF8QwtziQBmzX/ZtVOea4+JEVOGu29DHeSOA0a9SFrYjQorBrOLuKLhcMNQ==",
+      "path": "system.resources.extensions/6.0.0",
+      "hashPath": "system.resources.extensions.6.0.0.nupkg.sha512"
+    },
+    "System.Resources.ResourceManager/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/zrcPkkWdZmI4F92gL/TPumP98AVDu/Wxr3CSJGQQ+XN6wbRZcyfSKVoPo17ilb3iOr0cCRqJInGwNMolqhS8A==",
+      "path": "system.resources.resourcemanager/4.3.0",
+      "hashPath": "system.resources.resourcemanager.4.3.0.nupkg.sha512"
+    },
+    "System.Runtime/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JufQi0vPQ0xGnAczR13AUFglDyVYt4Kqnz1AZaiKZ5+GICq0/1MH/mO/eAJHt/mHW1zjKBJd7kV26SrxddAhiw==",
+      "path": "system.runtime/4.3.0",
+      "hashPath": "system.runtime.4.3.0.nupkg.sha512"
+    },
+    "System.Runtime.CompilerServices.Unsafe/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
+      "path": "system.runtime.compilerservices.unsafe/6.0.0",
+      "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    },
+    "System.Runtime.InteropServices.WindowsRuntime/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-J4GUi3xZQLUBasNwZnjrffN8i5wpHrBtZoLG+OhRyGo/+YunMRWWtwoMDlUAIdmX0uRfpHIBDSV6zyr3yf00TA==",
+      "path": "system.runtime.interopservices.windowsruntime/4.3.0",
+      "hashPath": "system.runtime.interopservices.windowsruntime.4.3.0.nupkg.sha512"
+    },
+    "System.Security.AccessControl/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AUADIc0LIEQe7MzC+I0cl0rAT8RrTAKFHl53yHjEUzNVIaUlhFY11vc2ebiVJzVBuOzun6F7FBA+8KAbGTTedQ==",
+      "path": "system.security.accesscontrol/6.0.0",
+      "hashPath": "system.security.accesscontrol.6.0.0.nupkg.sha512"
+    },
+    "System.Security.Cryptography.Cng/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jIMXsKn94T9JY7PvPq/tMfqa6GAaHpElRDpmG+SuL+D3+sTw2M8VhnibKnN8Tq+4JqbPJ/f+BwtLeDMEnzAvRg==",
+      "path": "system.security.cryptography.cng/5.0.0",
+      "hashPath": "system.security.cryptography.cng.5.0.0.nupkg.sha512"
+    },
+    "System.Security.Cryptography.Pkcs/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9TPLGjBCGKmNvG8pjwPeuYy0SMVmGZRwlTZvyPHDbYv/DRkoeumJdfumaaDNQzVGMEmbWtg07zUpSW9q70IlDQ==",
+      "path": "system.security.cryptography.pkcs/5.0.0",
+      "hashPath": "system.security.cryptography.pkcs.5.0.0.nupkg.sha512"
+    },
+    "System.Security.Cryptography.ProtectedData/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rp1gMNEZpvx9vP0JW0oHLxlf8oSiQgtno77Y4PLUBjSiDYoD77Y8uXHr1Ea5XG4/pIKhqAdxZ8v8OTUtqo9PeQ==",
+      "path": "system.security.cryptography.protecteddata/6.0.0",
+      "hashPath": "system.security.cryptography.protecteddata.6.0.0.nupkg.sha512"
+    },
+    "System.Security.Cryptography.Xml/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MYmkHtCW+paFmPGFDktnLdOeH3zUrNchbZNki87E1ejNSMm9enSRbJokmvFrsWUrDE4bRE1lVeAle01+t6SGhA==",
+      "path": "system.security.cryptography.xml/5.0.0",
+      "hashPath": "system.security.cryptography.xml.5.0.0.nupkg.sha512"
+    },
+    "System.Security.Permissions/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-T/uuc7AklkDoxmcJ7LGkyX1CcSviZuLCa4jg3PekfJ7SU0niF0IVTXwUiNVP9DSpzou2PpxJ+eNY2IfDM90ZCg==",
+      "path": "system.security.permissions/6.0.0",
+      "hashPath": "system.security.permissions.6.0.0.nupkg.sha512"
+    },
+    "System.Security.Principal.Windows/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-t0MGLukB5WAVU9bO3MGzvlGnyJPgUlcwerXn1kzBRjwLKixT96XV0Uza41W49gVd8zEMFu9vQEFlv0IOrytICA==",
+      "path": "system.security.principal.windows/5.0.0",
+      "hashPath": "system.security.principal.windows.5.0.0.nupkg.sha512"
+    },
+    "System.ServiceModel.Duplex/4.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Yb8MFiJxBBtm2JnfS/5SxYzm2HqkEmHu5xeaVIHXy83sNpty9wc30JifH2xgda821D6nr1UctbwbdZqN4LBUKQ==",
+      "path": "system.servicemodel.duplex/4.9.0",
+      "hashPath": "system.servicemodel.duplex.4.9.0.nupkg.sha512"
+    },
+    "System.ServiceModel.Http/4.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Z+s3RkLNzJ31fDXAjqXdXp67FqsNG4V3Md3r7FOrzMkHmg61gY8faEfTFPBLxU9tax1HPWt6IHVAquXBKySJaw==",
+      "path": "system.servicemodel.http/4.9.0",
+      "hashPath": "system.servicemodel.http.4.9.0.nupkg.sha512"
+    },
+    "System.ServiceModel.NetTcp/4.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nXgnnkrZERUF/KwmoLwZPkc7fqgiq94DXkmUZBvDNh/LdZquDvjy2NbhJLElpApOa5x8zEoQoBZyJ2PqNC39qg==",
+      "path": "system.servicemodel.nettcp/4.9.0",
+      "hashPath": "system.servicemodel.nettcp.4.9.0.nupkg.sha512"
+    },
+    "System.ServiceModel.Primitives/4.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LTFPVdS8Nf76xg/wRZkDa+2Q+GnjTOmwkTlwuoetwX37mAfYnGkf7p8ydhpDwVmomNljpUOhUUGxfjQyd5YcOg==",
+      "path": "system.servicemodel.primitives/4.9.0",
+      "hashPath": "system.servicemodel.primitives.4.9.0.nupkg.sha512"
+    },
+    "System.ServiceModel.Security/4.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iurpbSmPgotHps94VQ6acvL6hU2gjiuBmQI7PwLLN76jsbSpUcahT0PglccKIAwoMujATk/LWtAapBHpwCFn2g==",
+      "path": "system.servicemodel.security/4.9.0",
+      "hashPath": "system.servicemodel.security.4.9.0.nupkg.sha512"
+    },
+    "System.Spatial/5.8.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GHbPKObZGapgk977k/pOUHRJg/2jVHokFdlVIOB/zB7UZMQvgsmWvt6iogslL2kCGlcPZUs9D6QwMKPkGKI++Q==",
+      "path": "system.spatial/5.8.5",
+      "hashPath": "system.spatial.5.8.5.nupkg.sha512"
+    },
+    "System.Text.Encoding/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BiIg+KWaSDOITze6jGQynxg64naAPtqGHBwDrLaCtixsa5bKiR8dpPOHA7ge3C0JJQizJE+sfkz1wV+BAKAYZw==",
+      "path": "system.text.encoding/4.3.0",
+      "hashPath": "system.text.encoding.4.3.0.nupkg.sha512"
+    },
+    "System.Text.Encoding.CodePages/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZFCILZuOvtKPauZ/j/swhvw68ZRi9ATCfvGbk1QfydmcXBkIWecWKn/250UH7rahZ5OoDBaiAudJtPvLwzw85A==",
+      "path": "system.text.encoding.codepages/6.0.0",
+      "hashPath": "system.text.encoding.codepages.6.0.0.nupkg.sha512"
+    },
+    "System.Text.Encodings.Web/5.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KmJ+CJXizDofbq6mpqDoRRLcxgOd2z9X3XoFNULSbvbqVRZkFX3istvr+MUjL6Zw1RT+RNdoI4GYidIINtgvqQ==",
+      "path": "system.text.encodings.web/5.0.1",
+      "hashPath": "system.text.encodings.web.5.0.1.nupkg.sha512"
+    },
+    "System.Text.Json/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4F8Xe+JIkVoDJ8hDAZ7HqLkjctN/6WItJIzQaifBwClC7wmoLSda/Sv2i6i1kycqDb3hWF4JCVbpAweyOKHEUA==",
+      "path": "system.text.json/4.6.0",
+      "hashPath": "system.text.json.4.6.0.nupkg.sha512"
+    },
+    "System.Threading/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VkUS0kOBcUf3Wwm0TSbrevDDZ6BlM+b/HRiapRFWjM5O0NS0LviG0glKmFK+hhPDd1XFeSdU1GmlLhb2CoVpIw==",
+      "path": "system.threading/4.3.0",
+      "hashPath": "system.threading.4.3.0.nupkg.sha512"
+    },
+    "System.Threading.Tasks/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LbSxKEdOUhVe8BezB/9uOGGppt+nZf6e1VFyw6v3DN6lqitm0OSn2uXMOdtP0M3W4iMcqcivm2J6UgqiwwnXiA==",
+      "path": "system.threading.tasks/4.3.0",
+      "hashPath": "system.threading.tasks.4.3.0.nupkg.sha512"
+    },
+    "System.Threading.Tasks.Extensions/4.5.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BG/TNxDFv0svAzx8OiMXDlsHfGw623BZ8tCXw4YLhDFDvDhNUEV58jKYMGRnkbJNm7c3JNNJDiN7JBMzxRBR2w==",
+      "path": "system.threading.tasks.extensions/4.5.2",
+      "hashPath": "system.threading.tasks.extensions.4.5.2.nupkg.sha512"
+    },
+    "System.Web.Services.Description/4.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-d20B3upsWddwSG5xF3eQLs0cAV3tXDsBNqP4kh02ylfgZwqfpf4f/9KiZVIGIoxULt2cKqxWs+U4AdNAJ7L8cQ==",
+      "path": "system.web.services.description/4.9.0",
+      "hashPath": "system.web.services.description.4.9.0.nupkg.sha512"
+    },
+    "System.Windows.Extensions/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
+      "path": "system.windows.extensions/6.0.0",
+      "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
+    },
+    "YamlDotNet/11.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tBt8K+korVfrjH9wyDEhiLKxbs8qoLCLIFwvYgkSUuMC9//w3z0cFQ8LQAI/5MCKq+BMil0cfRTRvPeE7eXhQw==",
+      "path": "yamldotnet/11.2.1",
+      "hashPath": "yamldotnet.11.2.1.nupkg.sha512"
+    },
+    "ZXing.Net/0.16.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gmZxO4vRcqkdLhERYpzP3GK3T2bosoNqqIAf9kv+ipsB2ASpICK4YsAR0cfI6PDgC/HFGowJx3kHj8oyEN4R+w==",
+      "path": "zxing.net/0.16.7",
+      "hashPath": "zxing.net.0.16.7.nupkg.sha512"
+    },
+    "ZXing.Net.Bindings.Eto.Forms/0.16.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MXciDQMaeOvKJSNH6SZNcRBCWBBELGaYr9yplRA7MVRD0i/MOYDjOp2MMGkk1BZidwjEEvhjzmkU7WZizz+keg==",
+      "path": "zxing.net.bindings.eto.forms/0.16.3",
+      "hashPath": "zxing.net.bindings.eto.forms.0.16.3.nupkg.sha512"
+    },
+    "Mendix.BusinessEvents.MendixBuildExtension/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.CommandLine.Shared/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Common/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.Analytics/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.BusinessEvents/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.CodeActions/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.Core/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.DatabaseConnector/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.DataBroker/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.DataHubConnector/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.DataStorage/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.Deployment/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.DocumentTemplates/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.ExcelDataImporter/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.ExtensionLoader/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.Integration/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.JavaActions/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.JavaScriptActions/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.Microflows/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.MxAssist.MLKit/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.MxAssist.PerformanceBot/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.MxAssist.PerformanceBot.Interfaces/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.MxAssist.PerformanceBot.Serialization/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.Packages/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.ProjectHandling/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.ProtectedModules/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.SprintrConnector/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.Storage/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.Texts/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.Utility/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.WebUI/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.WebUI.Atlas/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.WebUI.Export/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.WebUI.JSEngine/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.WebUI.MicroflowAnalyzer/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.Workflows/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.ModelSDK/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "mx/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "mxutil/9.24.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.StudioPro.ExtensionsAPI.Reference/9.24.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.Utility.Network.Reference/9.24.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.Theming.Reference/9.24.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.Integration.DataContract.Reference/9.24.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.DataHub.Reference/9.24.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.CodeGeneration.Reference/9.24.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.Analytics.DPA.Reference/9.24.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.Core.VersionControl.Reference/9.24.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.MergeLib.Reference/9.24.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.Controls.Reference/9.24.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.M2EEConnector.Reference/9.24.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.AppStoreConnector.Reference/9.24.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.Theming.Legacy.Reference/9.24.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.CloudConnector.Reference/9.24.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.VersionControl.Reference/9.24.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.Packages.Metadata.Reference/9.24.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Shared.CustomWidgets.Reference/9.24.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mendix.Modeler.DiffLib.Reference/9.24.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  },
+  "runtimes": {
+    "win10-x64": [
+      "win10",
+      "win81-x64",
+      "win81",
+      "win8-x64",
+      "win8",
+      "win7-x64",
+      "win7",
+      "win-x64",
+      "win",
+      "any",
+      "base"
+    ],
+    "win10-x64-aot": [
+      "win10-aot",
+      "win10-x64",
+      "win10",
+      "win81-x64-aot",
+      "win81-aot",
+      "win81-x64",
+      "win81",
+      "win8-x64-aot",
+      "win8-aot",
+      "win8-x64",
+      "win8",
+      "win7-x64-aot",
+      "win7-aot",
+      "win7-x64",
+      "win7",
+      "win-x64-aot",
+      "win-aot",
+      "win-x64",
+      "win",
+      "aot",
+      "any",
+      "base"
+    ]
+  }
+}

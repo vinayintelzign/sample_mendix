@@ -1,0 +1,13 @@
+{
+	"RunDir": "run",
+	"CompileTargetDir": "run/bin",
+	"CompileLibs": [
+		"runtime/bundles/com.mendix.json.jar",
+		"runtime/bundles/com.mendix.logging-api.jar",
+		"runtime/bundles/com.mendix.m2ee-api.jar",
+		"runtime/bundles/com.mendix.public-api.jar",
+		"runtime/bundles/javax.servlet.servlet-api.jar",
+		"runtime/bundles/javax.websocket.websocket-api.jar"
+	],
+	"ProjectBundlesDir": "model/bundles",
+}

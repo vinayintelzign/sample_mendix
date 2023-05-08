@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "dependencies": {
+    "types-registry": "^0.1.565"
+  },
+  "devDependencies": {
+    "@types/react-native": "~0.64.10",
+    "@types/big.js": "^6.0.0"
+  }
+}

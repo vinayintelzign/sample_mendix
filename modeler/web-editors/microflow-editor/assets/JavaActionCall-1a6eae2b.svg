@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>9F11D51E-6950-4F29-B57F-C71E2CC87765</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M10,0 C4.47654802,0 0,4.47654802 0,10 C0,15.523452 4.47654802,20 10,20 C15.5229009,20 20,15.5231698 20,10 C20,4.47683022 15.5229009,0 10,0 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="20" height="20" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Microflow-Rendering-Copy" transform="translate(-912.000000, -739.000000)" stroke="#0595DB">
+            <g id="Activities" transform="translate(446.000000, 50.000000)">
+                <g id="Variable-activities" transform="translate(1.000000, 598.000000)">
+                    <g id="Java-Action-Call" transform="translate(445.000000, 71.000000)">
+                        <g id="icon-copy-5" transform="translate(20.000000, 20.000000)">
+                            <g id="Entity-icons">
+                                <use id="Stroke-2175" mask="url(#mask-2)" stroke-width="2" fill="#FFFFFF" xlink:href="#path-1"></use>
+                                <g id="Group-1054" transform="translate(5.000000, 6.000000)" stroke-width="0.5" stroke-linejoin="round">
+                                    <path d="M8.75,0.25 L8.75,7.75 C8.75,8.85 7.85,9.75 6.75,9.75 L2.25,9.75 C1.15,9.75 0.25,8.85 0.25,7.75 L0.25,0.25" id="Stroke-673" stroke-linecap="round"></path>
+                                    <path d="M8.75,1.5 C10.407,1.5 11.75,2.8435 11.75,4.5 C11.75,6.1565 10.407,7.5 8.75,7.5" id="Stroke-674"></path>
+                                    <path d="M0.25,0.25 L8.75,0.25" id="Stroke-675" stroke-linecap="round"></path>
+                                    <path d="M8.75,2.75 C9.7165,2.75 10.5,3.533 10.5,4.5 C10.5,5.4665 9.7165,6.25 8.75,6.25" id="Stroke-676"></path>
+                                    <path d="M1.75,2 L1.75,7.5" id="Stroke-677" stroke-linecap="round"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

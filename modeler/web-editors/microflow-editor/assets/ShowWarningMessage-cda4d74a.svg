@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="22px" viewBox="0 0 24 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>BA0734E4-F763-4B6A-992D-48B7F045F8CC</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <ellipse id="path-1" cx="9.6" cy="9.56521739" rx="9.6" ry="9.56521739"></ellipse>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="19.2" height="19.1304348" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Microflow-Rendering-Copy" transform="translate(-914.000000, -1235.000000)">
+            <g id="Activities" transform="translate(447.000000, 50.000000)">
+                <g id="Message-Activities" transform="translate(0.000000, 1084.000000)">
+                    <g id="Show-warning-message" transform="translate(447.000000, 81.000000)">
+                        <g id="Group-4-Copy-4" transform="translate(20.000000, 20.000000)">
+                            <g id="Pages-icon" stroke="#0595DB">
+                                <use id="Oval" mask="url(#mask-2)" stroke-width="2" fill="#FFFFFF" xlink:href="#path-1"></use>
+                                <g id="Stroke-342" transform="translate(5.000000, 6.000000)" stroke-width="0.5" stroke-linejoin="round">
+                                    <path d="M9.79166667,3.5744 C9.79166667,5.54849524 7.64666667,7.14849524 5,7.14849524 C4.40958333,7.14849524 3.84375,7.06887619 3.32125,6.92335238 L0.5675,8.09478095 L1.64583333,6.12678095 C0.75875,5.47801905 0.208333333,4.5744 0.208333333,3.5744 C0.208333333,1.60030476 2.35333333,-7.61904764e-05 5,-7.61904764e-05 C7.64666667,-7.61904764e-05 9.79166667,1.60030476 9.79166667,3.5744 L9.79166667,3.5744 Z"></path>
+                                </g>
+                            </g>
+                            <g id="close" transform="translate(11.000000, 9.000000)">
+                                <path d="M6.5,0 C2.916,0 0,2.915 0,6.5 C0,10.084 2.916,13 6.5,13 C10.084,13 13,10.084 13,6.5 C13,2.915 10.084,0 6.5,0 L6.5,0 Z" id="Fill-4818" fill="#FFA24E"></path>
+                                <g id="Stroke-4038-+-Fill-4039-+-Stroke-4040" transform="translate(5.000000, 3.000000)" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1.5,5 L1.5,0" id="Stroke-4038"></path>
+                                    <path d="M1.5,7.5 L1.5,7" id="Stroke-4038"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

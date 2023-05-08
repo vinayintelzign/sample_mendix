@@ -1,0 +1,2575 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Mendix.StudioPro.ExtensionsAPI</name>
+    </assembly>
+    <members>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Build.BuildExtension">
+            <summary>
+            Base class for an extension that performs some operations during app build.
+            </summary>
+            <remarks>Build extensions are loaded in Studio Pro and MxBuild and hence must not use any gui-specific APIs, like <see cref="N:Mendix.StudioPro.ExtensionsAPI.UI"/>.</remarks>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Build.BuildExtension.ProcessModelBeforeBuild(Mendix.StudioPro.ExtensionsAPI.Model.IModel)">
+            <summary>
+            Can be overriden in a derived class to modify the <paramref name="model"/> before it is deployed.
+            </summary>
+            <remarks>
+            <see cref="M:Mendix.StudioPro.ExtensionsAPI.Build.BuildExtension.ProcessModelBeforeBuild(Mendix.StudioPro.ExtensionsAPI.Model.IModel)"/> is triggered before any other build operation. Note that any changes you do to <paramref name="model"/> will be
+            visible to the subsequent deployment step, but will not be visible to the Studio Pro user nor will it be saved on disk.
+            </remarks>
+            <param name="model">
+            Build-only representation of the app model. Any change done to this representation are scoped to the deployment process and are not saved to disk or visible
+            to the Studio Pro user.
+            </param>
+            <returns>
+            Optionally, returns an object representing a build state. It will be passed to subsequent hooks. Empty object by default.
+            </returns>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Build.BuildExtension.PostProcessGenerationResult(Mendix.StudioPro.ExtensionsAPI.Model.IModel,System.Object)">
+            <summary>
+            Can be overriden in a derived class to modify the result of an app deployment.
+            </summary>
+            <remarks>
+            <see cref="M:Mendix.StudioPro.ExtensionsAPI.Build.BuildExtension.PostProcessGenerationResult(Mendix.StudioPro.ExtensionsAPI.Model.IModel,System.Object)"/> is invoked after <c>deployment</c> folder was created and filled, but before invoking compilers (e.g. Java compiler,
+            ReactNative bundler) that process any files generated on previous steps.
+            </remarks>
+            <param name="model">
+            Build-only representation of the app model. Any changes done to this representation at this point have no effect.
+            </param>
+            <param name="buildState">
+            Build state returned by <see cref="M:Mendix.StudioPro.ExtensionsAPI.Build.BuildExtension.ProcessModelBeforeBuild(Mendix.StudioPro.ExtensionsAPI.Model.IModel)"/>. Empty object by default.
+            </param>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Configuration">
+            <summary>
+            Global Studio Pro configuration that can depend on environment or user-defined settings.
+            </summary>
+            <remarks>
+            Configuration can be accessed in any extension from <see cref="P:Mendix.StudioPro.ExtensionsAPI.ExtensionBase.Configuration"/>, or can be obtained by having <see cref="T:Mendix.StudioPro.ExtensionsAPI.Services.IConfigurationService"/> injected into your class.
+            </remarks>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.Configuration.TargetServices">
+            <summary>
+            Versions of global services Studio Pro instance should use.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.Configuration.Theme">
+            <summary>
+            User interface theme currently in use.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.Configuration.ProxyCredentials">
+            <summary>
+            Credentials of user proxy.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.Configuration.MendixVersion">
+            <summary>
+            Version of Studio Pro in the semver v2 format <c>major.minor.patch</c>.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.Configuration.BuildTag">
+            <summary>
+            Tag uniquely identifying Studio Pro build.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.ServicesEnvironment">
+            <summary>
+            Represents a versions of global services accessed by Studio Pro.
+            </summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.ServicesEnvironment.None">
+            <summary>
+            Global services should not be used.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.ThemeSupport">
+            <summary>
+            Represents a user interface theme in Studio Pro.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.ConsistencyCheck.ConsistencyCheckExtension`1">
+             <summary>
+             Base class for an extension that introduces new <see href="https://docs.mendix.com/refguide/consistency-errors/">consistency errors (warnings)</see> for
+             specific model elements.
+             </summary>
+             <remarks>
+             Consistency check extensions are loaded in Studio Pro and MxBuild and hence must not use any gui-specific APIs, like <see cref="N:Mendix.StudioPro.ExtensionsAPI.UI"/>.
+            
+             Note that the consistency check process can be interrupted and restarted at any point. It also can also be split across multiple threads, or multiple check
+             processes can be ran simultaneously (on the same or different threads). Avoid holding any state in your <see cref="T:Mendix.StudioPro.ExtensionsAPI.ConsistencyCheck.ConsistencyCheckExtension`1"/>
+             implementation.
+            
+             Extension must be marked with <see cref="T:System.ComponentModel.Composition.ExportAttribute"/> as <c>[Export(typeof(ConsistencyCheckExtension&lt;&gt;))]</c>, otherwise it will not be loaded.
+             </remarks>
+             <example>
+             You can implement extension as following:
+             <code>
+             [Export(typeof(ConsistencyCheckExtension&lt;&gt;))]
+             public class MyExtension : ConsistencyCheckExtension&lt;IEntity&gt;
+             {
+                 public override IEnumerable&lt;ConsistencyError&gt; Check(IEntity entity, IModel model)
+                 {
+                     // returns any consistency errors for the entity
+                 }
+             }
+             </code>
+             </example>
+             <typeparam name="TCheckedStructure">Type of the <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.IStructure"/> to check.</typeparam>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.ConsistencyCheck.ConsistencyCheckExtension`1.Check(`0,Mendix.StudioPro.ExtensionsAPI.Model.IModel)">
+             <summary>
+             Should be overriden in a derived class to perform consistency checks for a <typeparamref name="TCheckedStructure">structure</typeparamref>.
+             </summary>
+             <remarks>
+             <see cref="M:Mendix.StudioPro.ExtensionsAPI.ConsistencyCheck.ConsistencyCheckExtension`1.Check(`0,Mendix.StudioPro.ExtensionsAPI.Model.IModel)"/> is invoked after Studio Pro starts up or after the app structure has changed.
+            
+             Studio Pro heavily optimizes the consistency check process by tracking what model elements <see cref="M:Mendix.StudioPro.ExtensionsAPI.ConsistencyCheck.ConsistencyCheckExtension`1.Check(`0,Mendix.StudioPro.ExtensionsAPI.Model.IModel)"/> method accesses, and re-running it only
+             when these elements change. Hence it is adviced to access as few model elements as possible in one <see cref="T:Mendix.StudioPro.ExtensionsAPI.ConsistencyCheck.ConsistencyCheckExtension`1"/>.
+            
+             Note that multiple consistency check can be ran in parallel and that one consistency check can be ran over multiple threads. Do not make any assumptions
+             about order of execution of <see cref="M:Mendix.StudioPro.ExtensionsAPI.ConsistencyCheck.ConsistencyCheckExtension`1.Check(`0,Mendix.StudioPro.ExtensionsAPI.Model.IModel)"/> and do not rely on state in <see cref="T:Mendix.StudioPro.ExtensionsAPI.ConsistencyCheck.ConsistencyCheckExtension`1"/>.
+             </remarks>
+             <param name="businessEventService">The <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.IStructure"/> to be checked for consistency by this method.</param>
+             <param name="model">Representation of the app model. Immutable.</param>
+             <returns>List of <see cref="T:Mendix.StudioPro.ExtensionsAPI.ConsistencyCheck.ConsistencyError"/> errors found in the <paramref name="businessEventService"/>.</returns>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.ConsistencyCheck.ConsistencyError">
+            <summary>
+            Represents consistency check errors in Studio Pro and MxBuild.
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.ConsistencyCheck.ConsistencyError.#ctor(System.String,Mendix.StudioPro.ExtensionsAPI.Model.IStructure,System.String,System.String,Mendix.StudioPro.ExtensionsAPI.ConsistencyCheck.Severity)">
+            <summary>
+            Construct new <see cref="T:Mendix.StudioPro.ExtensionsAPI.ConsistencyCheck.ConsistencyError"/>.
+            </summary>
+            <param name="message">The error message.</param>
+            <param name="errorSource">The specific structure causing the error.</param>
+            <param name="errorSourceDescription">
+            The description of the structure causing the error. Ignored for Core model structures, as description is inferred from <paramref name="errorSource"/>,
+            and hence can be left <c>null</c>.
+            </param>
+            <param name="errorSourceProperty">Description of <paramref name="errorSource"/>'s property causing the error, if any.</param>
+            <param name="severity">The severity of the failed check.</param>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.ConsistencyCheck.ConsistencyError.Message">
+            <summary>
+            The error message.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.ConsistencyCheck.ConsistencyError.ErrorSource">
+            <summary>
+            The specific element causing the error.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.ConsistencyCheck.ConsistencyError.ErrorSourceDescription">
+            <summary>
+            The description of the element causing the error. This property is ignored (so can be left <c>null</c>) if the source of the error is a Core model.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.ConsistencyCheck.ConsistencyError.ErrorSourceProperty">
+            <summary>
+            Description of <see cref="P:Mendix.StudioPro.ExtensionsAPI.ConsistencyCheck.ConsistencyError.ErrorSource"/>'s property causing the error, if any.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.ConsistencyCheck.ConsistencyError.Severity">
+            <summary>
+            The severity of the failed check. Could be Error, Warning, or Deprecation. It defaults to Error.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.ExtensionBase">
+            <summary>
+            Base class for all extensions. Do not inherit from this class directly, but use concrete extension points like <see cref="T:Mendix.StudioPro.ExtensionsAPI.ConsistencyCheck.ConsistencyCheckExtension`1"/>.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.ExtensionBase.Configuration">
+            <summary>
+            Current Studio Pro configuration.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Model.CanBeExtendedAttribute">
+            <summary>
+            Attribute indicating that a target interface represents an
+            <see href="https://docs.mendix.com/apidocs-mxsdk/mxsdk/understanding-the-metamodel#2-1-abstract-element-types">abstract element</see> or unit
+            that can be extended while creating your own custom metamodel element (or unit).
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.AssociationOwner">
+            <summary>
+            This property defines whether an <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.IAssociation">association</see> has one or two owners. If there is one owner, the owner is located at the start of the arrow.
+            </summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.AssociationOwner.Default">
+            <summary>
+            Only one entity is the owner (the parent).
+            </summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.AssociationOwner.Both">
+            <summary>
+            Both entities are owners.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.AssociationType">
+            <summary>
+            This property defines whether an <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.IAssociation">association</see> is a reference (single) or a reference set (plural).
+            </summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.AssociationType.Reference">
+            <summary>
+            An object of the <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.AssociationOwner">owner</see> entity refers to zero or one objects of the other entity.
+            </summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.AssociationType.ReferenceSet">
+            <summary>
+            An object of the <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.AssociationOwner">owner</see> entity refers to zero or more objects of the other entity.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.DeletingBehavior">
+            <summary>
+            The behavior which occurs when deleting one side of an <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.IAssociation">association</see>.
+            </summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.DeletingBehavior.DeleteMeAndReferences">
+            <summary>
+            It will delete the <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.IAssociation">association</see> and its references.
+            </summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.DeletingBehavior.DeleteMeButKeepReferences">
+            <summary>
+            It will delete the <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.IAssociation">association</see> and not its references.
+            </summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.DeletingBehavior.DeleteMeIfNoReferences">
+            <summary>
+            It will delete the <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.IAssociation">association</see> if it had no references.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.IAssociation.Name">
+            <summary>
+            The name of the association is used to refer to it from forms, microflows, XPath constraints, etcetera.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.IAssociation.DataStorageGuid">
+            <summary>
+            Gets the Data Storage GUID of this entity. This is the GUID that identifies this entity in the Mendix Runtime database.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.IAssociation.Documentation">
+            <summary>
+            The documentation of the association.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.IAssociation.Owner">
+            <summary>
+            The <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.AssociationOwner">owner</see> of the association.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.IAssociation.Type">
+            <summary>
+            The <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.AssociationType">type</see> of the association.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.IAssociation.ParentDeleteBehavior">
+            <summary>
+            The <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.DeletingBehavior">behavior</see> which occurs when deleting the parent association.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.IAssociation.ChildDeleteBehavior">
+            <summary>
+            The <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.DeletingBehavior">behavior</see> which occurs when deleting the child association.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.IAttribute.DataStorageGuid">
+            <summary>
+            Gets the Data Storage GUID of this attribute. This is the GUID that identifies this attribute in the Mendix Runtime database.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.IEntity.DataStorageGuid">
+            <summary>
+            Gets the Data Storage GUID of this entity. This is the GUID that identifies this entity in the Mendix Runtime database.
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.IEntity.AddAssociation(Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.IEntity)">
+            <summary>
+            Create an <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.IAssociation"></see> between this entity and another. This entity will be the parent.
+            </summary>
+            <param name="otherEntity">
+            The child entity of the association.
+            </param>
+            <returns>The new <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.IAssociation"></see> between this entity and the other entity.</returns>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Model.IAbstractUnit">
+            <summary>
+            Representation of a single <see href="https://docs.mendix.com/apidocs-mxsdk/mxsdk/understanding-the-metamodel#1-units">unit</see> in metamodel.
+            This is an abstract unit, so all instances of <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.IAbstractUnit"/> implement more concrete interface like <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.Projects.IFolder"/>.
+            </summary>
+            <seealso href="https://apidocs.rnd.mendix.com/modelsdk/latest/classes/abstractunit.html"/>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.Model.IAbstractUnit.Id">
+            <summary>
+            Unique identifier of the document. It does not change when a document is renamed or moved.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Model.IElement">
+            <summary>
+            Representation of a single <see href="https://docs.mendix.com/apidocs-mxsdk/mxsdk/understanding-the-metamodel#2-elements">element</see> in metamodel.
+            This is an abstract element, so all instances of <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.IElement"/> also implement more concrete interface like <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.Microflows.IMicroflow"/>.
+            </summary>
+            <seealso href="https://docs.mendix.com/apidocs-mxsdk/mxsdk/projects-metamodel#2-elements"/>
+            <seealso href="https://apidocs.rnd.mendix.com/modelsdk/latest/classes/element.html"/>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Model.IModel">
+            <summary>
+            Representation of Mendix app loaded in Studio Pro in terms of <see href="https://docs.mendix.com/apidocs-mxsdk/mxsdk/understanding-the-metamodel">Mendix Metamodel</see>.
+            </summary>
+            <remarks>
+            Interfaces used to expose an app in Studio Pro are aligned with the interfaces of <see href="https://docs.mendix.com/apidocs-mxsdk/mxsdk/">Mendix Platform SDK</see>,
+            so it can be handy to have its <see href="https://apidocs.rnd.mendix.com/modelsdk/latest/index.html">reference documentation</see> on hand.
+            </remarks>
+            <seealso href="https://docs.mendix.com/apidocs-mxsdk/mxsdk/"/>
+            <seealso href="https://apidocs.rnd.mendix.com/modelsdk/latest/classes/model.html"/>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.Model.IModel.Root">
+            <summary>
+            Returns the app's model content.
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Model.IModel.Create``1">
+            <summary>
+            Create a new model <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.IStructure">structure</see>.
+            </summary>
+            <typeparam name="T">Type of the structure to create. Abstract units and abstract elements are not supported.</typeparam>
+            <returns>Create a new model <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.IStructure">structure</see>.</returns>
+            <exception cref="T:System.ArgumentException"><typeparamref name="T"/> is not a type from <see cref="N:Mendix.StudioPro.ExtensionsAPI"/> assembly.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><typeparamref name="T"/> can not be created, for example because it is abstract.</exception>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Model.IModel.Copy``1(``0)">
+            <summary>
+            Create a model <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.IStructure">structure</see> by deep copying the given <paramref name="source"/>.
+            </summary>
+            <typeparam name="T">Type of the structure to copy.</typeparam>
+            <returns>Copy of the <paramref name="source"/>. It is not attached to a model.</returns>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Model.IModel.ToQualifiedName``1(System.String)">
+            <summary>
+            Create an object reference from its string representation.
+            </summary>
+            <remarks>
+            Note, that this method returns a value even when the object reference is invalid. That is when no object of type <typeparamref name="T"/> exists in the
+            app with the QualifiedName matching <paramref name="fullName"/>. In that case <see cref="M:Mendix.StudioPro.ExtensionsAPI.Model.IQualifiedName`1.Resolve"/> of the result would return
+            <c>null</c>.
+            </remarks>
+            <param name="fullName">String representation of <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.IQualifiedName`1"/>.</param>
+            <typeparam name="T">Type of object referenced by <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.IQualifiedName`1"/>.</typeparam>
+            <returns>
+            Created <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.IQualifiedName`1"/> which <see cref="P:Mendix.StudioPro.ExtensionsAPI.Model.IQualifiedName.FullName"/> equals <paramref name="fullName"/>. Note, that the reference might
+            be invalid, and hence its <see cref="M:Mendix.StudioPro.ExtensionsAPI.Model.IQualifiedName`1.Resolve"/> method might return <c>null</c>.
+            </returns>
+            <exception cref="T:System.ArgumentException"><typeparamref name="T"/> is not a type from <see cref="N:Mendix.StudioPro.ExtensionsAPI"/> assembly.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><typeparamref name="T"/> cannot be referenced.</exception>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Model.IModel.TryGetAbstractUnitById(System.String,Mendix.StudioPro.ExtensionsAPI.Model.IAbstractUnit@)">
+            <summary>
+            Get an IAbstractUnit by its unique identifier.
+            </summary>
+            <param name="abstractUnitId">
+            Unique identifier of the abstractUnit
+            </param>
+            <param name="abstractUnit">
+            Contains the retrieved IAbstractUnit if it is found, otherwise null.
+            </param>
+            <returns>True if the abstractUnit was retrieved, false if the abstractUnit could not be found.</returns>
+            <exception cref="T:System.ArgumentException"><paramref name="abstractUnitId"/> is null or empty or invalid.</exception>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Model.IModel.StartTransaction(System.String)">
+             <summary>
+             Create a transaction to wrap multiple model modifications together.
+             </summary>
+             <param name="description">
+             Description of the operation performed on the model. This description is visible to Studio Pro user in Edit -> Undo menu.
+             </param>
+             <returns><see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.ITransaction"/> representing the transaction.</returns>
+             <exception cref="T:System.ArgumentNullException"><paramref name="description"/> is null or empty.</exception>
+             <exception cref="T:System.InvalidOperationException">Another transaction is already running.</exception>
+             <remarks>
+             Any modification to the model must be done within a transaction otherwise a <see cref="T:System.InvalidOperationException"/> is thrown. There can be only a
+             single active (i.e. not committed or rolled back) <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.ITransaction"/> for the whole app.
+            
+             Transactions do not provide a way to isolate changes, but to group them. That is, any change to a model is immediately visible to all code working
+             with the model. When transaction is rolled back programmatically or is undone by a user, all changes included in it are reverted.
+             </remarks>
+             <example>
+             The most common use case for changing an app is to change one or few properties synchronously. Then we advice the following construct:
+             <code>
+             using (var transaction = model.StartTransaction("rename folder"))
+             {
+                 folder.Name = "New_Name";
+                 transaction.Commit();
+             }
+             </code>
+             </example>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Model.IQualifiedName`1">
+            <summary>
+            Represents a <see href="https://docs.mendix.com/apidocs-mxsdk/mxsdk/understanding-the-metamodel#3-1-references">by-name reference</see> to an object
+            (element or unit) or type <typeparamref name="T"/>  in metamodel. The reference can be resolved to retrieve the object it is referencing.
+            </summary>
+            <remarks>
+            Apps can contain invalid references, for example references to objects removed from the app. Such references are called invalid and they cannot
+            be resolved even if an object they point to still exists in Studio Pro's memory.
+            </remarks>
+            <typeparam name="T">Type of the referenced object.</typeparam>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Model.IQualifiedName`1.Resolve">
+            <summary>
+            Retrieve the referenced object.
+            </summary>
+            <returns>The referenced object, if reference is valid. Null otherwise.</returns>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Model.IQualifiedName">
+            <summary>
+            Represents a <see href="https://docs.mendix.com/apidocs-mxsdk/mxsdk/understanding-the-metamodel#3-1-references">by-name reference</see> to an object
+            (element or unit) in metamodel. The type of the referenced object is not statically known.
+            </summary>
+            <remarks>
+            Apps can contain invalid references, for example references to objects removed from the app. Such references are called invalid and they cannot
+            be resolved even if an object they point to still exists in Studio Pro's memory.
+            </remarks>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.Model.IQualifiedName.Name">
+            <summary>
+            Name of the referenced object. For example <c>MyHomePage</c>.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.Model.IQualifiedName.FullName">
+            <summary>
+            Fully qualified name of the referenced object. For example <c>MyFirstModule.MyHomePage</c>.
+            </summary>
+            <remarks><see cref="P:Mendix.StudioPro.ExtensionsAPI.Model.IQualifiedName.FullName"/> is globally unique.</remarks>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Model.IStructure">
+            <summary>
+            Representation of a single <see href="https://docs.mendix.com/apidocs-mxsdk/mxsdk/understanding-the-metamodel#1-units">unit</see> or <see href="https://docs.mendix.com/apidocs-mxsdk/mxsdk/understanding-the-metamodel#2-elements">element</see> in metamodel.
+            All instances of <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.IAbstractUnit"/> and <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.IElement"/> implement this interface.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Model.ITransaction">
+             <summary>
+             Transaction grouping the changes in the app model.
+             </summary>
+             <remarks>
+             Transactions provide a way to group changes together and to give a user-friendly name for these changes (visible in Edit -> Undo menu). Transactions
+             must be committed or rolled back where the latter one can be achieved by explicitly calling <see cref="M:Mendix.StudioPro.ExtensionsAPI.Model.ITransaction.Rollback"/> or by implicit call to
+             <see cref="M:System.IDisposable.Dispose"/> e.g. due to an exception being thrown. Committed transaction can later be reverted by a user using undo.
+            
+             Changes done within a transaction are not isolated, that is other parts of Studio Pro code, including editors, react to them even before
+             <see cref="M:Mendix.StudioPro.ExtensionsAPI.Model.ITransaction.Commit"/> is called. It is not recommended to have transactions active while a user can interact with Studio Pro screens different from the
+             one you control.
+             </remarks>
+             <example>
+             Transactions can be created using <see cref="M:Mendix.StudioPro.ExtensionsAPI.Model.IModel.StartTransaction(System.String)"/>.
+             </example>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Model.ITransaction.Commit">
+            <summary>
+            Commit the transaction. That indicates that an atomic set of changes is completed and: saves all affected documents that are not currently being
+            edited by a user; adds an undo item for the documents that are edited.
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Model.ITransaction.Rollback">
+            <summary>
+            Roll back the transaction. That is, undo all changes done during it.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Model.MicroflowExpressions.IMicroflowExpression">
+            <summary>
+            Represents a microflow expression like "$employee/Name".
+            </summary>
+            <remarks>
+            This type is read-only. To create new <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.MicroflowExpressions.IMicroflowExpression"/> use <see cref="M:Mendix.StudioPro.ExtensionsAPI.Services.IMicroflowExpressionService.CreateFromString(System.String)"/>.
+            </remarks>
+            <see href="https://docs.mendix.com/studio/expressions"/>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.Model.MicroflowExpressions.IMicroflowExpression.Text">
+            <summary>
+            Returns the string representation of the expression.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Model.Microflows.IMicroflow">
+            <summary>
+            Representation of a single <see href="https://docs.mendix.com/apidocs-mxsdk/mxsdk/microflows-metamodel">microflow</see> in a metamodel.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Model.ModelClassAttribute">
+            <summary>
+            Attribute indicating that a target interface represents a custom metamodel
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Model.Projects.IDocument">
+            <summary>
+            Representation of a single <see href="https://docs.mendix.com/apidocs-mxsdk/mxsdk/projects-metamodel#2-2-documents">document</see> in metamodel.
+            This is an abstract unit, so all instances of <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.Projects.IDocument"/> also implement more concrete interface like <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.Microflows.IMicroflow"/>.
+            </summary>
+            <remarks>Note that a document can be marked as <see cref="P:Mendix.StudioPro.ExtensionsAPI.Model.Projects.IDocument.Excluded"/>. Such documents should be ignored for the majority of operations.</remarks>
+            <seealso href="https://docs.mendix.com/apidocs-mxsdk/mxsdk/projects-metamodel#2-2-documents"/>
+            <seealso href="https://apidocs.rnd.mendix.com/modelsdk/latest/classes/projects.document.html"/>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.Model.Projects.IDocument.Name">
+            <summary>
+            Name of the document.
+            </summary>
+            <remarks>Note that changing a name of the document renames it. That is, all by-name reference to that document are updated.</remarks>
+            <exception cref="T:System.ArgumentException">New value is not valid for this document type or is not unique.</exception>
+            <exception cref="T:System.InvalidOperationException">Value is changed when not inside a <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.ITransaction"/>.</exception>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.Model.Projects.IFolder.Name">
+            <summary>
+            Name of the document.
+            </summary>
+            <exception cref="T:System.ArgumentException">New value is not valid for this document type or is not unique.</exception>
+            <exception cref="T:System.InvalidOperationException">Value is changed when not inside a <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.ITransaction"/>.</exception>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Model.Projects.IModule">
+            <summary>
+            Representation of a single <see href="https://docs.mendix.com/apidocs-mxsdk/mxsdk/projects-metamodel#2-modules">module</see> in metamodel.
+            </summary>
+            <seealso href="https://docs.mendix.com/apidocs-mxsdk/mxsdk/projects-metamodel#2-modules"/>
+            <seealso href="https://apidocs.rnd.mendix.com/modelsdk/latest/classes/projects.module.html"/>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.Model.Projects.IModule.QualifiedName">
+            <summary>
+            <see href="https://docs.mendix.com/apidocs-mxsdk/mxsdk/understanding-the-metamodel#3-1-references">By-name reference</see> to the module.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.Model.Projects.IModule.Name">
+            <summary>
+            Name of the module.
+            </summary>
+            <remarks>
+            Note that changing a name of the module renames it. That is, all by-name reference to that module or documents inside it are updated.
+            </remarks>
+            <exception cref="T:System.ArgumentException">New value is not valid for this document type or is not unique.</exception>
+            <exception cref="T:System.InvalidOperationException">Value is changed when not inside a <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.ITransaction"/>.</exception>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Model.Projects.IProject">
+            <summary>
+            Representation of a whole <see href="https://docs.mendix.com/apidocs-mxsdk/mxsdk/projects-metamodel">app</see> in metamodel.
+            </summary>
+            <seealso href="https://docs.mendix.com/apidocs-mxsdk/mxsdk/projects-metamodel"/>
+            <seealso href="https://apidocs.rnd.mendix.com/modelsdk/latest/classes/projects.project.html"/>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.Model.Projects.IProject.Name">
+            <summary>
+            Display name of the app.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.Model.Projects.IProject.DirectoryPath">
+            <summary>
+            Full path to app location on the file system.
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Model.Projects.IProject.GetModules">
+            <summary>
+            Returns the <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.Projects.IModule"/>s contained by the app model at this moment.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Model.Projects.IProject.GetProjectDocuments">
+            <summary>
+            Returns the <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.Projects.IProjectDocument"/>s contained by the app model at this moment. That includes <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.Settings.IProjectSettings"/>.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Model.Texts.IText">
+             <summary>
+             Represents a translatable text in a Mendix app.
+            
+             Translatable texts are mainly used in user-facing places in the app, for example on Pages and in Microflows where the end-user of the app will see the text.
+             </summary>
+             <remarks>
+             A translatable text contains a list of translations, which map from a language code, representing the language of the translation, to the actual text.
+             There can be duplicate translations for a particular language code, but this will lead to a consistency error in the model.
+             The methods of this class try to prevent creating duplicate translations.
+             </remarks>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Model.Texts.IText.GetTranslations">
+            <summary>
+            Gets the list of translations for this translatable text.
+            </summary>
+            <returns>A read-only list of <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.Texts.ITranslation"/> instances.</returns>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Model.Texts.IText.AddOrUpdateTranslation(System.String,System.String)">
+            <summary>
+            Adds or updates a translation for the specified language code.
+            </summary>
+            <remarks>
+            When a translation for the specified language code already exists, the text of that translation is updated.
+            Otherwise, a new translation is created with the specified language code and text.
+            </remarks>
+            <param name="languageCode">The language code for the translation.</param>
+            <param name="text">The text for the translation.</param>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Model.Texts.IText.RemoveTranslation(System.String)">
+            <summary>
+            Removes any translations for the specified language code from this translatable text.
+            </summary>
+            <param name="languageCode">The language code for which to remove the translations.</param>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Model.Texts.ITranslation">
+            <summary>
+            Represents a single translation of a translatable text.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.Model.Texts.ITranslation.LanguageCode">
+            <summary>
+            The language code representing the language for this translation.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.Model.Texts.ITranslation.Text">
+            <summary>
+            The text of the translation.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Services.IAnalyticsService">
+            <summary>
+            Provides access to the global analytics service of Studio Pro to record events from extensions.
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Services.IAnalyticsService.SendEvent(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Send an event to analytics service and log it locally. In MxBuild the event is only logged.
+            </summary>
+            <remarks>Please consider user's privacy when composing <paramref name="eventData"/>.</remarks>
+            <param name="eventName">Name of the event to send. Use format like <c>FEATURE_USED</c>.</param>
+            <param name="eventData">Optional additional event data.</param>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Services.IConfigurationService">
+            <summary>
+            Provides access to the global Studio Pro configurations that can depend on environment or user-defined settings.
+            </summary>
+            <remarks>The same information is accessible through <see cref="P:Mendix.StudioPro.ExtensionsAPI.ExtensionBase.Configuration"/> property.</remarks>
+            <seealso cref="P:Mendix.StudioPro.ExtensionsAPI.Services.IConfigurationService.Configuration"/>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.Services.IConfigurationService.Configuration">
+            <summary>
+            Current Studio Pro <see cref="T:Mendix.StudioPro.ExtensionsAPI.Configuration"/>.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Services.IDIService">
+            <summary>
+            Dynamically retrieves exports from within the extension or from Studio Pro. It is a wrapper over <see cref="T:System.ComponentModel.Composition.Hosting.ExportProvider"/>.
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Services.IDIService.Resolve``1">
+            <summary>
+            Returns the exported object with the specified type. If there is not exactly one matching exported object, an exception is thrown.
+            This method delegates to <see cref="M:System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValue``1"/>.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Services.IExtensionFileService">
+            <summary>
+            Provides filesystem operations specific to an extension.
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Services.IExtensionFileService.ResolvePath(System.String[])">
+            <summary>
+            Returns the full path to a file included in the calling extension, relative to the root directory containing the extension.
+            </summary>
+            <param name="pathSegments">Segments of the path to the file inside the root directory of the extension. E.g. "config"(directory),"config.json"(file)</param>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Services.IHttpClientService">
+            <summary>
+            Provides access to the HttpClientFactory from Studio Pro, which manages the usage of the HTTP Client Handler across the application.
+            This prevents socket allocation exhaustion, which can cause undesirable application behavior.
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Services.IHttpClientService.CreateHttpClient">
+            <summary>
+            Let Studio Pro create an HttpClient that manages socket allocation robustly within the application.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Services.ILogService">
+            <summary>
+            Provides access to the logging system of Studio Pro to log messages from extensions. Each message is by default decorated with the caller method name and the caller file path.
+            This can be overriden in the method calls.
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Services.ILogService.Debug(System.String,System.String,System.String)">
+            <summary>
+            Logs a message at DEBUG log level.
+            </summary>
+            <param name="message">the message</param>
+            <param name="memberName">optional member name, of the method or property where the message originates from. Uses [CallerMemberName] by default.</param>
+            <param name="filePath">optional file path of the file where the message originates from. Uses [CallerFilePath] by default.</param>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Services.ILogService.Info(System.String,System.String,System.String)">
+            <summary>
+            Logs a message at INFO log level.
+            </summary>
+            <param name="message">the message</param>
+            <param name="memberName">optional member name, of the method or property where the message originates from. Uses [CallerMemberName] by default.</param>
+            <param name="filePath">optional file path of the file where the message originates from. Uses [CallerFilePath] by default.</param>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Services.ILogService.Warn(System.String,System.String,System.String)">
+            <summary>
+            Logs a message at WARNING log level.
+            </summary>
+            <param name="message">the message</param>
+            <param name="memberName">optional member name, of the method or property where the message originates from. Uses [CallerMemberName] by default.</param>
+            <param name="filePath">optional file path of the file where the message originates from. Uses [CallerFilePath] by default.</param>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Services.ILogService.Error(System.String,System.Exception,System.String,System.String)">
+            <summary>
+            Logs a message at ERROR log level.
+            </summary>
+            <param name="message">the message</param>
+            <param name="exception">the exception to log. if exception is null, it will not be logged.</param>
+            <param name="memberName">optional member name, of the method or property where the message originates from. Uses [CallerMemberName] by default.</param>
+            <param name="filePath">optional file path of the file where the message originates from. Uses [CallerFilePath] by default.</param>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Services.IMicroflowExpressionService">
+            <summary>
+            Provides a set of operations on a <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.MicroflowExpressions.IMicroflowExpression">Microflow Expression</see>.
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Services.IMicroflowExpressionService.CreateFromString(System.String)">
+            <summary>
+            Create new <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.MicroflowExpressions.IMicroflowExpression"/> from a string <paramref name="value"/>.
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Services.IMicroflowExpressionService.TryGetComputedType(Mendix.StudioPro.ExtensionsAPI.Model.IModel,Mendix.StudioPro.ExtensionsAPI.Model.MicroflowExpressions.IMicroflowExpression,Mendix.StudioPro.ExtensionsAPI.Model.DataTypes.IDataType@)">
+             <summary>
+             Retrieve the type of the <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.MicroflowExpressions.IMicroflowExpression"/>, if it has been computed.
+             </summary>
+             <param name="model">Reference to the current app.</param>
+             <param name="microflowExpression">
+             Microflow expression which type should be determined. It must be a property of an elements that is added to the app model.
+             </param>
+             <param name="dataType">
+             Type of <paramref name="microflowExpression"/> represented by a <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.DataTypes.IDataType"/>, or <c>null</c> if it hasn't been computed.
+             </param>
+             <returns>
+             Returns <c>true</c> if data type of the expression is known and <c>false</c> otherwise.
+             </returns>
+             <remarks>
+             Note, that <c>false</c> result can be intermittent and executing <see cref="M:Mendix.StudioPro.ExtensionsAPI.Services.IMicroflowExpressionService.TryGetComputedType(Mendix.StudioPro.ExtensionsAPI.Model.IModel,Mendix.StudioPro.ExtensionsAPI.Model.MicroflowExpressions.IMicroflowExpression,Mendix.StudioPro.ExtensionsAPI.Model.DataTypes.IDataType@)"/> again at a later point in time might succeed.
+             </remarks>
+             <example>
+             To read the type of an existing expression:
+             <code>
+             if (!microflowExpressionOperator.TryGetComputedType(model, modelElement.Property, out var dataType))
+                 throw new InvalidOperationException();
+             switch (dataType)
+             {
+                 case IStringType:
+                     return "string";
+                 case IObjectType objectType:
+                     return $"object of type {objectType.Entity}";
+                 // etc
+             }
+             </code>
+            
+             This method will never return <c>true</c> when called with an expression that is not part of a model:
+             <code>
+             if (microflowExpressionOperator.TryGetComputedType(model, microflowExpressionOperator.CreateFromString(newExpressionValue), out var dataType))
+             {
+                 // this code will never execute
+             }
+             </code>
+            
+             Nor will it work with an expression that has been just assigned to the app model:
+             <code>
+             modelElement.Property = microflowExpressionOperator.CreateFromString(newExpressionValue);;
+             if (microflowExpressionOperator.TryGetComputedType(model, modelElement.Property, out var dataType))
+             {
+                 // this code will never execute
+             }
+             </code>
+            
+             If you need to read the type after setting it, use the following approach:
+             <code>
+             using var tx = model.StartTransaction("Change argument");
+             modelElement.Property = microflowExpressionOperator.CreateFromString(newExpressionValue);;
+             tx.Commit(); // this line is required
+            
+             if (microflowExpressionOperator.TryGetComputedType(model, modelElement.Property, out var dataType))
+             {
+                 // use dataType
+             }
+             });
+             </code>
+             </example>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Services.IMicroflowService">
+            <summary>
+            Provides a set of operations on a Microflow.
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Services.IMicroflowService.Initialize(Mendix.StudioPro.ExtensionsAPI.Model.Microflows.IMicroflow,System.ValueTuple{System.String,Mendix.StudioPro.ExtensionsAPI.Model.DataTypes.IDataType}[])">
+            <summary>
+            Initializes an empty microflow with start and end nodes and the specified <paramref name="parameters"/>. It uses ReturnType property of <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.Microflows.IMicroflow"/> to set the Return Type./>.
+            The microflow must be added to the app model first before this method can be used.
+            </summary>
+            <param name="microflow">Microflow which is initialized.</param>
+            <param name="parameters">List of parameters that are set in the microflow.</param>
+            <exception cref="T:System.InvalidOperationException">Microflow is not added to the app model.</exception>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Services.IMicroflowService.TryInsertAfterStart(Mendix.StudioPro.ExtensionsAPI.Model.Microflows.IMicroflow,Mendix.StudioPro.ExtensionsAPI.Model.Microflows.IActivity[])">
+            <summary>
+            Inserts <paramref name="activities"/> in the microflow directly after the start event.
+            </summary>
+            <param name="microflow">Microflow to which <paramref name="activities"/> are added.</param>
+            <param name="activities">List of activities to add after the start event.</param>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Services.IMicroflowService.TryInsertBeforeActivity(Mendix.StudioPro.ExtensionsAPI.Model.Microflows.IActivity,Mendix.StudioPro.ExtensionsAPI.Model.Microflows.IActivity[])">
+            <summary>
+            Inserts <paramref name="activities"/> in a microflow directly before the <paramref name="insertBeforeActivity"/>.
+            This <paramref name="insertBeforeActivity"/> must be connected in the microflow and must contain exactly 1 incoming <a href="https://docs.mendix.com/refguide/sequence-flow">SequenceFlow</a>.
+            </summary>
+            <param name="insertBeforeActivity">The activity in the microflow to act as reference point to insert the <paramref name="activities"/>.</param>
+            <param name="activities">List of activities to add before the <paramref name="insertBeforeActivity"/> activity.</param>
+            <returns>Returns false if it does not have exactly 1 incoming <a href="https://docs.mendix.com/refguide/sequence-flow">SequenceFlow</a>.</returns>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Services.IMicroflowService.GetParameters(Mendix.StudioPro.ExtensionsAPI.Model.Microflows.IMicroflow)">
+            <summary>
+            Get all parameters of a microflow.
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Services.IMicroflowService.GetAllMicroflowActivities(Mendix.StudioPro.ExtensionsAPI.Model.Microflows.IMicroflow)">
+            <summary>
+            Get all activities of a microflow that are exposed as <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.Microflows.IActivity"/> in the API, including nested activities (loop).
+            Order and nesting of activities cannot be determined from the result.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Services.INameValidationService">
+            <summary>
+            Provides validation functionality for names of model elements.
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Services.INameValidationService.GetValidName(System.String)">
+            <summary>
+            Generates a valid name based on the <paramref name="candidateName"/> that you provide.
+            </summary>
+            <param name="candidateName">The initial version of the Name that will be used in validation process.</param>
+            <returns>A valid name.</returns>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Services.INameValidationService.IsNameValid(System.String)">
+            <summary>
+            Checks if the provided <paramref name="name"/> is valid.
+            </summary>
+            <param name="name">The name that you wish to be checked.</param>
+            <returns>A <see cref="T:Mendix.StudioPro.ExtensionsAPI.Services.ValidationResult"/> containing the validity status and the error message that can be used if needed.</returns>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Services.ISoapClientService">
+            <summary>
+            Allows creating SOAP service clients set up using the standard configuration from Studio Pro,
+            which manages proxy connections, timeouts, max buffer size etc.
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Services.ISoapClientService.CreateClient``2(System.ServiceModel.EndpointAddress)">
+            <summary>
+            Let Studio Pro create a SOAP service client that manages client configuration robustly within the application.
+            </summary>
+            <typeparam name="TClient">Type of a client to create.</typeparam>
+            <typeparam name="TPortType">Type of a client's contract.</typeparam>
+            <param name="endpointAddress">Service URL as an <see cref="T:System.ServiceModel.EndpointAddress" />.</param>
+            <returns>An instance of <typeparamref name="TClient" />.</returns>
+            <example>
+            Given the following generated code for a SOAP service:
+            <code>
+            internal partial class MyServicePortTypeClient : System.ServiceModel.ClientBase&lt;MyServicePortType&gt;, MyServicePortType
+            </code>
+            The user of this API can create an instance of the client configured in accordance with Studio Pro rules as such:
+            <code>
+            var client = soapClientService.CreateClient&lt;MyServicePortTypeClient, MyServicePortType&gt;(new EndpointAddress(serviceUrl));
+            </code>
+            </example>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.Services.ValidationResult">
+            <summary>
+            Validation result that is returned by the validation api.
+            </summary>
+            <param name="IsValid">Was the validation successful.</param>
+            <param name="ErrorMessage">Why did the validation fail.</param>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.Services.ValidationResult.#ctor(System.Boolean,System.String)">
+            <summary>
+            Validation result that is returned by the validation api.
+            </summary>
+            <param name="IsValid">Was the validation successful.</param>
+            <param name="ErrorMessage">Why did the validation fail.</param>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.Services.ValidationResult.IsValid">
+            <summary>Was the validation successful.</summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.Services.ValidationResult.ErrorMessage">
+            <summary>Why did the validation fail.</summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.DataHub.DataHubPaneExtension">
+            <summary>
+            Base class for an extension that adds new items into <see href="https://docs.mendix.com/refguide/data-hub-pane/">Data Hub pane</see>.
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.DataHub.DataHubPaneExtension.CollectUsedServicesAsync(System.Threading.CancellationToken)">
+            <summary>
+            Collect services already used by the <see cref="P:Mendix.StudioPro.ExtensionsAPI.UI.UIExtensionBase.CurrentApp"/> to be presented in Data Hub pane.
+            </summary>
+            <param name="cancellationToken">Cancellation to signal that the result of current operation is not needed anymore.</param>
+            <returns>List of <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.DataHub.DataHubService"/> representing services used in the <see cref="P:Mendix.StudioPro.ExtensionsAPI.UI.UIExtensionBase.CurrentApp"/>.</returns>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.DataHub.DataHubPaneExtension.SearchServicesAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Search for services in response to Studio Pro user input to be presented in Data Hub pane.
+            </summary>
+            <remarks>
+            <see cref="M:Mendix.StudioPro.ExtensionsAPI.UI.DataHub.DataHubPaneExtension.SearchServicesAsync(System.String,System.Threading.CancellationToken)"/> might be called multiple times in parallel, e.g. once for each user key stroke. Only the result for the actual
+            visible <paramref name="searchTerm"/> will be displayed.
+            </remarks>
+            <param name="searchTerm">Search term entered by Studio Pro user so far.</param>
+            <param name="cancellationToken">Cancellation to signal that the result of current operation is not needed anymore.</param>
+            <returns>List of <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.DataHub.DataHubService"/> representing services found by the search.</returns>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.DataHub.DataHubService">
+            <summary>
+            Representation of a single service in the <see href="https://docs.mendix.com/refguide/data-hub-pane/">Data Hub pane</see>. It is immutable.
+            </summary>
+            <param name="UniqueId">Unique identifier of this service. Used internally.</param>
+            <param name="Name">User-visible name of the service.</param>
+            <param name="Icon">Icon to show next to the service.</param>
+            <param name="Version">Version of the service. Showed as a secondary info under the service. Can be empty.</param>
+            <param name="EnvironmentName">Name of the environment where the service is deployed. Showed as a secondary info under the service. Can be empty.</param>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.DataHub.DataHubService.#ctor(System.String,System.String,Eto.Drawing.Icon,System.String,System.String)">
+            <summary>
+            Representation of a single service in the <see href="https://docs.mendix.com/refguide/data-hub-pane/">Data Hub pane</see>. It is immutable.
+            </summary>
+            <param name="UniqueId">Unique identifier of this service. Used internally.</param>
+            <param name="Name">User-visible name of the service.</param>
+            <param name="Icon">Icon to show next to the service.</param>
+            <param name="Version">Version of the service. Showed as a secondary info under the service. Can be empty.</param>
+            <param name="EnvironmentName">Name of the environment where the service is deployed. Showed as a secondary info under the service. Can be empty.</param>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.DataHub.DataHubService.UniqueId">
+            <summary>Unique identifier of this service. Used internally.</summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.DataHub.DataHubService.Name">
+            <summary>User-visible name of the service.</summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.DataHub.DataHubService.Icon">
+            <summary>Icon to show next to the service.</summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.DataHub.DataHubService.Version">
+            <summary>Version of the service. Showed as a secondary info under the service. Can be empty.</summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.DataHub.DataHubService.EnvironmentName">
+            <summary>Name of the environment where the service is deployed. Showed as a secondary info under the service. Can be empty.</summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.DataHub.DataHubService.Entities">
+            <summary>
+            Entities that this service contains represented as <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.DataHub.DataHubServiceEntity"/>.
+            </summary>
+            <example>
+            Can be initialized as:
+            <code>
+            return new DataHubService("com.mendix.example.contracts.1", "Contracts", Icons.Service, "1.0.0", "Production")
+            {
+                Entities = { new DataHubServiceEntity("Contract") }
+            }
+            </code>
+            </example>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.DataHub.DataHubService.GetInfoControl">
+            <summary>
+            Delegate invoked to create an optional control shown on the right of the service in Data Hub pane.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.DataHub.DataHubServiceEntity">
+            <summary>
+            Representation of a single entity introduced by a service in the <see href="https://docs.mendix.com/refguide/data-hub-pane/">Data Hub pane</see>. It is immutable.
+            </summary>
+            <param name="Name">Name of this entity.</param>
+            <param name="Icon">Icon to show next to the entity in Data Hub pane. Optional.</param>
+            <param name="SupportedOperation">
+            Indicate which operations can be performed with the entity. Translated to capability indicators next to the entity in Data Hub pane. Optional.
+            </param>
+            <param name="IsConsumed">
+            Indicates whether this entity is already referenced in the current app. Translated to a checkmark next to the entity in Data Hub pane.
+            </param>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.DataHub.DataHubServiceEntity.#ctor(System.String,Eto.Drawing.Icon,System.Nullable{Mendix.StudioPro.ExtensionsAPI.UI.DataHub.SupportedOperation},System.Boolean)">
+            <summary>
+            Representation of a single entity introduced by a service in the <see href="https://docs.mendix.com/refguide/data-hub-pane/">Data Hub pane</see>. It is immutable.
+            </summary>
+            <param name="Name">Name of this entity.</param>
+            <param name="Icon">Icon to show next to the entity in Data Hub pane. Optional.</param>
+            <param name="SupportedOperation">
+            Indicate which operations can be performed with the entity. Translated to capability indicators next to the entity in Data Hub pane. Optional.
+            </param>
+            <param name="IsConsumed">
+            Indicates whether this entity is already referenced in the current app. Translated to a checkmark next to the entity in Data Hub pane.
+            </param>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.DataHub.DataHubServiceEntity.Name">
+            <summary>Name of this entity.</summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.DataHub.DataHubServiceEntity.Icon">
+            <summary>Icon to show next to the entity in Data Hub pane. Optional.</summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.DataHub.DataHubServiceEntity.SupportedOperation">
+            <summary>
+            Indicate which operations can be performed with the entity. Translated to capability indicators next to the entity in Data Hub pane. Optional.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.DataHub.DataHubServiceEntity.IsConsumed">
+            <summary>
+            Indicates whether this entity is already referenced in the current app. Translated to a checkmark next to the entity in Data Hub pane.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.DataHub.DataHubServiceEntity.Attributes">
+            <summary>
+            Attributes that this entity contain represented as strings. They are shown as-is in Data Hub pane.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.DataHub.DataHubServiceEntity.OnInstantiate">
+            <summary>
+            Action invoked when an entity is dragged from the Data Hub pane to a Domain Model. Should create an
+            <see href="https://docs.mendix.com/refguide/external-entities/">External</see> or regular <see href="https://docs.mendix.com/refguide/entities/">Entity</see>
+            matching this <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.DataHub.DataHubServiceEntity"/> definition and associated with parent <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.DataHub.DataHubService"/>.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.Dialogs.ModalWebViewDialogViewModelBase">
+            <summary>
+            Representation of a modal popup dialog in Studio Pro. It is topmost and blocking.
+            </summary>
+            <remarks>A dialog can be open with <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Services.IDialogService"/>.</remarks>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Dialogs.ModalWebViewDialogViewModelBase.Title">
+            <summary>
+            Title of the dialog. Empty by default.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">Passed value in the constructor is null or empty.</exception>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Dialogs.ModalWebViewDialogViewModelBase.InitWebView">
+            <summary>
+            The action to initialize the web view.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Dialogs.ModalWebViewDialogViewModelBase.Height">
+            <summary>
+            The height of the dialog. If not provided, the dialog will have a default size. It can be changed while the dialog is open.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Dialogs.ModalWebViewDialogViewModelBase.Width">
+            <summary>
+            The width of the dialog. If not provided, the dialog will have a default size.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Dialogs.ModalWebViewDialogViewModelBase.OnClosed">
+            <summary>
+            Optional action to execute when the dialog is closed.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.DockablePane.DockablePaneExtension">
+            <summary>
+            Base class for an extension that introduces new <see href="https://docs.mendix.com/refguide/studio-pro-overview/#5-dockable-panes">dockable pane</see>.
+            </summary>
+            <remarks>
+            Note that it is common to have a corresponding "View" top level menu item for each pane. Extension must introduce such item explicitly using
+            <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuBarExtension"/> and <see cref="M:Mendix.StudioPro.ExtensionsAPI.UI.Services.IDockingWindowService.OpenPane(System.String)"/>.
+            </remarks>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.DockablePane.DockablePaneExtension.Id">
+            <summary>
+            Unique stable identifier of this pane. It is used internally and should always be the same.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.DockablePane.DockablePaneExtension.InitialPosition">
+            <summary>
+            The dock where the pane is opened initially, if it hasn't been opened before. By default <see cref="F:Mendix.StudioPro.ExtensionsAPI.UI.DockablePane.DockablePanePosition.Right"/>.
+            </summary>
+            <remarks>
+            Studio Pro user can drag the dockable pane to another position. That position is persisted (based on <see cref="P:Mendix.StudioPro.ExtensionsAPI.UI.DockablePane.DockablePaneExtension.Id"/>) and has precedence
+            over the <see cref="P:Mendix.StudioPro.ExtensionsAPI.UI.DockablePane.DockablePaneExtension.InitialPosition"/>.
+            </remarks>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.DockablePane.DockablePaneExtension.Open">
+            <summary>
+            Create <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.DockablePane.DockablePaneViewModel"/> when a pane is opened.
+            </summary>
+            <remarks>
+            This method is called every time when the pane is opened. Note that the pane can be opened automatically on extension load,
+            if it has been previously opened by Studio Pro user.
+            </remarks>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.DockablePane.DockablePaneViewModel">
+            <summary>
+            Representation of a <see href="https://docs.mendix.com/refguide/studio-pro-overview/#5-dockable-panes">dockable pane</see> in Studio Pro.
+            </summary>
+            <remarks>Dockable pane can be introduced through <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.DockablePane.DockablePaneExtension"/>.</remarks>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.DockablePane.DockablePaneViewModel.OnClosed">
+            <summary>
+            Optional action to execute when the dockable pane is closed.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.DockablePane.DockablePaneViewModel.OnActivated">
+            <summary>
+            Optional action to execute when the dockable pane becomes active.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.DockablePane.DockablePaneViewModel.Controls">
+            <summary>
+            Content of the pane.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.DockablePane.DockablePaneViewModel.Title">
+            <summary>
+            Title of the pane displayed in its header. Empty by default.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">Passed value is null or empty.</exception>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.DockablePane.DockablePaneViewModel.IsBadgeVisible">
+            <summary>
+            Indicates whether a "badge indicator" should be shown in the pane's tab header. False by default.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.DockablePane.DockablePaneViewModel.BadgeValue">
+            <summary>
+            Number displayed in "badge indicator". <c>0</c> by default.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.DockablePane.DockablePaneViewModel.BadgePriority">
+            <summary>
+            Color of "badge indicator". <see cref="F:Mendix.StudioPro.ExtensionsAPI.UI.DockablePane.DockablePaneBadgePriority.Normal"/> by default.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.Document.AddDocumentMenuExtension">
+            <summary>
+            Base class for an extension that introduces new items into "add document" context menu of App Explorer (also accessible through File > New).
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.Document.AddDocumentMenuExtension.GetItems">
+            <summary>
+            Return <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Document.AddDocumentMenuItem"/>s introduced by this extension.
+            </summary>
+            <returns>A list of <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Document.AddDocumentMenuItem"/> introduced by this extension.</returns>
+            <remarks>This method is called every time before showing a list of items to Studio Pro user.</remarks>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.Document.AddDocumentMenuItem">
+            <summary>
+            "Add ..." item in context menu of Project Explorer or its "Add other" sub-menu (also accessible through File > New).
+            </summary>
+            <param name="DocumentTypeCaption">Caption of the type of a document that this action will create. It must be in the form like "Building block".</param>
+            <param name="Icon">Optional icon displayed next to the item.</param>
+            <param name="Category">
+            Group to which the item belongs. It can either be an existing category ("Common", "Resources", "Services", "Page resources") or a new one (any other value
+            of <paramref name="Category"/>).
+            </param>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.Document.AddDocumentMenuItem.#ctor(System.String,Eto.Drawing.Image,System.String)">
+            <summary>
+            "Add ..." item in context menu of Project Explorer or its "Add other" sub-menu (also accessible through File > New).
+            </summary>
+            <param name="DocumentTypeCaption">Caption of the type of a document that this action will create. It must be in the form like "Building block".</param>
+            <param name="Icon">Optional icon displayed next to the item.</param>
+            <param name="Category">
+            Group to which the item belongs. It can either be an existing category ("Common", "Resources", "Services", "Page resources") or a new one (any other value
+            of <paramref name="Category"/>).
+            </param>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Document.AddDocumentMenuItem.DocumentTypeCaption">
+            <summary>Caption of the type of a document that this action will create. It must be in the form like "Building block".</summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Document.AddDocumentMenuItem.Icon">
+            <summary>Optional icon displayed next to the item.</summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Document.AddDocumentMenuItem.Category">
+            <summary>
+            Group to which the item belongs. It can either be an existing category ("Common", "Resources", "Services", "Page resources") or a new one (any other value
+            of <paramref name="Category"/>).
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Document.AddDocumentMenuItem.TryCreateDocument">
+             <summary>
+             Action to execute when "add document" item is clicked. It can return newly created document or <c>null</c> if creation was canceled.
+             </summary>
+             <remarks>
+             <see cref="P:Mendix.StudioPro.ExtensionsAPI.UI.Document.AddDocumentMenuItem.TryCreateDocument"/> receives <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.Projects.IFolderBase"/> (<see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.Projects.IFolder"/> or <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.Projects.IModule"/>) that was selected as a location
+             for to-be-created document.
+            
+             If a document is successfully created, it is immediately opened in the editor.
+             </remarks>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.Document.AppExplorerExtension`1">
+            <summary>
+            Base class for an extension that introduces a support for a new document type in the App Explorer.
+            </summary>
+            <typeparam name="TDocument">Type of the document that this extension handles.</typeparam>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.Document.AppExplorerExtension`1.EditDocument(`0)">
+            <summary>
+            Create <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Document.DocumentTabViewModel"/> when the <paramref name="document"/> is opened.
+            </summary>
+            <param name="document"><typeparamref name="TDocument"/> that is being opened by Studio Pro user.</param>
+            <returns><see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Document.DocumentTabViewModel"/> representing an editor for the <paramref name="document"/>.</returns>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.Document.AppExplorerExtension`1.TryGetIcon(`0)">
+            <summary>
+            Icon to be used for a <paramref name="document"/> in the Project Explorer.
+            </summary>
+            <param name="document"><typeparamref name="TDocument"/> shown in the Project Explorer.</param>
+            <returns>
+            Icon to be displayed for this <paramref name="document"/>. Or <c>null</c> if no custom icon should be used.
+            </returns>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.Document.DocumentTabViewModel">
+            <summary>
+            Representation of a <see href="https://docs.mendix.com/refguide/studio-pro-overview/#documents">document tab</see> - tab in the
+            <see href="https://docs.mendix.com/refguide/studio-pro-overview/#4-working-area">working area</see> of Studio Pro specialized in displaying content of
+            a specific <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.IAbstractUnit">document</see>.
+            </summary>
+            <remarks>Document tabs can be introduced through <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Document.AppExplorerExtension`1"/>.</remarks>
+            <seealso cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Tab.TabViewModel"/>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Document.DocumentTabViewModel.Controls">
+            <summary>
+            Content of the tab.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Document.DocumentTabViewModel.FocusElement">
+            <summary>
+            Action to focus an element. It is triggered when a tab is opened or focused programmatically,
+            for example, when a Studio Pro user clicks a consistency error reported on the associated document.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Document.DocumentTabViewModel.OnDocumentChanged">
+            <summary>
+            Unstable API. Might be removed in the future.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.Events.ExtensionLoaded">
+            <summary>
+            An event that occurs when an extension is loading.
+            </summary>
+            <remarks>
+            This event occurs when an app that contains the extension is opened, as well as when an extension is added later to an open app, or is updated to a newer version.
+            </remarks>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.Events.ExtensionUnloading">
+             <summary>
+             An event that occurs when an extension will be unloaded.
+             </summary>
+             <remarks>
+             This event occurs when an app that contains the extension is closing, as well as when an extension is removed from the app, or before it is updated to a newer version.
+            
+             Note that this method is called when Studio Pro closes gracefully, but its execution is not guaranteed.
+             </remarks>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.Events.IEvent">
+            <summary>
+            Interface for events that occur in Studio Pro.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.Events.IEventSubscription">
+            <summary>
+            Interface for event subscriptions.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.Events.UserSignedOut">
+            <summary>
+            An event that occurs after the user signed out.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.Events.UserSigningOut">
+            <summary>
+                An event that occurs at the start of the user sign-out process.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.Menu.ContextMenuExtension`1">
+            <summary>
+            Base class for an extension that introduces new context menu items for model elements. Currently only elements of type <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.IEntity"/> are supported.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Menu.ContextMenuExtension`1.StructureType">
+            <summary>
+            The type of the element for which this extension will generate context menus. Currently only elements of type <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.IEntity"/> are supported.
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.Menu.ContextMenuExtension`1.GetContextMenus(System.Object)">
+            <summary>
+            Return <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuItemViewModel"/>s and <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Menu.SubMenuViewModel"/>s introduced by this extension.
+            </summary>
+            <returns>List of <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuItemViewModel"/> and <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Menu.SubMenuViewModel"/> introduced by this extension.</returns>
+            <remarks>
+            This method is called once an element of type <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.IEntity"/> is right-clicked.
+            The menus this method returns will be inserted into the existing context menus and placed accordingly.
+            </remarks>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuBarExtension">
+            <summary>
+            Base class for an extension that introduces new menu items into the menu bar.
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuBarExtension.GetMenus">
+            <summary>
+            Return <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuItemViewModel"/>s and <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Menu.SubMenuViewModel"/>s introduced by this extension.
+            </summary>
+            <returns>List of <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuItemViewModel"/> and <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Menu.SubMenuViewModel"/> introduced by this extension.</returns>
+            <remarks>
+            This method is called once when the extension is initialized and must return all menus items, including disabled ones.
+            A menu item can be enabled/disabled later (e.g. based on an event) using <see cref="P:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuViewModelBase.IsEnabled"/>.
+            Menu items cannot be invisible.
+            </remarks>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuItemViewModel">
+             <summary>
+             Representation of a regular menu item in one of sub-menus of the menu bar in Studio Pro.
+             </summary>
+             <remarks>
+             Menu item can be introduced through <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuBarExtension"/>.
+            
+             If you need to place a menu item into new sub-menu, use <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Menu.SubMenuViewModel"/>. Note, that it should be returned from
+             <see cref="M:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuBarExtension.GetMenus"/> earlier (e.g. on a smaller index) than this <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuItemViewModel"/>.
+             </remarks>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuItemViewModel.#ctor(System.String,System.Collections.Generic.IReadOnlyList{System.String},System.String,Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuSeparator,Eto.Forms.Keys)">
+            <summary>
+            Construct new <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuItemViewModel"/>.
+            </summary>
+            <param name="caption">Caption of the menu. It can be changed later via <see cref="P:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuViewModelBase.Caption"/> property.</param>
+            <param name="placeUnder">
+            Path to the menu item into which the current menu should be placed. For example, <c>new[] { "app", "tools" }</c>.
+            </param>
+            <param name="placeAfter">
+            Name of the menu item after which the current menu should be placed. Or <c>null</c> to place it on top.
+            </param>
+            <param name="separator">
+            Indicates whether a menu separator should be placed <see cref="F:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuSeparator.Before"/> or <see cref="F:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuSeparator.After"/> this menu item.
+            </param>
+            <param name="shortcutKey">Optional global shortcut for this menu item.</param>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuItemViewModel.ShortcutKey">
+            <summary>
+            Optional global shortcut for this menu item. <see cref="F:Eto.Forms.Keys.None"/> by default.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuItemViewModel.Action">
+            <summary>
+            Action to execute when the menu is clicked. Empty operation by default.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">Passed value is null.</exception>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuViewModelBase">
+            <summary>
+            Representation of a menu item in the menu bar of Studio Pro or one of its sub-menus. Use concrete classes <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuItemViewModel"/> or
+            <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Menu.SubMenuViewModel"/> to create menus in <see cref="M:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuBarExtension.GetMenus"/> or <see cref="M:Mendix.StudioPro.ExtensionsAPI.UI.Menu.ContextMenuExtension`1.GetContextMenus(System.Object)"/>.
+            </summary>
+            <remarks>Menu item can be introduced through <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuBarExtension"/> or <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Menu.ContextMenuExtension`1"/>.</remarks>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuViewModelBase.PlaceUnder">
+            <summary>
+            Path to the menu item into which the current menu should be placed.
+            </summary>
+            <example>
+            To put the menu just after "App > Create Deployment Package...", <see cref="P:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuViewModelBase.PlaceUnder"/> should be
+            <c>new[] { "app" }</c> and <see cref="P:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuViewModelBase.PlaceAfter"/> should be <c>"create deployment package"</c>.
+            Note, that punctuation symbols and capitalization are ignored.
+            </example>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuViewModelBase.PlaceAfter">
+            <summary>
+            Name of the menu item after which the current menu should be placed. Or <c>null</c> to place it on top.
+            </summary>
+            <example>
+            To put the menu just after "App > Create Deployment Package...", <see cref="P:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuViewModelBase.PlaceUnder"/> should be
+            <c>new[] { "app" }</c> and <see cref="P:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuViewModelBase.PlaceAfter"/> should be <c>"create deployment package"</c>.
+            Note, that punctuation symbols and capitalization are ignored.
+            </example>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuViewModelBase.Separator">
+            <summary>
+            Indicates whether a menu separator should be placed <see cref="F:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuSeparator.Before"/> or <see cref="F:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuSeparator.After"/> this menu.
+            <see cref="F:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuSeparator.None"/> by default.
+            </summary>
+            <remarks>Top level menus must use <see cref="F:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuSeparator.None"/>.</remarks>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuViewModelBase.Caption">
+            <summary>
+            Caption of the menu.
+            </summary>
+            <remarks>You can use a single <c>&#38;</c> in the caption to support Alt-based keyboard navigation.</remarks>
+            <exception cref="T:System.ArgumentNullException">Passed value is null or empty.</exception>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuViewModelBase.IsEnabled">
+            <summary>
+            Whether the menu is enabled. True by default.
+            </summary>
+            <exception cref="T:System.NotSupportedException">Passed <c>false</c> value for a top-level menu.</exception>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.Menu.SubMenuViewModel">
+            <summary>
+            Representation of a sub-menu in the menu bar of Studio Pro or one of its sub-menus. <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Menu.SubMenuViewModel"/> acts as a container for other menu items.
+            </summary>
+            <remarks>Menu items can be introduced through <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuBarExtension"/>.</remarks>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.Menu.SubMenuViewModel.#ctor(System.String,System.Collections.Generic.IReadOnlyList{System.String},System.String,Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuSeparator)">
+            <summary>
+            Construct a new <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Menu.SubMenuViewModel"/>.
+            </summary>
+            <param name="caption">Caption of the menu. It can be changed later via <see cref="P:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuViewModelBase.Caption"/> property.</param>
+            <param name="placeUnder">
+            Path to the menu item into which the current menu should be placed. For example, <c>new[] { "app", "tools" }</c>.
+            </param>
+            <param name="placeAfter">
+            Name of the menu item after which the current menu should be placed. Or <c>null</c> to place it on top.
+            </param>
+            <param name="separator">
+            Indicates whether a menu separator should be placed <see cref="F:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuSeparator.Before"/> or <see cref="F:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuSeparator.After"/> this menu item.
+            </param>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.Services.IAppService">
+            <summary>
+            Provides a set of Studio Pro level operations related to Mendix App.
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.Services.IAppService.TryImportApp(Mendix.StudioPro.ExtensionsAPI.Model.IModel,System.String,System.String)">
+            <summary>
+            Try to import a mpk project file as a new app. The user will get a dialog asking how to import the app.
+            </summary>
+            <remarks>We advise you to use temporary directory for <paramref name="mpkFilePath"/> and remove the file after import.</remarks>
+            <param name="model">Reference to the current model.</param>
+            <param name="mpkFilePath">Path to the mpk that should be imported.</param>
+            <param name="name">Suggested name of the new app</param>
+            <returns>Flag indicating whether import was successful.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="name"/> or <paramref name="mpkFilePath"/> is null or empty.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="mpkFilePath"/> does not exist.</exception>
+            <exception cref="T:System.InvalidOperationException"><paramref name="model"/> has a pending transaction which is not allowed.</exception>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.Services.IAppService.CheckVersionCompatible(Mendix.StudioPro.ExtensionsAPI.Model.IModel,System.String,System.String@)">
+            <summary>
+            Verify whether an app/module created by a given <paramref name="mendixVersion"/> of Studio Pro can be opened in the current Studio Pro.
+            </summary>
+            <param name="model">Reference to the current model.</param>
+            <param name="mendixVersion">Semver v2 version string like <c>major.minor.patch</c>.</param>
+            <param name="mismatchMessage">Description of incompatibility if the result is <c>false</c>.</param>
+            <returns>Whether an app in a given version can be opened in the current Studio Pro.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="mendixVersion"/> is null or empty.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="mendixVersion"/> is in incorrect format.</exception>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.Services.IAppService.TryImportModule(Mendix.StudioPro.ExtensionsAPI.Model.IModel,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Try to import a mpk file as a module to the app. If the module with the same name exists, user will get a dialog asking to replace it or
+            to rename the importing module.
+            </summary>
+            <remarks>We advise you to use temporary directory for <paramref name="moduleMpkPath"/> and remove the file after import.</remarks>
+            <param name="model">Reference to the current model.</param>
+            <param name="moduleMpkPath">Path to the mpk that should be imported.</param>
+            <param name="appId"></param>
+            <param name="versionId"></param>
+            <param name="version"></param>
+            <param name="packageId"></param>
+            <returns>Flag indicating whether import was successful.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="model"/> or <paramref name="moduleMpkPath"/> is null or empty.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="moduleMpkPath"/> does not exist.</exception>
+            <exception cref="T:System.NotSupportedException"><paramref name="model"/> is not the one received from Studio Pro API.</exception>
+            <exception cref="T:System.InvalidOperationException"><paramref name="model"/> has a pending transaction which is not allowed.</exception>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.Services.IAppService.SynchronizeWithFileSystem(Mendix.StudioPro.ExtensionsAPI.Model.IModel)">
+            <summary>
+            Synchronize model representation in Studio Pro with the recent changes on the file system, like changes in JavaScript actions or Widgets.
+            </summary>
+            <remarks>
+            This method behaves similarly to a <see href="https://docs.mendix.com/refguide/app-menu/#synchronize">Synchronize App Directory</see> menu item.
+            </remarks>
+            <param name="model">Reference to the current model.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="model"/> is null or empty.</exception>
+            <exception cref="T:System.NotSupportedException"><paramref name="model"/> is not the one received from Studio Pro API.</exception>
+            <exception cref="T:System.InvalidOperationException"><paramref name="model"/> has a pending transaction which is not allowed.</exception>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.Services.IDialogService">
+            <summary>
+            Provides methods to open and close modal dialogs.
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.Services.IDialogService.ShowDialog(Mendix.StudioPro.ExtensionsAPI.UI.Dialogs.ModalWebViewDialogViewModelBase)">
+            <summary>
+            It opens a modal dialog with the details from a <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Dialogs.ModalWebViewDialogViewModelBase"/>.
+            </summary>
+            <exception cref="T:System.Exception">
+            <paramref name="dialog"/> is null.
+            </exception>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.Services.IDialogService.CloseDialog(Mendix.StudioPro.ExtensionsAPI.UI.Dialogs.ModalWebViewDialogViewModelBase)">
+            <summary>
+            It closes a modal dialog previously opened from the <see cref="M:Mendix.StudioPro.ExtensionsAPI.UI.Services.IDialogService.ShowDialog(Mendix.StudioPro.ExtensionsAPI.UI.Dialogs.ModalWebViewDialogViewModelBase)"/> method.
+            It returns errors if trying to close a dialog that was not previously opened or that has already been closed.
+            </summary>
+            <exception cref="T:System.Exception">
+            <paramref name="dialog"/> is null.
+            </exception>
+            <exception cref="T:System.Exception">Thrown if the dialog was not initialized correctly.</exception>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.Services.IDockingWindowService">
+            <summary>
+            Provides access to the docking window of Studio Pro allowing for interactions with tabs and editors.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.Services.IEntityService">
+            <summary>
+            Provides a set of operations on an entity.
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.Services.IEntityService.OpenEntityForm(Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.IEntity)">
+            <summary>
+            Opens the Entity form to modify an <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.IEntity"/>. Returns true if modifications to the entity were saved successfully, false if user cancelled.
+            </summary>
+            <param name="entity">The preliminary entity which will be modified in the form.</param>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.Services.ISelectorDialogService">
+            <summary>
+            Provides a set of operations for showing the object (that is <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.IAbstractUnit">unit</see> or <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.IElement">element</see>) selection interface to Studio Pro user.
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.Services.ISelectorDialogService.SelectDocumentAsync``1(Mendix.StudioPro.ExtensionsAPI.UI.Services.DocumentSelectorDialogOptions{``0})">
+            <summary>
+            Shows interface (in a popup) for selecting <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.Projects.IDocument"/> of a specific type <typeparamref name="TDocument"/> from all such documents in the app.
+            </summary>
+            <remarks>
+            Use <see cref="M:Mendix.StudioPro.ExtensionsAPI.UI.Services.ISelectorDialogService.SelectDocumentUntypedAsync(Mendix.StudioPro.ExtensionsAPI.UI.Services.DocumentSelectorDialogOptions{Mendix.StudioPro.ExtensionsAPI.Model.Projects.IDocument})"/> if you need to select a document of one of a few types, e.g. select either Microflow or Nanoflow.
+            </remarks>
+            <param name="options">An instance of <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Services.DocumentSelectorDialogOptions`1"/> that describes how the selector dialog should behave.</param>
+            <typeparam name="TDocument">
+            The type of the document that can be selected. It must be a concrete type like <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.Microflows.IMicroflow"/> and not a base type like
+            <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.Microflows.IMicroflowBase"/>. If you need to select a document of a one of a few types, use <see cref="M:Mendix.StudioPro.ExtensionsAPI.UI.Services.ISelectorDialogService.SelectDocumentUntypedAsync(Mendix.StudioPro.ExtensionsAPI.UI.Services.DocumentSelectorDialogOptions{Mendix.StudioPro.ExtensionsAPI.Model.Projects.IDocument})"/>.
+            </typeparam>
+            <returns>
+            A <see cref="T:System.Threading.Tasks.Task`1"/> that is resolved when the selection process is finished by Studio Pro user. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            contains an instance of <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Services.SelectorResult`1"/> representing the result of the selection process.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="options"/> is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            <typeparamref name="TDocument"/> does not refer to a concrete type, but to a base type.
+            </exception>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.Services.ISelectorDialogService.SelectDocumentUntypedAsync(Mendix.StudioPro.ExtensionsAPI.UI.Services.DocumentSelectorDialogOptions{Mendix.StudioPro.ExtensionsAPI.Model.Projects.IDocument})">
+             <summary>
+             Shows interface (in a popup) for selecting <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.Projects.IDocument"/> from all documents in the app.
+             </summary>
+             <remarks>
+             Providing a <see cref="P:Mendix.StudioPro.ExtensionsAPI.UI.Services.SelectorDialogOptions`2.Filter"/> in the <paramref name="options"/> parameter is required.
+            
+             Prefer using <see cref="M:Mendix.StudioPro.ExtensionsAPI.UI.Services.ISelectorDialogService.SelectDocumentAsync``1(Mendix.StudioPro.ExtensionsAPI.UI.Services.DocumentSelectorDialogOptions{``0})"/> when the type of selectable document is known.
+             </remarks>
+             <param name="options">An instance of <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Services.DocumentSelectorDialogOptions`1"/> that describes how the selector dialog should behave.</param>
+             <returns>
+             A <see cref="T:System.Threading.Tasks.Task`1"/> that is resolved when the selection process is finished by Studio Pro user. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+             contains an instance of <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Services.SelectorResult`1"/> representing the result of the selection process.
+             </returns>
+             <exception cref="T:System.ArgumentNullException">
+             <paramref name="options"/> is null.
+             </exception>
+             <exception cref="T:System.ArgumentException">
+             <paramref name="options"/> has its <see cref="P:Mendix.StudioPro.ExtensionsAPI.UI.Services.SelectorDialogOptions`2.Filter"/> property set to <code>null</code>.
+             </exception>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.Services.ISelectorDialogService.SelectEntityAsync(Mendix.StudioPro.ExtensionsAPI.UI.Services.EntitySelectorDialogOptions)">
+            <summary>
+            Shows interface (in a popup) for selecting an <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.DomainModels.IEntity"/> from all entities in the app model.
+            </summary>
+            <param name="options">An instance of <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Services.EntitySelectorDialogOptions"/> that describes how the selector dialog should behave.</param>
+            <returns>
+            A <see cref="T:System.Threading.Tasks.Task`1"/> that is resolved when the selection process is finished by Studio Pro user. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            contains an instance of <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Services.SelectorResult`1"/> representing the result of the selection process.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="options"/> is null.
+            </exception>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.Services.SelectorDialogOptions`2">
+            <summary>
+            Options class for describing the behavior of a selector dialog in Studio Pro.
+            </summary>
+            <typeparam name="TStructure">The type of model element that is selected in the dialog.</typeparam>
+            <typeparam name="TContainerStructure">The type of model element that is passed into the <see cref="P:Mendix.StudioPro.ExtensionsAPI.UI.Services.SelectorDialogOptions`2.CreateElement"/> function.</typeparam>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.Services.SelectorDialogOptions`2.#ctor(Mendix.StudioPro.ExtensionsAPI.Model.IAbstractUnit,`0)">
+            <summary>
+            Construct a new <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Services.SelectorDialogOptions`2"/>
+            </summary>
+            <param name="context">
+            Context in which the selection happens that is used to focus a specific <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.Projects.IFolder"/> or <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.Projects.IModule"/> in the shown interface.
+            If you use <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Services.ISelectorDialogService"/> to aid editing of a model property, pass the <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.Projects.IDocument"/> containing it.
+            </param>
+            <param name="initialSelection">
+            The initially selected model element, if any. If you use <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Services.ISelectorDialogService"/> to aid editing of a model property, pass its current value.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="context"/> is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="context"/> is not an <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.Projects.IDocument"/>, <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.Projects.IFolder"/>, or <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.Projects.IModule"/>.
+            </exception>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Services.SelectorDialogOptions`2.Context">
+            <summary>
+            Context in which the selection happens that is used to focus a specific <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.Projects.IFolder"/> or <see cref="T:Mendix.StudioPro.ExtensionsAPI.Model.Projects.IModule"/> in the shown interface.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Services.SelectorDialogOptions`2.InitialSelection">
+            <summary>
+            The initially selected model element, if any.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Services.SelectorDialogOptions`2.AllowNone">
+             <summary>
+             Whether to show the 'None' button, which allows the user to select nothing, in which case <code>null</code> is returned as the result of the selector dialog.
+            
+             Default value: <code>true</code>
+             </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Services.SelectorDialogOptions`2.Filter">
+            <summary>
+            Optional filter to limit what model elements can be selected.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Services.SelectorDialogOptions`2.CreateElement">
+             <summary>
+             Optional function to create a new model element. If not null, the 'New' button is displayed.
+             </summary>
+             <remarks>
+             The function gets passed in a model element representing the desired container of the new element.
+             This model element can be used to create the new element in a logical container,
+             e.g. in the same module or folder that was selected when the 'New' button was clicked.
+            
+             If the function returns <code>null</code>, it is considered as a cancellation of creating a new element and the selector dialog will remain visible.
+             </remarks>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.Services.DocumentSelectorDialogOptions`1">
+            <summary>
+            Options class for describing the behavior of a document selector dialog in Studio Pro.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.Services.EntitySelectorDialogOptions">
+            <summary>
+            Options class for describing the behavior of an entity selector dialog in Studio Pro.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.Services.SelectorResult`1">
+            <summary>
+            Represents the result of showing a selector dialog.
+            </summary>
+            <typeparam name="TStructure">The type of model element that is selected in the dialog.</typeparam>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Services.SelectorResult`1.IsCanceled">
+            <summary>
+            Whether the selector dialog was canceled by the user.
+            </summary>
+            <remarks>
+            If the dialog was canceled, the <see cref="P:Mendix.StudioPro.ExtensionsAPI.UI.Services.SelectorResult`1.Selection"/> property will always be <code>null</code>.
+            </remarks>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Services.SelectorResult`1.Selection">
+            <summary>
+            The selected model element. Can be <code>null</code> in case the dialog was canceled (see <see cref="P:Mendix.StudioPro.ExtensionsAPI.UI.Services.SelectorResult`1.IsCanceled"/>), or when the 'None' button was clicked.
+            </summary>
+            <remarks>
+            Should only be used when <see cref="P:Mendix.StudioPro.ExtensionsAPI.UI.Services.SelectorResult`1.IsCanceled"/> is <code>false</code>. Otherwise the value will be <code>null</code>.
+            </remarks>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.Services.IUserAuthenticationService">
+            <summary>
+            Provides access to information about logged in user.
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.Services.IUserAuthenticationService.RetrieveCredentialsOrSignInAsync">
+            <summary>
+            Retrieve valid credentials of Studio Pro user. If an authentication has expired and cannot be refreshed automatically,
+            or user is not currently logged in, then a blocking "Sign In" dialog is shown.
+            </summary>
+            <returns>
+            A task that is completed when authentication process is completed, fails, or aborted by the user. It resolves with the user's credentials or with
+            <c>null</c> if authentication failed, e.g. due to network error, or was aborted by the user.
+            </returns>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.Services.IUserAuthenticationService.TryRetrieveCredentialsAsync">
+            <summary>
+            Retrieve valid credentials of Studio Pro user, if user is authenticated. If an authentication has expired, Studio Pro will attempt to refresh it
+            without any user interaction.
+            </summary>
+            <returns>
+            A task that is completed when authentication process is completed. It resolves with the user's credentials or with <c>null</c> if failed.
+            </returns>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.Services.IUserAuthenticationService.TryRetrieveUserName(System.String@)">
+            <summary>
+            Retrieve the username of Studio Pro user, if user is/was authenticated. The value is returned even if an authentication has expired, but not when
+            user has logged out. No user interaction or token refresh happens.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.StartingPoints.NewAppStartingPointExtension">
+            <summary>
+            Base class for an extension that introduces new starting points used to create new apps in the Create New App form in Studio Pro.
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.StartingPoints.NewAppStartingPointExtension.GetNewAppStartingPoints">
+            <summary>
+            Return <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.StartingPoints.NewAppStartingPointViewModel"/>s introduced by this extension.
+            </summary>
+            <returns>List of <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.StartingPoints.NewAppStartingPointViewModel"/> introduced by this extension.</returns>
+            <remarks>
+            This method is called once when the extension is initialized and must return all starting point for creating new apps.
+            </remarks>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.StartingPoints.NewAppStartingPointViewModel">
+            <summary>
+            Representation of a starting point for creating a new app in Studio Pro. It adds a button to the list of starting points in the Create New App form in Studio Pro.
+            </summary>
+            <remarks>
+            Custom starting points can be introduced through <see cref="M:Mendix.StudioPro.ExtensionsAPI.UI.StartingPoints.NewAppStartingPointExtension.GetNewAppStartingPoints"/>.
+            </remarks>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.StartingPoints.NewAppStartingPointViewModel.Name">
+            <summary>
+            The name of the starting point.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.StartingPoints.NewAppStartingPointViewModel.Description">
+            <summary>
+            The description of the starting point. It will show in the next window after the button is clicked.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.StartingPoints.NewAppStartingPointViewModel.Subtitle">
+            <summary>
+            The subtitle of the starting point.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.StartingPoints.NewAppStartingPointViewModel.Thumbnail">
+            <summary>
+            The image that will show next to the name in the button.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.StartingPoints.NewAppStartingPointViewModel.Screenshot">
+            <summary>
+            The main image that will show in the next window after the button is clicked.
+            </summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.StartingPoints.NewAppStartingPointViewModel.OnAppCreated">
+            <summary>
+            The action that should happen after the app is created using this starting point. It is optional.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.Tab.TabViewModel">
+            <summary>
+            Representation of a tab in the <see href="https://docs.mendix.com/refguide/studio-pro-overview/#4-working-area">working area</see> of Studio Pro.
+            </summary>
+            <remarks>A tab can be opened through <see cref="M:Mendix.StudioPro.ExtensionsAPI.UI.Services.IDockingWindowService.OpenTab(Mendix.StudioPro.ExtensionsAPI.UI.Tab.TabViewModel)"/> method.</remarks>
+            <seealso cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Document.DocumentTabViewModel"/>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Tab.TabViewModel.OnClosed">
+            <summary>
+            Optional action to execute when the dockable pane is closed.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Tab.TabViewModel.Controls">
+            <summary>
+            Content of the tab.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Tab.TabViewModel.Title">
+            <summary>
+            Title of the tab displayed in its header.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">Passed value is null or empty.</exception>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.Tab.TabViewModel.Icon">
+            <summary>
+            Optional icon displayed in the tab header. <c>null</c> by default.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.TopBar.TopBarButtonViewModel">
+            <summary>
+            Representation of a button in the <see href="https://docs.mendix.com/refguide/studio-pro-overview/#2-top-bar">top bar</see> of Studio Pro.
+            </summary>
+            <remarks>Top bar button can be introduced through <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.TopBar.TopBarExtension"/>.</remarks>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.TopBar.TopBarButtonViewModel.#ctor(Eto.Drawing.Image,System.Int32)">
+            <summary>
+            Construct new <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.TopBar.TopBarButtonViewModel"/>
+            </summary>
+            <param name="icon">Icon shown for the Toolbar Button. It can be changed later via the <see cref="P:Mendix.StudioPro.ExtensionsAPI.UI.TopBar.TopBarButtonViewModel.Icon"/> property.</param>
+            <param name="position">Position on the Toolbar Button among other buttons.</param>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.TopBar.TopBarButtonViewModel.Position">
+            <summary>
+            Position of this button among other top bar buttons.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.TopBar.TopBarButtonViewModel.Icon">
+            <summary>
+            Icon shown for the button.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">Passed value is null.</exception>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.TopBar.TopBarButtonViewModel.Action">
+            <summary>
+            Action to execute when the button is clicked. Empty function by default.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">Passed value is null.</exception>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.TopBar.TopBarButtonViewModel.IsVisible">
+            <summary>
+            Whether the button is visible to the user. True by default.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.TopBar.TopBarButtonViewModel.IsEnabled">
+            <summary>
+            Whether the button is active and clickable by the user. True by default.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.TopBar.TopBarButtonViewModel.Tooltip">
+            <summary>
+            Optional tooltip shown when hovering the button. <c>null</c> by default.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.TopBar.TopBarExtension">
+            <summary>
+            Base class for an extension that introduces new buttons into <see href="https://docs.mendix.com/refguide/studio-pro-overview/#2-top-bar">top bar</see>.
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.TopBar.TopBarExtension.GetButtons">
+            <summary>
+            Return <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.TopBar.TopBarButtonViewModel"/>s introduced by this extension.
+            </summary>
+            <returns>List of <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.TopBar.TopBarButtonViewModel"/> introduced by this extension.</returns>
+            <remarks>
+            This method is called once when the extension is initialized and must return all buttons including disabled and invisible ones.
+            Top bar button can be shown/hidden and enabled/disabled later using <see cref="P:Mendix.StudioPro.ExtensionsAPI.UI.TopBar.TopBarButtonViewModel.IsVisible"/> and
+            <see cref="P:Mendix.StudioPro.ExtensionsAPI.UI.TopBar.TopBarButtonViewModel.IsEnabled"/> properties.
+            </remarks>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.UIExtensionBase">
+            <summary>
+            Base class for all extensions providing custom UI. Do not inherit from this class directly, but use concrete extension points like <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.Menu.MenuBarExtension"/>.
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.UIExtensionBase.Subscribe``1(System.Action)">
+            <summary>
+            Subscribe to a Studio Pro event.
+            </summary>
+            <param name="onEvent">The action to execute when the event occurs.</param>
+            <typeparam name="TEvent">The type of event to subscribe to.</typeparam>
+            <exception cref="T:System.ArgumentNullException">If the action passed is <code>null</code></exception>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.UIExtensionBase.CurrentApp">
+            <summary>
+            Currently opened app. Or <c>null</c> if no app is opened.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.ViewModelBase">
+            <summary>
+            Base class for any View Model - class which state is tracked and shown in the UI. Should not be used directly.
+            </summary>
+        </member>
+        <member name="E:Mendix.StudioPro.ExtensionsAPI.UI.ViewModelBase.System#ComponentModel#INotifyPropertyChanged#PropertyChanged">
+            <inheritdoc cref="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged"/>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IHttpResponseHeaders">
+            <summary>HTTP response headers.</summary>
+            <remarks>
+            Used to construct a <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebResourceResponse" /> for the <see cref="E:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebResourceRequested" /> event.
+            </remarks>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IHttpResponseHeaders.AppendHeader(System.String,System.String)">
+            <summary>Appends header line with name and value.</summary>
+            <param name="name">The header name to be appended.</param>
+            <param name="value">The header value to be appended.</param>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IHttpResponseHeaders.Contains(System.String)">
+            <summary>
+            Checks whether this CoreWebView2HttpResponseHeadersWrapper contains entries matching the header name.
+            </summary>
+            <param name="name">The name of the header to seek.</param>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IHttpResponseHeaders.GetHeader(System.String)">
+            <summary>
+            Gets the first header value in the collection matching the name.
+            </summary>
+            <param name="name">The header name.</param>
+            <returns>The first header value in the collection matching the name.</returns>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebResourceResponse">
+            <summary>
+            An HTTP response interface used with the <see cref="E:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebResourceRequested" /> event.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebResourceResponse.Content">
+            <summary>Gets HTTP response content as stream.</summary>
+            <remarks>
+            Stream must have all the content data available by the time the <see cref="E:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebResourceRequested" /> event deferral of this response is completed. Stream should be agile or be created from a background thread to prevent performance impact to the UI thread. <c>null</c> means no content data.
+            </remarks>
+            <seealso cref="T:System.IO.Stream" />
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebResourceResponse.Headers">
+            <summary>Gets the overridden HTTP response headers.</summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebResourceResponse.ReasonPhrase">
+            <summary>Gets or sets the HTTP response status code.</summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebResourceResponse.StatusCode">
+            <summary>Gets or sets the HTTP response reason phrase.</summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebView">
+            <summary>
+                It allows developers to display web content from within their extension.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebView.DefaultBackGroundColor">
+            <summary>
+            The default background color of the Web view.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebView.UserAgent">
+            <summary>
+                Determines the WebView2's User Agent.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebView.AllowDevTools">
+            <summary>
+                Allows the use of Chrome Developer Tools.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebView.AllowReload">
+            <summary>
+                If set to true will allow the Browser to respond to reload calls from the ReloadBrowser method.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebView.Address">
+            <summary>
+                Getting the URI of the current top level document. Setting this property causes a navigation of the top level document to the specified URI.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebView.IsFocused">
+            <summary>
+                It returns true if the browser is in focus.
+            </summary>
+        </member>
+        <member name="E:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebView.NavigationStarting">
+            <summary>
+                NavigationStarting is raised when the WebView main frame is requesting permission to navigate to a different URI.
+            </summary>
+        </member>
+        <member name="E:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebView.NavigationCompleted">
+            <summary>
+                NavigationCompleted is raised when the WebView has completely loaded (body.onload has been raised) or loading stopped with error.
+            </summary>
+        </member>
+        <member name="E:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebView.WebResourceRequested">
+            <summary>
+                WebResourceRequested is raised when the WebView is performing a URL request to a matching URL and resource context filter that was added with
+                <see cref="M:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebView.AddWebResourceRequestedFilter(System.String,Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewWebResourceContext)" />
+            </summary>
+        </member>
+        <member name="E:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebView.WebMessageReceived">
+            <summary>
+                WebMessageReceived is raised when the IsWebMessageEnabled setting is set and the top-level document of the WebView runs window.chrome.webview.postMessage.
+                <remarks>
+                    The postMessage function is void postMessage(object) where object is any object supported by JSON conversion. When postMessage is called,
+                    the handler's Invoke method will be called with the object parameter postMessage converted to a JSON string. If the same page calls postMessage
+                    multiple times, the corresponding WebMessageReceived events are guaranteed to be fired in the same order. However, if multiple frames call
+                    postMessage, there is no guaranteed order. In addition, WebMessageReceived events caused by calls to postMessage are not guaranteed to be
+                    sequenced with events caused by DOM APIs. For example, if the page runs
+                    <example>
+                        chrome.webview.postMessage("message");
+                        window.open();
+                    </example>
+                    then the NewWindowRequested event might be fired before the WebMessageReceived event. If you need the WebMessageReceived event to happen before
+                    anything else, then in the WebMessageReceived handler you can post a message back to the page and have the page wait until it receives that message
+                    before continuing.
+                </remarks>
+            </summary>
+        </member>
+        <member name="E:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebView.Reloaded">
+            <summary>
+                Reloaded event is raised when the WebView has been reloaded after a call to Reload
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebView.NavigateToString(System.String)">
+            <summary>
+                Initiates a navigation to htmlContent as source HTML of a new document.
+            </summary>
+            <param name="htmlContent">A source HTML of a new document.</param>
+            <remarks>This method can only be called after the WebView initialization has been completed.</remarks>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebView.Navigate(System.String)">
+            <summary>
+                Causes a navigation of the top level document to the specified URI.
+            </summary>
+            <param name="uri">The URI to navigate to.</param>
+            <remarks>This method can only be called after the WebView initialization has been completed.</remarks>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebView.NavigateWithWebResourceRequest(System.String,System.String,System.IO.Stream,System.String)">
+            <summary>
+                Navigates using a constructed CoreWebView2WebResourceRequest object.
+            </summary>
+            <remarks>This method can only be called after the WebView initialization has been completed.</remarks>
+            <param name="uri">The request URI.</param>
+            <param name="method">The HTTP request method.</param>
+            <param name="postData">Data that will be sent as the body of a post request</param>
+            <param name="headers">The raw request header string delimited by CRLF (optional in last header).</param>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebView.Stop">
+            <summary>
+                Stops all navigations and pending resource fetches.
+            </summary>
+            <remarks>This method can only be called after the WebView initialization has been completed.</remarks>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebView.AddWebResourceRequestedFilter(System.String,Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewWebResourceContext)">
+            <summary>
+                Adds a URI and resource context filter for the WebResourceRequested event.
+            </summary>
+            <remarks>This method can only be called after the WebView initialization has been completed.</remarks>
+            <param name="uri">An URI to be added to the WebResourceRequested event.</param>
+            <param name="resourceContext">A resource context filter to be added to the WebResourceRequested event.</param>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebView.ShowDevTools">
+            <summary>
+                If AllowedDevTools is true this method will display the Chrome Developer Tools.
+            </summary>
+            <remarks>This method can only be called after the WebView initialization has been completed.</remarks>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebView.Reload(System.Boolean)">
+            <summary>
+                Reloads the browser if AllowReload is set to true.
+            </summary>
+            <remarks>This method can only be called after the WebView initialization has been completed.</remarks>
+            <param name="ignoreCache"></param>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebView.PostWebMessageAsString(System.String)">
+            <summary>
+                Posts a message that is a simple string rather than a JSON string representation of a JavaScript object.
+            </summary>
+            <param name="webMessageAsString">The web message to be posted to the top level document in this WebView.</param>
+            <remarks>
+                This method can only be called after the WebView initialization has been completed.
+                This behaves in exactly the same manner as <see cref="M:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebView.PostWebMessageAsJson(System.String)" />, but the data property of the event arg of the window.chrome.webview
+                message is a string with the same value as webMessageAsString. Use this instead of <see cref="M:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebView.PostWebMessageAsJson(System.String)" /> if you want to communicate using
+                simple strings rather than JSON objects.
+            </remarks>
+            <example>
+            <list>
+            <item>
+                <description>
+                    window.chrome.webview.addEventListener('message', handler)
+                </description>
+                <term>
+                    Start listening
+                </term>
+            </item>
+            <item>
+                <description>
+                    window.chrome.webview.removeEventListener('message', handler)
+                </description>
+                <term>
+                    Stop listening
+                </term>
+            </item>
+            </list>
+            </example>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebView.PostWebMessageAsJson(System.String)">
+            <summary>
+                Posts the specified webMessageAsJson to the top level document in this WebView.e
+            </summary>
+            <remarks>This method can only be called after the WebView initialization has been completed.</remarks>
+            <param name="webMessageAsJson">The web message to be posted to the top level document in this WebView.</param>
+            <example>
+            <list>
+            <item>
+                <description>
+                    window.chrome.webview.addEventListener('message', handler)
+                </description>
+                <term>
+                    Start listening
+                </term>
+            </item>
+            <item>
+                <description>
+                    window.chrome.webview.removeEventListener('message', handler)
+                </description>
+                <term>
+                    Stop listening
+                </term>
+            </item>
+            </list>
+            </example>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebView.CreateWebResourceResponse(System.IO.Stream,System.Int32,System.String,System.String)">
+            <summary>
+            Creates a new <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebResourceResponse" /> object that can be passed as a request response inside the request handler.
+            </summary>
+            <param name="Content">HTTP response content as stream.</param>
+            <param name="StatusCode">The HTTP response status code.</param>
+            <param name="ReasonPhrase">The HTTP response reason phrase.</param>
+            <param name="Headers">The raw response header string delimited by newline.</param>
+            <remarks>
+            It is also possible to create this object with empty headers string and then use the <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IHttpResponseHeaders" /> to construct the headers line by line.
+            </remarks>
+            <seealso cref="T:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebResourceResponse" />
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebViewDeferral">
+            <summary>
+            This is used to complete deferrals on web resource requested event args using the <c>GetDeferral</c> method, then calling Complete./>.
+            We handle this process in the background so you won't have to do it yourself.
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebViewDeferral.Complete">
+            <summary>Completes the associated deferred event and resolves the promise that's being awaited on the js side.</summary>
+            <remarks>
+            Complete should only be run once for each deferral taken.
+            </remarks>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.WebView.NavigationCompletedEventArgs">
+            <summary>
+            Event args for the <see cref="E:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewBrowser.NavigationCompleted"/> event.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.WebView.NavigationCompletedEventArgs.IsSuccess">
+            <summary>
+            true when the navigation is successful; false for a navigation that ended up in an error page (failures due to no network, DNS lookup failure,
+            HTTP server responds with 4xx).
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.WebView.NavigationCompletedEventArgs.NavigationId">
+            <summary>
+            Gets the ID of the navigation.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.WebView.NavigationCompletedEventArgs.ErrorStatus">
+            <summary>
+            Gets the error code if the navigation failed.
+            </summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.NavigationCompletedEventArgs.WebErrorStatus.Unknown">
+            <summary>
+            Indicates that an unknown error occurred.
+            </summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.NavigationCompletedEventArgs.WebErrorStatus.CertificateCommonNameIsIncorrect">
+            <summary>
+            Indicates that the SSL certificate common name does not match the web address.
+            </summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.NavigationCompletedEventArgs.WebErrorStatus.CertificateExpired">
+            <summary>
+            Indicates that the SSL certificate has expired.
+            </summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.NavigationCompletedEventArgs.WebErrorStatus.ClientCertificateContainsErrors">
+            <summary>
+            Indicates that the SSL client certificate contains errors.
+            </summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.NavigationCompletedEventArgs.WebErrorStatus.CertificateRevoked">
+            <summary>
+            Indicates that the SSL certificate has been revoked.
+            </summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.NavigationCompletedEventArgs.WebErrorStatus.CertificateIsInvalid">
+            <summary>
+            Indicates that the SSL certificate is not valid. The certificate may not match the public key pins for the host name,
+            the certificate is signed by an untrusted authority or using a weak sign algorithm, the certificate claimed DNS names
+            violate name constraints, the certificate contains a weak key, the validity period of the certificate is too long,
+            lack of revocation information or revocation mechanism, non-unique host name, lack of certificate transparency information,
+            or the certificate is chained to a <see href="https://security.googleblog.com/2018/03/distrust-of-symantec-pki-immediate.html">legacy Symantec root</see> .
+            </summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.NavigationCompletedEventArgs.WebErrorStatus.ServerUnreachable">
+            <summary>
+            Indicates that the host is unreachable.
+            </summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.NavigationCompletedEventArgs.WebErrorStatus.Timeout">
+            <summary>
+            Indicates that the connection has timed out.
+            </summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.NavigationCompletedEventArgs.WebErrorStatus.ErrorHttpInvalidServerResponse">
+            <summary>
+            Indicates that the server returned an invalid or unrecognized response.
+            </summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.NavigationCompletedEventArgs.WebErrorStatus.ConnectionAborted">
+            <summary>
+            Indicates that the connection was stopped.
+            </summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.NavigationCompletedEventArgs.WebErrorStatus.ConnectionReset">
+            <summary>
+            Indicates that the connection was reset.
+            </summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.NavigationCompletedEventArgs.WebErrorStatus.Disconnected">
+            <summary>
+            Indicates that the Internet connection has been lost.
+            </summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.NavigationCompletedEventArgs.WebErrorStatus.CannotConnect">
+            <summary>
+            Indicates that a connection to the destination was not established.
+            </summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.NavigationCompletedEventArgs.WebErrorStatus.HostNameNotResolved">
+            <summary>
+            Indicates that the provided host name was not able to be resolved.
+            </summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.NavigationCompletedEventArgs.WebErrorStatus.OperationCanceled">
+            <summary>
+            Indicates that the operation was canceled.
+            </summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.NavigationCompletedEventArgs.WebErrorStatus.RedirectFailed">
+            <summary>
+            Indicates that the request redirect failed.
+            </summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.NavigationCompletedEventArgs.WebErrorStatus.UnexpectedError">
+            <summary>
+            An unexpected error occurred.
+            </summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.NavigationCompletedEventArgs.WebErrorStatus.ValidAuthenticationCredentialsRequired">
+            <summary>
+            Indicates that user is prompted with a login, waiting on user action. Initial navigation to a login site will always return this even if
+            app provides credential using BasicAuthenticationRequested. HTTP response status code in this case is 401. See status code reference
+            here: https://developer.mozilla.org/docs/Web/HTTP/Status
+            </summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.NavigationCompletedEventArgs.WebErrorStatus.ValidProxyAuthenticationRequired">
+            <summary>
+            Indicates that user lacks proper authentication credentials for a proxy server. HTTP response status code in this case is 407.
+            See status code reference here: https://developer.mozilla.org/docs/Web/HTTP/Status.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.WebView.NavigationStartingEventArgs">
+            <summary>
+            Event args for the NavigationStarting event.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.WebView.NavigationStartingEventArgs.Cancel">
+            <summary>
+            Determines whether to cancel the navigation.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.WebView.NavigationStartingEventArgs.IsRedirected">
+            <summary>
+            true when the navigation is redirected.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.WebView.NavigationStartingEventArgs.IsUserInitiated">
+            <summary>
+            true when the new window request was initiated through a user gesture.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.WebView.NavigationStartingEventArgs.NavigationId">
+            <summary>
+            Gets the ID of the navigation.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.WebView.NavigationStartingEventArgs.Uri">
+            <summary>
+            Gets the uri of the requested navigation.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebMessageReceivedEventArgs">
+            <summary>
+            Event args for the WebMessageReceived event.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebMessageReceivedEventArgs.Source">
+            <summary>
+            Gets the URI of the document that sent this web message.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebMessageReceivedEventArgs.WebMessageAsJson">
+            <summary>
+            Gets the message posted from the WebView content to the host converted to a JSON string.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebResourceRequestedEventArgs">
+            <summary>
+                Event args for the WebResourceRequested event.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebResourceRequestedEventArgs.Request">
+            <summary>
+                Gets the web resource request.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebResourceRequestedEventArgs.Response">
+            <summary>
+                Gets or sets the web resource response.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebResourceRequestedEventArgs.ResourceContext">
+            <summary>
+                Gets the web resource request context.
+            </summary>
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewBrowser">
+            <summary>
+                WebViewBrowser is a Eto compatible webview browser. This control allows developers to display web content from within their extension
+            </summary>
+        </member>
+        <member name="E:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewBrowser.WebMessageReceived">
+            <summary>
+                WebMessageReceived is raised when the IsWebMessageEnabled setting is set and the top-level document of the WebView runs window.chrome.webview.postMessage.
+                <remarks>
+                    The postMessage function is void postMessage(object) where object is any object supported by JSON conversion. When postMessage is called,
+                    the handler's Invoke method will be called with the object parameter postMessage converted to a JSON string. If the same page calls postMessage
+                    multiple times, the corresponding WebMessageReceived events are guaranteed to be fired in the same order. However, if multiple frames call
+                    postMessage, there is no guaranteed order. In addition, WebMessageReceived events caused by calls to postMessage are not guaranteed to be
+                    sequenced with events caused by DOM APIs. For example, if the page runs
+                    <example>
+                        chrome.webview.postMessage("message");
+                        window.open();
+                    </example>
+                    then the NewWindowRequested event might be fired before the WebMessageReceived event. If you need the WebMessageReceived event to happen before
+                    anything else, then in the WebMessageReceived handler you can post a message back to the page and have the page wait until it receives that message
+                    before continuing.
+                </remarks>
+            </summary>
+        </member>
+        <member name="E:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewBrowser.NavigationStarting">
+            <summary>
+                NavigationStarting is raised when the WebView main frame is requesting permission to navigate to a different URI.
+            </summary>
+        </member>
+        <member name="E:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewBrowser.NavigationCompleted">
+            <summary>
+                NavigationCompleted is raised when the WebView has completely loaded (body.onload has been raised) or loading stopped with error.
+            </summary>
+        </member>
+        <member name="E:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewBrowser.Reloaded">
+            <summary>
+                Reloaded event is raised when the WebView has been reloaded after a call to Reload
+            </summary>
+        </member>
+        <member name="E:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewBrowser.WebResourceRequested">
+            <summary>
+                WebResourceRequested is raised when the WebView is performing a URL request to a matching URL and resource context filter that was added with
+                <see cref="M:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewBrowser.AddWebResourceRequestedFilter(System.String,Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewWebResourceContext)" />
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewBrowser.IsFocused">
+            <summary>
+                It returns true if the browser is in focus.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewBrowser.Address">
+            <summary>
+                Getting the URI of the current top level document. Setting this property causes a navigation of the top level document to the specified URI.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewBrowser.AllowReload">
+            <summary>
+                If set to true will allow the Browser to respond to reload calls from the ReloadBrowser method.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewBrowser.AllowDevTools">
+            <summary>
+                Allows the use of Chrome Developer Tools.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewBrowser.UserAgent">
+            <summary>
+                Determines the WebView2's User Agent.
+            </summary>
+        </member>
+        <member name="P:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewBrowser.DefaultBackGroundColor">
+            <summary>
+            The default background color of the Web view.
+            </summary>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewBrowser.PostWebMessageAsJson(System.String)">
+            <summary>
+                Posts the specified webMessageAsJson to the top level document in this WebView.e
+            </summary>
+            <remarks>This method can only be called after the WebView initialization has been completed.</remarks>
+            <param name="webMessageAsJson">The web message to be posted to the top level document in this WebView.</param>
+            <example>
+            <list>
+            <item>
+                <description>
+                    window.chrome.webview.addEventListener('message', handler)
+                </description>
+                <term>
+                    Start listening
+                </term>
+            </item>
+            <item>
+                <description>
+                    window.chrome.webview.removeEventListener('message', handler)
+                </description>
+                <term>
+                    Stop listening
+                </term>
+            </item>
+            </list>
+            </example>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewBrowser.PostWebMessageAsString(System.String)">
+            <summary>
+                Posts a message that is a simple string rather than a JSON string representation of a JavaScript object.
+            </summary>
+            <param name="webMessageAsString">The web message to be posted to the top level document in this WebView.</param>
+            <remarks>
+                This method can only be called after the WebView initialization has been completed.
+                This behaves in exactly the same manner as <see cref="M:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewBrowser.PostWebMessageAsJson(System.String)" />, but the data property of the event arg of the window.chrome.webview
+                message is a string with the same value as webMessageAsString. Use this instead of <see cref="M:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewBrowser.PostWebMessageAsJson(System.String)" /> if you want to communicate using
+                simple strings rather than JSON objects.
+            </remarks>
+            <example>
+            <list>
+            <item>
+                <description>
+                    window.chrome.webview.addEventListener('message', handler)
+                </description>
+                <term>
+                    Start listening
+                </term>
+            </item>
+            <item>
+                <description>
+                    window.chrome.webview.removeEventListener('message', handler)
+                </description>
+                <term>
+                    Stop listening
+                </term>
+            </item>
+            </list>
+            </example>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewBrowser.Reload(System.Boolean)">
+            <summary>
+                Reloads the browser if AllowReload is set to true.
+            </summary>
+            <remarks>This method can only be called after the WebView initialization has been completed.</remarks>
+            <param name="ignoreCache"></param>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewBrowser.ShowDevTools">
+            <summary>
+                If AllowedDevTools is true this method will display the Chrome Developer Tools.
+            </summary>
+            <remarks>This method can only be called after the WebView initialization has been completed.</remarks>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewBrowser.AddWebResourceRequestedFilter(System.String,Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewWebResourceContext)">
+            <summary>
+                Adds a URI and resource context filter for the WebResourceRequested event.
+            </summary>
+            <remarks>This method can only be called after the WebView initialization has been completed.</remarks>
+            <param name="uri">An URI to be added to the WebResourceRequested event.</param>
+            <param name="resourceContext">A resource context filter to be added to the WebResourceRequested event.</param>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewBrowser.NavigateWithWebResourceRequest(System.String,System.String,System.IO.Stream,System.String)">
+            <summary>
+                Navigates using a constructed CoreWebView2WebResourceRequest object.
+            </summary>
+            <remarks>This method can only be called after the WebView initialization has been completed.</remarks>
+            <param name="uri">The request URI.</param>
+            <param name="method">The HTTP request method.</param>
+            <param name="postData">Data that will be sent as the body of a post request</param>
+            <param name="headers">The raw request header string delimited by CRLF (optional in last header).</param>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewBrowser.NavigateToString(System.String)">
+            <summary>
+                Initiates a navigation to htmlContent as source HTML of a new document.
+            </summary>
+            <param name="htmlContent">A source HTML of a new document.</param>
+            <remarks>This method can only be called after the WebView initialization has been completed.</remarks>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewBrowser.Navigate(System.String)">
+            <summary>
+                Causes a navigation of the top level document to the specified URI.
+            </summary>
+            <param name="uri">The URI to navigate to.</param>
+            <remarks>This method can only be called after the WebView initialization has been completed.</remarks>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewBrowser.Stop">
+            <summary>
+                Stops all navigations and pending resource fetches.
+            </summary>
+            <remarks>This method can only be called after the WebView initialization has been completed.</remarks>
+        </member>
+        <member name="M:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewBrowser.CreateWebResourceResponse(System.IO.Stream,System.Int32,System.String,System.String)">
+            <summary>
+            Creates a new <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebResourceResponse" /> object that can be passed as a request response inside the request handler.
+            </summary>
+            <param name="Content">HTTP response content as stream.</param>
+            <param name="StatusCode">The HTTP response status code.</param>
+            <param name="ReasonPhrase">The HTTP response reason phrase.</param>
+            <param name="Headers">The raw response header string delimited by newline.</param>
+            <remarks>
+            It is also possible to create this object with empty headers string and then use the <see cref="T:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IHttpResponseHeaders" /> to construct the headers line by line.
+            </remarks>
+            <seealso cref="T:Mendix.StudioPro.ExtensionsAPI.UI.WebView.IWebResourceResponse" />
+        </member>
+        <member name="T:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewWebResourceContext">
+            <summary>Specifies the web resource request contexts.</summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewWebResourceContext.All">
+            <summary>Specifies all resources.</summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewWebResourceContext.Document">
+            <summary>Specifies a document resources.</summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewWebResourceContext.Stylesheet">
+            <summary>Specifies a CSS resources.</summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewWebResourceContext.Image">
+            <summary>Specifies an image resources.</summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewWebResourceContext.Media">
+            <summary>Specifies another media resource such as a video.</summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewWebResourceContext.Font">
+            <summary>Specifies a font resource.</summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewWebResourceContext.Script">
+            <summary>Specifies a script resource.</summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewWebResourceContext.XmlHttpRequest">
+            <summary>Specifies an XML HTTP request.</summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewWebResourceContext.Fetch">
+            <summary>Specifies a Fetch API communication.</summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewWebResourceContext.TextTrack">
+            <summary>Specifies a TextTrack resource.</summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewWebResourceContext.EventSource">
+            <summary>Specifies an EventSource API communication.</summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewWebResourceContext.Websocket">
+            <summary>Specifies a WebSocket API communication.</summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewWebResourceContext.Manifest">
+            <summary>Specifies a Web App Manifest.</summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewWebResourceContext.SignedExchange">
+            <summary>Specifies a Signed HTTP Exchange.</summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewWebResourceContext.Ping">
+            <summary>Specifies a Ping request.</summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewWebResourceContext.CspViolationReport">
+            <summary>Specifies a CSP Violation Report.</summary>
+        </member>
+        <member name="F:Mendix.StudioPro.ExtensionsAPI.UI.WebView.WebViewWebResourceContext.Other">
+            <summary>Specifies an other resource.</summary>
+        </member>
+    </members>
+</doc>

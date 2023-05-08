@@ -1,0 +1,4 @@
+FROM mendix/rootfs:bionic
+COPY . /build
+RUN rm -rf /app/data/*
+RUN mxbuild --output-dir /app/data/ --java-home /usr/lib/jvm/zulu-11/

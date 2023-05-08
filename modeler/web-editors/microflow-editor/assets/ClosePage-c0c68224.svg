@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="22px" viewBox="0 0 24 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>F77F5255-203F-4BC2-936D-B16822CC7471</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <ellipse id="path-1" cx="9.6" cy="9.56521739" rx="9.6" ry="9.56521739"></ellipse>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="19.2" height="19.1304348" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Microflow-Rendering-Copy" transform="translate(-660.000000, -1427.000000)">
+            <g id="Activities" transform="translate(447.000000, 50.000000)">
+                <g id="Loop-Activities" transform="translate(0.000000, 1276.000000)">
+                    <g id="Close-Pages-Activity" transform="translate(193.000000, 81.000000)">
+                        <g id="Group-4-Copy-2" transform="translate(20.000000, 20.000000)">
+                            <g id="Pages-icon" stroke="#0595DB">
+                                <use id="Oval" mask="url(#mask-2)" stroke-width="2" fill="#FFFFFF" xlink:href="#path-1"></use>
+                                <g id="Group-5" transform="translate(6.720000, 4.782609)" stroke-linecap="round" stroke-width="0.5" stroke-linejoin="round">
+                                    <polygon id="Stroke-2828" points="6.72 8.60869565 0 8.60869565 0 0 4.34823529 0 6.72 2.24574669"></polygon>
+                                    <polyline id="Stroke-2829" points="4.34823529 0 4.34823529 2.24574669 6.72 2.24574669"></polyline>
+                                </g>
+                            </g>
+                            <g id="close" transform="translate(11.000000, 9.000000)">
+                                <path d="M6.5,0 C2.916,0 0,2.915 0,6.5 C0,10.084 2.916,13 6.5,13 C10.084,13 13,10.084 13,6.5 C13,2.915 10.084,0 6.5,0 L6.5,0 Z" id="Fill-4818" fill="#EA202D"></path>
+                                <path d="M9.554,8.846 C9.749,9.041 9.749,9.358 9.554,9.553 C9.456,9.651 9.328,9.7 9.2,9.7 C9.073,9.7 8.945,9.651 8.847,9.553 L6.5,7.207 L4.154,9.553 C4.056,9.651 3.928,9.7 3.8,9.7 C3.672,9.7 3.544,9.651 3.447,9.553 C3.251,9.358 3.251,9.041 3.447,8.846 L5.793,6.5 L3.447,4.153 C3.251,3.958 3.251,3.641 3.447,3.446 C3.642,3.251 3.958,3.251 4.154,3.446 L6.5,5.793 L8.847,3.446 C9.042,3.251 9.359,3.251 9.554,3.446 C9.749,3.641 9.749,3.958 9.554,4.153 L7.207,6.5 L9.554,8.846 Z" id="Path" fill="#FFFFFF"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

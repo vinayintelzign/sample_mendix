@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="22px" viewBox="0 0 24 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>951C1BE4-C1A8-4933-9F54-5BF6A6D64482</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M10,0 C4.47654802,0 0,4.47654802 0,10 C0,15.523452 4.47654802,20 10,20 C15.5229009,20 20,15.5231698 20,10 C20,4.47683022 15.5229009,0 10,0 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="20" height="20" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Microflow-Rendering-Copy" transform="translate(-653.000000, -871.000000)">
+            <g id="Activities" transform="translate(446.000000, 50.000000)">
+                <g id="Variable-activities" transform="translate(1.000000, 598.000000)">
+                    <g id="Generate-document" transform="translate(186.000000, 203.000000)">
+                        <g id="icon-copy-14" transform="translate(20.000000, 20.000000)">
+                            <g id="Entity-icons" stroke="#0595DB">
+                                <use id="Stroke-2175" mask="url(#mask-2)" stroke-width="2" fill="#FFFFFF" xlink:href="#path-1"></use>
+                                <g id="Group" transform="translate(6.000000, 4.000000)" stroke-linecap="round" stroke-width="0.5" stroke-linejoin="round">
+                                    <polygon id="Stroke-341" points="8.75 11.75 0.25 11.75 0.25 0.25 5.75 0.25 8.75 3.25"></polygon>
+                                    <polyline id="Stroke-342" points="5.75 0.25 5.75 3.25 8.75 3.25"></polyline>
+                                </g>
+                            </g>
+                            <g id="plus" transform="translate(11.000000, 9.000000)">
+                                <path d="M0,6.5 C0,10.0844545 2.91554545,13 6.5,13 C10.0844545,13 13,10.0844545 13,6.5 C13,2.91554545 10.0844545,0 6.5,0 C2.91554545,0 0,2.91554545 0,6.5 Z" id="Fill-4864" fill="#76CA02"></path>
+                                <path d="M9.41666667,7.08333333 L7.08333333,7.08333333 L7.08333333,9.41666667 C7.08333333,9.73866667 6.822,10 6.5,10 C6.178,10 5.91666667,9.73866667 5.91666667,9.41666667 L5.91666667,7.08333333 L3.58333333,7.08333333 C3.26133333,7.08333333 3,6.822 3,6.5 C3,6.178 3.26133333,5.91666667 3.58333333,5.91666667 L5.91666667,5.91666667 L5.91666667,3.58333333 C5.91666667,3.26133333 6.178,3 6.5,3 C6.822,3 7.08333333,3.26133333 7.08333333,3.58333333 L7.08333333,5.33333333 L7.08333333,5.91666667 L9.41666667,5.91666667 C9.73866667,5.91666667 10,6.178 10,6.5 C10,6.822 9.73866667,7.08333333 9.41666667,7.08333333" id="Path" fill="#FFFFFF"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

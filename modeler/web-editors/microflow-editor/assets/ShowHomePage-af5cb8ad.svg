@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="22px" viewBox="0 0 24 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>E4665BE6-CB34-41A0-89F4-4D9F926400FE</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <ellipse id="path-1" cx="9.6" cy="9.56521739" rx="9.6" ry="9.56521739"></ellipse>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="19.2" height="19.1304348" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Microflow-Rendering-Copy" transform="translate(-819.000000, -1559.000000)">
+            <g id="Activities" transform="translate(446.000000, 50.000000)">
+                <g id="Loop-Activities" transform="translate(0.000000, 1408.000000)">
+                    <g id="Show-Home-Page-activity" transform="translate(353.000000, 81.000000)">
+                        <g id="Group-4-Copy-6" transform="translate(20.000000, 20.000000)">
+                            <g id="Pages-icon" stroke="#0595DB">
+                                <use id="Oval" mask="url(#mask-2)" stroke-width="2" fill="#FFFFFF" xlink:href="#path-1"></use>
+                                <g id="Group-142" transform="translate(4.720000, 4.782609)" stroke-linecap="round" stroke-width="0.50999999" stroke-linejoin="round">
+                                    <polyline id="Stroke-4934" points="1.45833333 4.8915 1.45833333 8.80454348 3.95833333 8.80454348 3.95833333 6.06541304 6.04166667 6.06541304 6.04166667 8.80454348 8.54166667 8.80454348 8.54166667 5.08715217"></polyline>
+                                    <polyline id="Stroke-4935" points="0.208333333 4.69584783 5 0.195847826 9.79166667 4.69584783"></polyline>
+                                    <polyline id="Stroke-4936" points="6.66666667 0.587152174 8.125 0.587152174 8.125 1.95671739"></polyline>
+                                </g>
+                            </g>
+                            <g id="Arrow" transform="translate(10.560000, 8.608696)">
+                                <ellipse id="Oval-2" fill="#888888" cx="6.72" cy="6.69565217" rx="6.72" ry="6.69565217"></ellipse>
+                                <path d="M8.5954824,7.24055167 L3.45724823,7.24055167 C3.13844284,7.24055167 2.88,6.96828635 2.88,6.65360497 C2.88,6.32944327 3.13552734,6.06665828 3.45724823,6.06665828 L8.5003283,6.06665828 L7.13738539,4.86212931 C6.90223389,4.65430932 6.87776871,4.27727059 7.06981791,4.03621067 C7.26765292,3.7878884 7.61840938,3.75483523 7.85380934,3.96287481 L10.3640912,6.18138826 C10.4969051,6.29876531 10.5625099,6.47012327 10.5598556,6.64047404 C10.5599517,6.64484039 10.56,6.64921755 10.56,6.65360497 C10.56,6.67162004 10.5592108,6.68944554 10.5576649,6.70704691 C10.5732711,6.89138414 10.5082985,7.08246991 10.3640912,7.20991609 L7.85380934,9.42842954 C7.61840938,9.63646912 7.26765292,9.60341595 7.06981791,9.35509368 C6.87776871,9.11403375 6.90223389,8.73699503 7.13738539,8.52917503 L8.5954824,7.24055167 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

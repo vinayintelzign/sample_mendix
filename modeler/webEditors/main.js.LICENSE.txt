@@ -1,0 +1,5 @@
+/*! For license information please see main.js.LICENSE.txt */
+
+/*! For license information please see vendor.js.LICENSE.txt */
+
+/*! dom-to-image-more 06-09-2022 */

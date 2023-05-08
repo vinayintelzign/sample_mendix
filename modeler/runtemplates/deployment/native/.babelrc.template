@@ -1,0 +1,11 @@
+\{
+  "presets": ["{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/metro-react-native-babel-preset"],
+  "plugins": [
+    [
+      "{InstallDir:HtmlAttributeEncode}/modeler/tools/node/node_modules/babel-plugin-inline-import",
+      \{
+        "extensions": [".svg"]
+      \}
+    ]
+  ]
+\}

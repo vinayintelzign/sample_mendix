@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="22px" viewBox="0 0 24 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>F2662871-ED77-4B81-A0D7-DAFC177FD602</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M10,0 C4.47654802,0 0,4.47654802 0,10 C0,15.523452 4.47654802,20 10,20 C15.5229009,20 20,15.5231698 20,10 C20,4.47683022 15.5229009,0 10,0 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="20" height="20" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Microflow-Rendering-Copy" transform="translate(-1032.000000, -871.000000)">
+            <g id="Activities" transform="translate(446.000000, 50.000000)">
+                <g id="Variable-activities" transform="translate(1.000000, 598.000000)">
+                    <g id="Download-File" transform="translate(565.000000, 203.000000)">
+                        <g id="icon-copy-14" transform="translate(20.000000, 20.000000)">
+                            <g id="Entity-icons" stroke="#0595DB">
+                                <use id="Stroke-2175" mask="url(#mask-2)" stroke-width="2" fill="#FFFFFF" xlink:href="#path-1"></use>
+                                <g id="Group-27" transform="translate(10.000000, 10.000000) rotate(-330.000000) translate(-10.000000, -10.000000) translate(7.000000, 4.000000)" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1.75,8.5 L1.75,4.75 C1.75,3.922 2.1715,3.25 3,3.25 C3.8285,3.25 4.25,3.922 4.25,4.75 L4.25,9.5 C4.25,10.743 3.4925,11.75 2.25,11.75 C1.0075,11.75 0.25,10.743 0.25,9.5 L0.25,3.25 C0.25,1.593 1.343,0.25 3,0.25 C4.657,0.25 5.75,1.593 5.75,3.25 L5.75,7.75" id="Stroke-91"></path>
+                                </g>
+                            </g>
+                            <g id="plus" transform="translate(11.000000, 9.000000)">
+                                <path d="M0,6.5 C0,10.0844545 2.91554545,13 6.5,13 C10.0844545,13 13,10.0844545 13,6.5 C13,2.91554545 10.0844545,0 6.5,0 C2.91554545,0 0,2.91554545 0,6.5 Z" id="Fill-4864" fill="#76CA02"></path>
+                                <path d="M8.86365543,7.4457554 L6.5003496,10 L4.13704377,7.4457554 C3.95431874,7.24935252 3.95431874,6.93007194 4.13704377,6.73366906 C4.31883653,6.53726619 4.61343402,6.53726619 4.79615905,6.73366906 L6.04819839,8.08733813 L6.04819839,3.50359712 C6.04819839,3.22561151 6.25702699,3 6.51433366,3 C6.77164033,3 6.98046893,3.22561151 6.98046893,3.50359712 L6.98046893,8.05611511 L8.20454016,6.73366906 C8.38633291,6.53726619 8.68186268,6.53726619 8.86365543,6.73366906 C9.04544819,6.93007194 9.04544819,7.24935252 8.86365543,7.4457554" id="Path" fill="#FFFFFF" transform="translate(6.500000, 6.500000) rotate(-360.000000) translate(-6.500000, -6.500000) "></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
